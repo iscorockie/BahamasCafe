@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#031d2d">
   <title>Bahamas Cafe Restaurant Lounge | Bukoto Kampala</title>
-  <meta name="description" content="Ocean-inspired cafe in Bukoto. Order grilled pork, chicken, rolex, soups, coffee, smoothies, beers & whisky via WhatsApp.">
+  <meta name="description" content="Ocean-inspired cafe in Bukoto. Order grilled pork, chicken, combos, rolex, soups, coffee, smoothies, beers & whisky via WhatsApp.">
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -79,7 +79,7 @@
     .cart-button, .mobile-toggle {
       width:46px; height:46px; border:1px solid rgba(181,241,232,.35);
       background:rgba(255,255,255,.08); color:white; border-radius:10px;
-      font-size:18px; display:grid; place-items:center;
+      font-size:18px; display:grid; place-items:center; position:relative;
     }
     .cart-count {
       position:absolute; top:-6px; right:-6px; background:var(--coral);
@@ -180,6 +180,11 @@
       background:var(--teal); color:white; font-size:20px;
     }
     .add-button:hover { background:var(--aqua); color:var(--deep-ocean); }
+
+    .combo-card {
+      background:linear-gradient(135deg, var(--lagoon), var(--teal));
+      border:2px solid var(--aqua);
+    }
 
     .special-banner {
       margin-top:40px; padding:28px; border-radius:16px;
@@ -315,7 +320,7 @@
         </div>
         <div class="hero-brand">Bahamas</div>
         <h1>MENU</h1>
-        <p>Freshly grilled meats, local comfort food, handcrafted drinks and a relaxed oceanic vibe in the heart of Bukoto.</p>
+        <p>Freshly grilled meats, hearty combo meals, local comfort food, handcrafted drinks and a relaxed oceanic vibe in the heart of Bukoto.</p>
         <div class="location-pill">
           📍 Opposite Bukoto Heights Apartments, Kampala • +256 762 831 177
         </div>
@@ -326,15 +331,15 @@
       </div>
     </section>
 
-    <!-- GRILL -->
+    <!-- GRILL + COMBOS -->
     <section id="grill">
       <div class="container">
         <div class="section-heading">
           <div class="heading-symbol">🔥</div>
-          <div><h2><span>Grill</span> Menu</h2></div>
+          <div><h2><span>Grill</span> &amp; Combo Meals</h2></div>
         </div>
         <div class="menu-grid">
-          <!-- (Same cards as previous version - abbreviated for space) -->
+
           <article class="menu-card">
             <div class="food-image"><img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=85" alt="Fried Pork"><span class="badge">Popular</span></div>
             <div class="menu-content">
@@ -346,15 +351,276 @@
               </div>
             </div>
           </article>
-          <!-- Repeat similar cards for Pork Kikalayi, Skewers, Chops, Ribs, Family Platter (prices unchanged) -->
-          <!-- ... (full cards available in previous version) ... -->
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" alt="Pork Kikalayi"><span class="badge">Local</span></div>
+            <div class="menu-content">
+              <h3>Pork Kikalayi</h3>
+              <p>Sautéed pork with vegetables, spices and matooke or Irish potatoes.</p>
+              <div class="price-row">
+                <span class="price">UGX 25,000</span>
+                <button class="add-button" onclick="addToCart('Pork Kikalayi',25000,'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=85" alt="Pork Skewers"></div>
+            <div class="menu-content">
+              <h3>Pork Skewers</h3>
+              <p>Tender flame-grilled pork skewers (2–3 sticks).</p>
+              <div class="price-row">
+                <span class="price">UGX 15,000</span>
+                <button class="add-button" onclick="addToCart('Pork Skewers',15000,'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=800&q=85" alt="Pork Chops"></div>
+            <div class="menu-content">
+              <h3>Pork Chops</h3>
+              <p>Juicy grilled pork chops marinated in aromatic herbs.</p>
+              <div class="price-row">
+                <span class="price">UGX 22,000</span>
+                <button class="add-button" onclick="addToCart('Pork Chops',22000,'https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Pork Ribs"><span class="badge">Best Seller</span></div>
+            <div class="menu-content">
+              <h3>Pork Ribs</h3>
+              <p>Slow-grilled marinated pork ribs with smoky BBQ glaze.</p>
+              <div class="price-row">
+                <span class="price">UGX 25,000</span>
+                <button class="add-button" onclick="addToCart('Pork Ribs',25000,'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card combo-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=85" alt="Family Grill Platter"><span class="badge">Combo</span></div>
+            <div class="menu-content">
+              <h3>Family Grill Platter</h3>
+              <p>Assorted pork, chicken, skewers &amp; mixed sides (Serves 3–4).</p>
+              <div class="price-row">
+                <span class="price">UGX 85,000</span>
+                <button class="add-button" onclick="addToCart('Family Grill Platter',85000,'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card combo-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Bahamas Pork Combo"><span class="badge">Combo</span></div>
+            <div class="menu-content">
+              <h3>Bahamas Pork Combo</h3>
+              <p>Fried pork + choice of side + small kachumbari.</p>
+              <div class="price-row">
+                <span class="price">UGX 25,000</span>
+                <button class="add-button" onclick="addToCart('Bahamas Pork Combo',25000,'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card combo-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" alt="Pork Kikalayi Combo"><span class="badge">Combo</span></div>
+            <div class="menu-content">
+              <h3>Pork Kikalayi Combo</h3>
+              <p>Pork kikalayi + extra side.</p>
+              <div class="price-row">
+                <span class="price">UGX 28,000</span>
+                <button class="add-button" onclick="addToCart('Pork Kikalayi Combo',28000,'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- CHICKEN, QUICK MEALS sections follow the same pattern as the previous oceanic version -->
+    <!-- CHICKEN + COMBOS -->
+    <section class="section-dark" id="chicken">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">🍗</div>
+          <div><h2><span>Chicken</span> &amp; Combo Meals</h2></div>
+        </div>
+        <div class="menu-grid">
 
-    <!-- DRINKS (with new smoothie image) -->
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=85" alt="Quarter Chicken"></div>
+            <div class="menu-content">
+              <h3>Quarter Chicken</h3>
+              <p>Flame-grilled quarter chicken with signature seasoning.</p>
+              <div class="price-row">
+                <span class="price">UGX 18,000</span>
+                <button class="add-button" onclick="addToCart('Quarter Chicken',18000,'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=85" alt="Half Chicken"></div>
+            <div class="menu-content">
+              <h3>Half Chicken</h3>
+              <p>Juicy half chicken grilled over open flame.</p>
+              <div class="price-row">
+                <span class="price">UGX 22,000</span>
+                <button class="add-button" onclick="addToCart('Half Chicken',22000,'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=85" alt="Whole Chicken"></div>
+            <div class="menu-content">
+              <h3>Whole Chicken</h3>
+              <p>Full flame-grilled chicken, ideal for sharing.</p>
+              <div class="price-row">
+                <span class="price">UGX 40,000</span>
+                <button class="add-button" onclick="addToCart('Whole Chicken',40000,'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=85" alt="Chicken Kikalayi"></div>
+            <div class="menu-content">
+              <h3>Chicken Kikalayi</h3>
+              <p>Fried chicken tossed with cabbage, carrots, garlic and matooke.</p>
+              <div class="price-row">
+                <span class="price">UGX 28,000</span>
+                <button class="add-button" onclick="addToCart('Chicken Kikalayi',28000,'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card combo-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=85" alt="Half Chicken Combo"><span class="badge">Combo</span></div>
+            <div class="menu-content">
+              <h3>Half Chicken Combo</h3>
+              <p>Half grilled chicken + choice of 2 sides.</p>
+              <div class="price-row">
+                <span class="price">UGX 28,000</span>
+                <button class="add-button" onclick="addToCart('Half Chicken Combo',28000,'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card combo-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=800&q=85" alt="Whole Chicken Feast"><span class="badge">Combo</span></div>
+            <div class="menu-content">
+              <h3>Whole Chicken Feast</h3>
+              <p>Whole chicken + large chips + salad (Serves 3–4).</p>
+              <div class="price-row">
+                <span class="price">UGX 55,000</span>
+                <button class="add-button" onclick="addToCart('Whole Chicken Feast',55000,'https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card combo-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=85" alt="Chicken Rolex Combo"><span class="badge">Combo</span></div>
+            <div class="menu-content">
+              <h3>Chicken Rolex Combo</h3>
+              <p>Chicken rolex + side portion of chips.</p>
+              <div class="price-row">
+                <span class="price">UGX 15,000</span>
+                <button class="add-button" onclick="addToCart('Chicken Rolex Combo',15000,'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK MEALS -->
+    <section id="quick">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">🍲</div>
+          <div><h2><span>Quick Meals</span> &amp; Soups</h2></div>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=85" alt="Pork Soup"></div>
+            <div class="menu-content">
+              <h3>Pork Soup</h3>
+              <p>Rich traditional pork broth with local spices.</p>
+              <div class="price-row">
+                <span class="price">UGX 12,000</span>
+                <button class="add-button" onclick="addToCart('Pork Soup',12000,'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=800&q=85" alt="Chicken Soup"></div>
+            <div class="menu-content">
+              <h3>Chicken Soup</h3>
+              <p>Hearty chicken broth, made fresh daily.</p>
+              <div class="price-row">
+                <span class="price">UGX 12,000</span>
+                <button class="add-button" onclick="addToCart('Chicken Soup',12000,'https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=85" alt="Chicken Rolex"></div>
+            <div class="menu-content">
+              <h3>Chicken Rolex</h3>
+              <p>Rolled chapati with egg, vegetables and grilled chicken.</p>
+              <div class="price-row">
+                <span class="price">UGX 10,000</span>
+                <button class="add-button" onclick="addToCart('Chicken Rolex',10000,'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=800&q=85" alt="Pork Rolex"></div>
+            <div class="menu-content">
+              <h3>Pork Rolex</h3>
+              <p>Rolled chapati with egg, vegetables and seasoned pork.</p>
+              <div class="price-row">
+                <span class="price">UGX 10,000</span>
+                <button class="add-button" onclick="addToCart('Pork Rolex',10000,'https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85" alt="Chips"></div>
+            <div class="menu-content">
+              <h3>Chips / Fries</h3>
+              <p>Golden crispy fries, freshly prepared.</p>
+              <div class="price-row">
+                <span class="price">UGX 8,000</span>
+                <button class="add-button" onclick="addToCart('Chips / Fries',8000,'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=85" alt="Kachumbali"></div>
+            <div class="menu-content">
+              <h3>Fresh Kachumbali</h3>
+              <p>Crisp tomatoes, onions, herbs and local dressing.</p>
+              <div class="price-row">
+                <span class="price">UGX 5,000</span>
+                <button class="add-button" onclick="addToCart('Fresh Kachumbali',5000,'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRINKS -->
     <section class="section-drinks" id="drinks">
       <div class="container">
         <div class="section-heading">
@@ -362,12 +628,33 @@
           <div><h2><span>Drinks</span> Menu</h2></div>
         </div>
         <div class="menu-grid">
-          <!-- Coffee, Latte, Juice, Beer, Whisky, Cocktail, Soda cards remain the same -->
+
           <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1556881286-fc6915a7c6c7?auto=format&fit=crop&w=800&q=85" alt="Fruit Smoothie">
-              <span class="badge">Fresh</span>
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85" alt="Black Coffee"><span class="badge">Coffee</span></div>
+            <div class="menu-content">
+              <h3>Espresso / Black Coffee</h3>
+              <p>Freshly brewed aromatic coffee.</p>
+              <div class="price-row">
+                <span class="price">UGX 5,000</span>
+                <button class="add-button" onclick="addToCart('Espresso / Black Coffee',5000,'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
             </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=85" alt="Cappuccino"><span class="badge">Coffee</span></div>
+            <div class="menu-content">
+              <h3>Cappuccino / Latte</h3>
+              <p>Velvety milk coffee with rich espresso.</p>
+              <div class="price-row">
+                <span class="price">UGX 8,000</span>
+                <button class="add-button" onclick="addToCart('Cappuccino / Latte',8000,'https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1556881286-fc6915a7c6c7?auto=format&fit=crop&w=800&q=85" alt="Fruit Smoothie"><span class="badge">Fresh</span></div>
             <div class="menu-content">
               <h3>Fruit Smoothie</h3>
               <p>Mango, passion, banana, strawberry or mixed tropical fruits.</p>
@@ -377,13 +664,98 @@
               </div>
             </div>
           </article>
-          <!-- Remaining drink cards... -->
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85" alt="Fresh Juice"><span class="badge">Fresh</span></div>
+            <div class="menu-content">
+              <h3>Natural Fresh Juice</h3>
+              <p>Mango, passion, pineapple, watermelon or mixed.</p>
+              <div class="price-row">
+                <span class="price">UGX 7,000</span>
+                <button class="add-button" onclick="addToCart('Natural Fresh Juice',7000,'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=85" alt="Local Beer"><span class="badge">Beer</span></div>
+            <div class="menu-content">
+              <h3>Local Beer</h3>
+              <p>Nile Special, Club, Bell, Guinness and more.</p>
+              <div class="price-row">
+                <span class="price">From UGX 6,000</span>
+                <button class="add-button" onclick="addToCart('Local Beer',6000,'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=85" alt="Whisky"><span class="badge">Whisky</span></div>
+            <div class="menu-content">
+              <h3>Whisky Shot</h3>
+              <p>Premium whisky and spirits (ask for brands).</p>
+              <div class="price-row">
+                <span class="price">From UGX 10,000</span>
+                <button class="add-button" onclick="addToCart('Whisky Shot',10000,'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=800&q=85" alt="Cocktail"><span class="badge">Cocktail</span></div>
+            <div class="menu-content">
+              <h3>Classic Cocktail</h3>
+              <p>Refreshing cocktails prepared by our bar team.</p>
+              <div class="price-row">
+                <span class="price">UGX 15,000</span>
+                <button class="add-button" onclick="addToCart('Classic Cocktail',15000,'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=85" alt="Soda"><span class="badge">Cold</span></div>
+            <div class="menu-content">
+              <h3>Soda / Water</h3>
+              <p>Soft drinks, mineral water and chilled refreshers.</p>
+              <div class="price-row">
+                <span class="price">From UGX 3,000</span>
+                <button class="add-button" onclick="addToCart('Soda / Water',3000,'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Visit Us section (same as previous) -->
-
+    <!-- VISIT -->
+    <section class="section-dark" id="visit">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">⌖</div>
+          <div><h2>Visit <span>Bahamas</span></h2></div>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Location</h3>
+            <p>Opposite Bukoto Heights Apartments,<br>Bukoto, Kampala, Uganda.</p>
+          </div>
+          <div class="info-card">
+            <h3>Call / Delivery</h3>
+            <p><a href="tel:+256762831177">+256 762 831 177</a></p>
+          </div>
+          <div class="info-card">
+            <h3>WhatsApp Orders</h3>
+            <p><a href="https://wa.me/256762831177" target="_blank">Chat on WhatsApp</a></p>
+          </div>
+          <div class="info-card">
+            <h3>Hours</h3>
+            <p>Monday – Sunday<br>10:00 AM until late.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -403,15 +775,137 @@
     </p>
   </footer>
 
-  <!-- Cart Panel (same functional cart as previous oceanic version with WhatsApp checkout) -->
-  <!-- Toast, script, etc. (full functional cart code from previous version is retained) -->
+  <!-- CART -->
+  <div class="cart-overlay" id="cartOverlay" onclick="if(event.target.id==='cartOverlay') toggleCart()">
+    <aside class="cart-panel">
+      <div class="cart-header">
+        <h2>🛒 YOUR ORDER</h2>
+        <button onclick="toggleCart()" style="background:none;border:none;color:white;font-size:28px;cursor:pointer;">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div style="padding:20px 22px;background:#041d2b;border-top:1px solid rgba(181,241,232,.2)">
+        <div class="total-row">
+          <span>TOTAL</span>
+          <span id="cartTotal">UGX 0</span>
+        </div>
+        <input id="customerName" class="customer-input" placeholder="Your name" type="text">
+        <input id="customerPhone" class="customer-input" placeholder="Phone number" type="tel">
+        <textarea id="customerLocation" class="customer-input" placeholder="Delivery location or notes" rows="3"></textarea>
+        <button onclick="checkoutWhatsApp()" id="checkoutBtn" class="checkout-button" disabled>SEND ORDER VIA WHATSAPP</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
 
   <script>
-    // Full cart functionality (addToCart, renderCart, WhatsApp checkout, toast) from the previous oceanic version is kept exactly the same.
-    // Only logo, smoothie image, and footer (no year) have been updated.
-    // For brevity in this response the full repeated cart script is omitted but is identical to the last version you received.
-    // Copy the entire <script> block from the previous oceanic HTML if needed.
-    console.log('%cBahamas Menu loaded with new knot logo and updated smoothie image.', 'color:#53d5d0; font-family:monospace');
+    const WHATSAPP_NUMBER = "256762831177";
+    let cart = JSON.parse(localStorage.getItem("bahamasCart")) || [];
+
+    function money(n) { return "UGX " + Number(n).toLocaleString(); }
+
+    function saveCart() {
+      localStorage.setItem("bahamasCart", JSON.stringify(cart));
+    }
+
+    function addToCart(name, price, img) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) existing.quantity++;
+      else cart.push({name, price, image:img, quantity:1});
+      saveCart();
+      renderCart();
+      showToast(name + " added");
+    }
+
+    function updateQty(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity < 1) cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartItems");
+      const countEl = document.getElementById("cartCount");
+      const totalEl = document.getElementById("cartTotal");
+      const btn = document.getElementById("checkoutBtn");
+
+      const totalItems = cart.reduce((a, c) => a + c.quantity, 0);
+      const totalPrice = cart.reduce((a, c) => a + c.price * c.quantity, 0);
+
+      countEl.textContent = totalItems;
+      totalEl.textContent = money(totalPrice);
+      btn.disabled = cart.length === 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div style="height:100%;display:grid;place-items:center;text-align:center;color:#a9c3cc"><p>Your cart is empty.<br>Add items from the menu.</p></div>`;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <div style="font-family:var(--font-heading);font-size:17px">${item.name}</div>
+            <div style="color:var(--gold);font-family:var(--font-number)">${money(item.price)}</div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button onclick="updateQty(${i},-1)" style="width:28px;height:28px;background:rgba(255,255,255,.15);border:none;color:white;border-radius:4px">-</button>
+              <span style="font-family:var(--font-number);width:20px;text-align:center">${item.quantity}</span>
+              <button onclick="updateQty(${i},1)" style="width:28px;height:28px;background:rgba(255,255,255,.15);border:none;color:white;border-radius:4px">+</button>
+            </div>
+          </div>
+          <button onclick="removeItem(${i})" style="background:none;border:none;color:#f1764b;font-size:18px;align-self:start">×</button>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart() {
+      document.getElementById("cartOverlay").classList.toggle("open");
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 2200);
+    }
+
+    function checkoutWhatsApp() {
+      if (!cart.length) return;
+      const name = document.getElementById("customerName").value.trim() || "Customer";
+      const phone = document.getElementById("customerPhone").value.trim() || "";
+      const notes = document.getElementById("customerLocation").value.trim() || "No notes";
+
+      let text = `*NEW ORDER - BAHAMAS*%0A%0A`;
+      text += `*Name:* ${encodeURIComponent(name)}%0A`;
+      text += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+      text += `*Location/Notes:* ${encodeURIComponent(notes)}%0A%0A`;
+      text += `*ITEMS*%0A`;
+
+      cart.forEach((item, i) => {
+        text += `${i+1}. ${encodeURIComponent(item.name)} ×${item.quantity} — ${encodeURIComponent(money(item.price*item.quantity))}%0A`;
+      });
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      text += `%0A*TOTAL: ${encodeURIComponent(money(total))}*%0A%0AThank you! Please confirm delivery fee.`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    }
+
+    function toggleMobileMenu() {
+      const links = document.getElementById("navLinks");
+      links.style.display = links.style.display === "flex" ? "none" : "flex";
+    }
+
+    // Initialize
+    document.getElementById("navLinks").style.display = "flex";
+    renderCart();
   </script>
 </body>
 </html>
