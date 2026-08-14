@@ -1,716 +1,1715 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bahamas Cafe & Lounge — Oceanic Menu | Bukoto, Kampala</title>
-<meta name="description" content="Order grilled pork, kikalayi, cocktails & ocean-fresh smoothies. Delivery across Kampala. WhatsApp +256 762 831 177">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#062b40">
+  <title>Bahamas Cafe Restaurant Lounge | Bukoto Kampala</title>
+  <meta name="description" content="Bahamas Cafe Restaurant Lounge in Bukoto, Kampala. Order grilled pork, chicken, rolex, soups, coffee, smoothies, beers and whisky via WhatsApp.">
 
-<!-- Fonts: Big Shoulders Display (Headings), Great Vibes (Beyonest fallback), Montserrat (Nexa fallback) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800&family=Great+Vibes&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:opsz,wght@10..72,400;10..72,500;10..72,600;10..72,700;10..72,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* ========== OCEANIC PALETTE ========== */
-:root{
-  --font-heading:'Big Shoulders Display', sans-serif;
-  --font-script:'Great Vibes', cursive; /* Replace with 'Beyonest' if available */
-  --font-numbers:'Montserrat', sans-serif; /* Replace with 'Nexa' if available */
-  
-  /* Oceanic Colors */
-  --ocean-deep:#0a1628;      /* Deepest background */
-  --ocean-mid:#0f1f2e;       /* Card backgrounds */
-  --ocean-surface:#162635;   /* Elevated surfaces */
-  --teal:#14b8a6;            /* Primary accent (teal) */
-  --aqua:#2dd4bf;            /* Secondary accent (aqua) */
-  --seafoam:#5eead4;         /* Highlights */
-  --sand:#d4a373;            /* Prices/warm accent (sandy gold) */
-  --coral:#e76f51;           /* CTAs (coral/orange) */
-  --foam:#e0f2f1;            /* Light text */
-  --glass:rgba(255,255,255,.04);
-  --line:rgba(255,255,255,.08);
-}
+  <style>
+    /*
+      -------------------------------------------------------
+      FONT SETUP
+      Beyonest and Nexa are usually licensed font files.
 
-*::before,*::after,*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(--font-numbers);
-  background:var(--ocean-deep);
-  color:var(--foam);
-  -webkit-font-smoothing:antialiased;
-  line-height:1.6;
-}
-img{max-width:100%;display:block}
-.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+      To use exact brand fonts in a single HTML file:
+      1. Convert licensed .woff2 fonts to Base64.
+      2. Replace the src values below with:
+      src: url("data:font/woff2;base64,PASTE_DATA_HERE") format("woff2");
+      -------------------------------------------------------
+    */
 
-/* Typography */
-.font-heading{font-family:var(--font-heading);letter-spacing:3px;text-transform:uppercase}
-.font-script{font-family:var(--font-script);letter-spacing:0;text-transform:none;font-weight:400}
-.font-numbers{font-family:var(--font-numbers);font-weight:700;letter-spacing:1px}
+    @font-face {
+      font-family: "Beyonest";
+      src: local("Beyonest"), local("Beyonest Script");
+      font-display: swap;
+    }
 
-/* Buttons */
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 32px;border-radius:50px;text-decoration:none;font-weight:700;
-  font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:.25s;border:0;cursor:pointer;
-  font-family:var(--font-numbers);
-}
-.btn-p{background:var(--coral);color:#fff}
-.btn-p:hover{background:var(--sand);color:var(--ocean-deep)}
-.btn-s{background:transparent;border:2px solid var(--seafoam);color:var(--seafoam)}
-.btn-s:hover{background:var(--seafoam);color:var(--ocean-deep)}
-.btn-wa{background:#25D366;color:#fff}
-.btn-wa:hover{background:#128C7E}
-.btn-sm{padding:10px 22px;font-size:11px}
+    @font-face {
+      font-family: "Nexa";
+      src: local("Nexa"), local("Nexa Bold"), local("Nexa Heavy");
+      font-weight: 400 900;
+      font-display: swap;
+    }
 
-/* Navigation */
-header{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(10,22,40,.97);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav{display:flex;align-items:center;justify-content:space-between;height:90px}
-.brand-logo{height:64px;width:auto;filter:brightness(0) invert(1)} /* White logo */
-.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+    :root {
+      --deep-ocean: #031d2d;
+      --ocean: #062b40;
+      --ocean-light: #0a405b;
+      --lagoon: #087d8a;
+      --teal: #0fa3a7;
+      --aqua: #53d5d0;
+      --seafoam: #b5f1e8;
+      --sand: #f5eee0;
+      --white: #ffffff;
+      --coral: #f1764b;
+      --gold: #f6ca73;
+      --ink: #10212a;
+      --muted: #a9c3cc;
+      --whatsapp: #25d366;
 
-nav ul{display:flex;gap:32px;list-style:none;align-items:center}
-nav a{
-  color:#94a3b8;text-decoration:none;font-size:13px;letter-spacing:2px;
-  text-transform:uppercase;font-weight:600;transition:.25s;
-  font-family:var(--font-heading);
-}
-nav a:hover{color:var(--seafoam)}
-.nav-actions{display:flex;gap:16px;align-items:center}
+      --font-body: "DM Sans", Arial, sans-serif;
+      --font-heading: "Big Shoulders Display", Impact, sans-serif;
+      --font-brand: "Beyonest", "Brush Script MT", cursive;
+      --font-number: "Nexa", "DM Sans", Arial, sans-serif;
+    }
 
-.cart-btn{
-  position:relative;background:var(--glass);border:1px solid var(--line);
-  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:var(--foam);cursor:pointer;transition:.25s;
-}
-.cart-btn:hover{background:var(--teal);border-color:var(--teal);color:#fff}
-.cart-count{
-  position:absolute;top:-4px;right:-4px;background:var(--coral);color:#fff;
-  font-family:var(--font-numbers);font-size:11px;font-weight:800;
-  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
-}
-.burger{display:none;background:none;border:0;color:var(--foam);font-size:26px;cursor:pointer}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Hero - Ocean Gradient */
-.hero{
-  position:relative;min-height:92vh;display:grid;place-items:center;text-align:center;
-  background:linear-gradient(135deg,rgba(10,22,40,.92),rgba(15,30,46,.95)),
-             url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=85') center/cover fixed;
-  padding:120px 0;
-}
-.hero::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 50%,rgba(45,212,191,.08),transparent 70%);
-  pointer-events:none;
-}
-.hero-logo{width:340px;max-width:85vw;margin:0 auto 30px;filter:drop-shadow(0 10px 40px rgba(0,0,0,.6))}
-.hero h1{
-  font-family:var(--font-heading);
-  font-size:clamp(72px,16vw,200px);
-  letter-spacing:24px;line-height:.85;
-  color:transparent;-webkit-text-stroke:2px var(--seafoam);
-  margin-top:10px;
-}
-.hero .script{
-  font-family:var(--font-script);
-  font-size:clamp(48px,8vw,84px);
-  color:var(--aqua);
-  margin-bottom:-10px;
-  display:block;
-}
-.hero p.tag{
-  margin:28px auto 0;max-width:680px;color:#cbd5e1;font-weight:400;
-  font-size:18px;line-height:1.8;font-family:var(--font-numbers);
-}
-.hero .loc{
-  display:inline-flex;align-items:center;gap:12px;margin-top:40px;background:rgba(20,184,166,.08);
-  padding:16px 32px;border-radius:8px;font-size:14px;font-weight:600;border:1px solid var(--line);
-  font-family:var(--font-numbers);color:var(--seafoam);
-}
-.hero .loc i{color:var(--aqua)}
-.btns{margin-top:40px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Sections */
-.sec{padding:100px 0;position:relative}
-.sec-header{
-  display:flex;align-items:center;gap:20px;margin-bottom:50px;
-}
-.sec-header .line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
-.sec-header h2{
-  font-family:var(--font-heading);
-  font-size:clamp(40px,6vw,64px);
-  letter-spacing:6px;color:var(--foam);
-}
-.sec-header h2 span{color:var(--aqua)}
+    body {
+      background: var(--deep-ocean);
+      color: var(--white);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
 
-/* Grids */
-.grid-2{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+    body.cart-active {
+      overflow: hidden;
+    }
 
-/* Cards - Glass Ocean */
-.card{
-  background:var(--ocean-mid);border:1px solid var(--line);border-radius:20px;
-  overflow:hidden;transition:.3s;display:flex;flex-direction:column;height:100%;
-  box-shadow:0 8px 32px rgba(0,0,0,.3);
-}
-.card:hover{
-  transform:translateY(-8px);
-  border-color:var(--teal);
-  box-shadow:0 20px 60px rgba(20,184,166,.15);
-}
-.card-img{height:220px;position:relative;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.card:hover .card-img img{transform:scale(1.08)}
-.card-body{padding:26px;display:flex;flex-direction:column;flex:1}
-.card-meta{display:flex;justify-content:space-between;align-items:start;margin-bottom:12px}
-.card h3{
-  font-family:var(--font-heading);font-size:24px;font-weight:800;
-  letter-spacing:1px;text-transform:uppercase;color:var(--foam);
-}
-.card p{font-size:14px;color:#94a3b8;line-height:1.7;margin-bottom:20px;flex:1;font-family:var(--font-numbers)}
-.price{
-  color:var(--sand);font-size:20px;font-weight:700;
-  font-family:var(--font-numbers);letter-spacing:1px;
-}
-.add-btn{
-  width:44px;height:44px;border-radius:50%;border:0;background:var(--teal);color:#fff;
-  display:grid;place-items:center;cursor:pointer;transition:.25s;font-size:18px;
-}
-.add-btn:hover{background:var(--seafoam);color:var(--ocean-deep)}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* Combo Box - Teal Gradient */
-.combo-box{
-  background:linear-gradient(145deg,#134e4a,#0f766e);
-  border-radius:20px;padding:32px;position:relative;overflow:hidden;
-  box-shadow:0 24px 48px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1);
-  border:1px solid rgba(94,234,212,.2);
-}
-.combo-box::before{
-  content:"";position:absolute;top:-60px;right:-60px;width:240px;height:240px;
-  border:24px solid rgba(94,234,212,.1);border-radius:50%;
-}
-.combo-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;position:relative;z-index:2}
-.combo-header i{font-size:32px;color:var(--seafoam)}
-.combo-header h3{
-  font-family:var(--font-script);font-size:56px;font-weight:400;color:#fff;
-  line-height:1;
-}
-.combo-header h3 small{
-  font-family:var(--font-heading);font-size:22px;letter-spacing:4px;margin-left:12px;font-weight:800;
-}
-.combo-list{position:relative;z-index:2}
-.combo-item{
-  display:flex;justify-content:space-between;align-items:center;padding:16px 0;
-  border-bottom:1px solid rgba(255,255,255,.15);
-}
-.combo-item:last-child{border-bottom:0}
-.combo-item div h4{font-family:var(--font-heading);font-size:18px;font-weight:700;letter-spacing:1px;color:#fff}
-.combo-item div p{font-size:13px;opacity:.9;font-weight:400;margin-top:4px;font-family:var(--font-numbers);color:#ccfbf1}
-.combo-item .price{color:var(--sand);font-size:18px;font-family:var(--font-numbers);font-weight:700}
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
 
-/* Drinks Section */
-.drinks-cat{margin-bottom:60px}
-.drinks-cat h3{
-  display:flex;align-items:center;gap:14px;font-size:26px;margin-bottom:28px;
-  color:var(--aqua);font-family:var(--font-heading);letter-spacing:3px;
-}
-.drinks-cat h3 i{width:44px;height:44px;background:var(--ocean-surface);border-radius:50%;display:grid;place-items:center;font-size:18px;color:var(--seafoam);border:1px solid var(--line)}
+    img {
+      display: block;
+      width: 100%;
+    }
 
-.drink-card{
-  background:var(--ocean-mid);border:1px solid var(--line);border-radius:16px;padding:24px;
-  display:flex;gap:20px;align-items:center;transition:.25s;
-}
-.drink-card:hover{border-color:var(--teal);background:var(--ocean-surface)}
-.drink-thumb{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--teal);box-shadow:0 8px 20px rgba(0,0,0,.3)}
-.drink-info{flex:1}
-.drink-info h4{font-family:var(--font-heading);font-size:20px;margin-bottom:6px;letter-spacing:1px;color:var(--foam)}
-.drink-info span{font-size:11px;color:var(--aqua);text-transform:uppercase;letter-spacing:2px;font-family:var(--font-numbers);font-weight:600}
-.drink-price{font-family:var(--font-numbers);font-weight:700;color:var(--sand);font-size:18px;white-space:nowrap;margin-right:14px}
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin-inline: auto;
+    }
 
-/* Cart Sidebar */
-.cart-overlay{
-  position:fixed;inset:0;background:rgba(10,22,40,.9);z-index:2000;opacity:0;pointer-events:none;transition:.3s;
-}
-.cart-overlay.open{opacity:1;pointer-events:all}
-.cart-sidebar{
-  position:fixed;top:0;right:0;width:100%;max-width:460px;height:100%;background:var(--ocean-mid);
-  border-left:1px solid var(--line);z-index:2001;transform:translateX(100%);transition:.35s cubic-bezier(.4,0,.2,1);
-  display:flex;flex-direction:column;font-family:var(--font-numbers);
-  box-shadow:-10px 0 40px rgba(0,0,0,.5);
-}
-.cart-sidebar.open{transform:translateX(0)}
-.cart-header{
-  padding:28px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;
-  background:var(--ocean-deep);
-}
-.cart-header h3{font-size:22px;font-weight:800;display:flex;align-items:center;gap:12px;font-family:var(--font-heading);letter-spacing:2px;color:var(--seafoam)}
-.close-cart{width:40px;height:40px;border-radius:50%;border:0;background:var(--glass);color:var(--foam);cursor:pointer;transition:.25s;font-size:18px}
-.close-cart:hover{background:var(--coral);color:#fff}
-.cart-items{flex:1;overflow-y:auto;padding:24px;background:var(--ocean-deep)}
-.empty-cart{text-align:center;color:#64748b;padding:50px 20px}
-.empty-cart i{font-size:56px;margin-bottom:20px;color:var(--teal)}
-.cart-item{
-  display:flex;gap:16px;align-items:center;background:var(--ocean-surface);padding:18px;border-radius:14px;margin-bottom:14px;border:1px solid var(--line);
-}
-.cart-item img{width:70px;height:70px;border-radius:12px;object-fit:cover}
-.cart-item-info{flex:1}
-.cart-item-info h4{font-family:var(--font-heading);font-size:17px;margin-bottom:6px;letter-spacing:1px;color:var(--foam)}
-.cart-item-info .item-price{color:var(--sand);font-size:14px;font-weight:700;font-family:var(--font-numbers)}
-.qty-control{display:flex;align-items:center;gap:10px;margin-top:8px}
-.qty-btn{width:32px;height:32px;border-radius:8px;border:0;background:var(--ocean-deep);color:var(--seafoam);cursor:pointer;font-weight:700;font-family:var(--font-numbers);font-size:16px;border:1px solid var(--line)}
-.qty-btn:hover{background:var(--teal);color:#fff}
-.remove-btn{color:#f87171;background:none;border:0;cursor:pointer;font-size:20px;padding:6px;transition:.25s}
-.remove-btn:hover{transform:scale(1.2)}
-.cart-footer{padding:24px;border-top:1px solid var(--line);background:var(--ocean-surface)}
-.cart-total{
-  display:flex;justify-content:space-between;font-size:24px;font-weight:800;margin-bottom:20px;
-  font-family:var(--font-numbers);color:var(--seafoam);
-}
-.note-box{
-  width:100%;background:var(--ocean-deep);border:1px solid var(--line);border-radius:12px;
-  padding:14px;color:var(--foam);margin-bottom:20px;resize:none;font-family:var(--font-numbers);font-size:14px;
-}
-.note-box::placeholder{color:#64748b}
-.checkout-btn{width:100%;padding:18px;font-size:16px;justify-content:center;font-weight:800;letter-spacing:2px}
+    /* =========================
+       BRAND LOGO
+       ========================= */
 
-/* Info Section */
-.info{background:var(--ocean-mid)}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
-.info-card{
-  background:var(--ocean-surface);border:1px solid var(--line);border-radius:20px;padding:36px 28px;text-align:center;transition:.25s;
-}
-.info-card:hover{border-color:var(--teal);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
-.info-card i{font-size:36px;color:var(--aqua);margin-bottom:20px}
-.info-card h4{font-family:var(--font-heading);font-size:22px;font-weight:800;margin-bottom:14px;letter-spacing:2px;color:var(--foam)}
-.info-card p,.info-card a{color:#94a3b8;font-size:15px;line-height:1.8;text-decoration:none;display:block;font-family:var(--font-numbers)}
-.info-card a:hover{color:var(--seafoam)}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: max-content;
+    }
 
-/* Floating WhatsApp */
-.float-wa{
-  position:fixed;bottom:28px;right:28px;width:64px;height:64px;background:#25D366;color:#fff;border-radius:50%;
-  display:grid;place-items:center;font-size:32px;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:900;transition:.25s;
-}
-.float-wa:hover{transform:scale(1.1) rotate(10deg);background:#128C7E}
+    .logo-symbol {
+      width: 51px;
+      height: 51px;
+      position: relative;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
 
-/* Footer */
-footer{background:#070f1a;padding:50px 20px;text-align:center;color:#475569;font-size:14px;border-top:1px solid var(--line);font-family:var(--font-numbers)}
-footer .footer-logo{height:50px;margin-bottom:20px;opacity:.9}
+    .logo-symbol::before,
+    .logo-symbol::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 2px solid var(--white);
+      transform: rotate(45deg);
+    }
 
-/* Responsive */
-@media(max-width:980px){
-  .grid-2{grid-template-columns:1fr}
-  nav ul{display:none;position:absolute;top:90px;left:0;right:0;background:var(--ocean-mid);flex-direction:column;padding:10px 0;border-bottom:1px solid var(--line)}
-  nav ul.open{display:flex}
-  nav ul li{padding:16px 24px;border-bottom:1px solid var(--line)}
-  .burger{display:block}
-  .hero-logo{width:260px}
-  .hero h1{letter-spacing:8px;-webkit-text-stroke:1.5px var(--seafoam)}
-  .drink-card{flex-direction:column;text-align:center}
-  .drink-thumb{margin:0 auto}
-  .brand-logo{height:52px}
-}
-</style>
+    .logo-symbol::after {
+      width: 36px;
+      height: 36px;
+      border-color: rgba(255,255,255,.78);
+    }
+
+    .logo-mark {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .logo-divider {
+      width: 1px;
+      height: 43px;
+      background: rgba(255,255,255,.7);
+    }
+
+    .logo-word {
+      font-family: var(--font-brand);
+      font-size: 39px;
+      line-height: .75;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .logo-sub {
+      display: block;
+      margin-top: 7px;
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      color: var(--white);
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3,29,45,.95);
+      border-bottom: 1px solid rgba(181,241,232,.16);
+      backdrop-filter: blur(15px);
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--seafoam);
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--aqua);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-button,
+    .mobile-toggle {
+      min-width: 44px;
+      height: 44px;
+      border: 1px solid rgba(181,241,232,.3);
+      border-radius: 9px;
+      background: rgba(255,255,255,.06);
+      color: var(--white);
+      position: relative;
+      font-size: 17px;
+    }
+
+    .cart-button:hover,
+    .mobile-toggle:hover {
+      border-color: var(--aqua);
+      color: var(--aqua);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--coral);
+      color: var(--white);
+      font-family: var(--font-number);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .order-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 15px;
+      border-radius: 9px;
+      background: var(--teal);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      transition: .2s;
+    }
+
+    .order-now:hover {
+      background: var(--aqua);
+      color: var(--deep-ocean);
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      min-height: 690px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(3,29,45,.94), rgba(3,29,45,.50), rgba(3,29,45,.92)),
+        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=90")
+        center/cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(83,213,208,.22), transparent 25%),
+        radial-gradient(circle at 18% 78%, rgba(15,163,167,.18), transparent 29%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      height: 180px;
+      z-index: -1;
+      background: linear-gradient(transparent, var(--deep-ocean));
+    }
+
+    .hero-content {
+      padding: 90px 0;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(181,241,232,.45);
+      border-radius: 50px;
+      color: var(--seafoam);
+      font-family: var(--font-heading);
+      font-size: 17px;
+      letter-spacing: 1.4px;
+    }
+
+    .hero-brand {
+      margin-top: 25px;
+      font-family: var(--font-brand);
+      font-size: clamp(56px, 8vw, 96px);
+      line-height: .65;
+      color: var(--aqua);
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(84px, 16vw, 190px);
+      font-weight: 700;
+      letter-spacing: 6px;
+      line-height: .92;
+      text-transform: uppercase;
+    }
+
+    .hero-description {
+      max-width: 690px;
+      margin: 23px auto 0;
+      color: #defaf5;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .location-pill {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      max-width: 94%;
+      margin-top: 25px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: var(--coral);
+      color: white;
+      font-family: var(--font-number);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 29px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 23px;
+      border: 0;
+      border-radius: 8px;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      transition: .2s ease;
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: white;
+    }
+
+    .btn-teal:hover {
+      transform: translateY(-2px);
+      background: var(--aqua);
+      color: var(--deep-ocean);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.8);
+      background: rgba(255,255,255,.07);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--deep-ocean);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #16ad50;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       MENU SECTIONS
+       ========================= */
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-dark {
+      background:
+        radial-gradient(circle at 10% 15%, rgba(15,163,167,.14), transparent 25%),
+        var(--ocean);
+    }
+
+    .section-drinks {
+      background:
+        radial-gradient(circle at 84% 13%, rgba(83,213,208,.19), transparent 23%),
+        radial-gradient(circle at 16% 91%, rgba(241,118,75,.14), transparent 25%),
+        #062535;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 33px;
+    }
+
+    .heading-symbol {
+      flex: none;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(181,241,232,.35);
+      border-radius: 13px;
+      background: rgba(15,163,167,.16);
+      color: var(--aqua);
+      font-size: 23px;
+    }
+
+    .section-heading h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(42px, 5vw, 62px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: .85;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 span {
+      color: var(--aqua);
+    }
+
+    .section-heading p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 19px;
+    }
+
+    .menu-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: rgba(255,255,255,.065);
+      border: 1px solid rgba(181,241,232,.14);
+      border-radius: 14px;
+      transition: .25s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(83,213,208,.75);
+      box-shadow: 0 18px 37px rgba(0,0,0,.28);
+    }
+
+    .food-image {
+      height: 194px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .food-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .menu-card:hover .food-image img {
+      transform: scale(1.08);
+    }
+
+    .badge {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      padding: 6px 10px;
+      border-radius: 30px;
+      background: rgba(3,29,45,.83);
+      border: 1px solid rgba(181,241,232,.25);
+      color: var(--seafoam);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      letter-spacing: .8px;
+    }
+
+    .menu-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px;
+    }
+
+    .menu-content h3 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      letter-spacing: .4px;
+      line-height: .95;
+    }
+
+    .menu-content p {
+      flex: 1;
+      margin: 9px 0 18px;
+      color: #b8d1d6;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .price {
+      color: var(--gold);
+      font-family: var(--font-number);
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .add-button {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--teal);
+      color: white;
+      font-size: 16px;
+      transition: .2s;
+    }
+
+    .add-button:hover {
+      background: var(--aqua);
+      color: var(--deep-ocean);
+    }
+
+    .special-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-top: 30px;
+      padding: 28px;
+      border-radius: 15px;
+      background: linear-gradient(110deg, var(--lagoon), var(--teal));
+    }
+
+    .special-banner h3 {
+      font-family: var(--font-heading);
+      font-size: 39px;
+      line-height: .9;
+      letter-spacing: 1px;
+    }
+
+    .special-banner p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #dcfffa;
+    }
+
+    /* =========================
+       VISIT / FOOTER
+       ========================= */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 25px;
+      background: rgba(255,255,255,.06);
+      border-top: 4px solid var(--aqua);
+      border-radius: 12px;
+    }
+
+    .info-icon {
+      color: var(--aqua);
+      font-size: 23px;
+    }
+
+    .info-card h3 {
+      margin: 12px 0 8px;
+      font-family: var(--font-heading);
+      font-size: 28px;
+      letter-spacing: .5px;
+    }
+
+    .info-card p,
+    .info-card a {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .info-card a:hover {
+      color: var(--aqua);
+    }
+
+    footer {
+      padding: 35px 18px;
+      border-top: 1px solid rgba(181,241,232,.13);
+      background: #021521;
+      text-align: center;
+      color: #86a8b2;
+      font-size: 12px;
+    }
+
+    footer .footer-logo {
+      justify-content: center;
+      margin-bottom: 20px;
+      transform: scale(.84);
+    }
+
+    footer strong {
+      color: var(--seafoam);
+      font-family: var(--font-number);
+    }
+
+    /* =========================
+       CART
+       ========================= */
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      visibility: hidden;
+      opacity: 0;
+      background: rgba(0,11,18,.72);
+      transition: .3s ease;
+    }
+
+    .cart-overlay.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .cart-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(445px, 100%);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #062637;
+      box-shadow: -20px 0 45px rgba(0,0,0,.4);
+      transform: translateX(100%);
+      transition: transform .32s ease;
+    }
+
+    .cart-overlay.open .cart-panel {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 21px;
+      border-bottom: 1px solid rgba(181,241,232,.15);
+    }
+
+    .cart-header h2 {
+      font-family: var(--font-heading);
+      font-size: 35px;
+      letter-spacing: .8px;
+    }
+
+    .close-cart {
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 25px;
+    }
+
+    .cart-items {
+      flex: 1;
+      padding: 8px 21px;
+      overflow-y: auto;
+    }
+
+    .empty-cart {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .empty-cart .empty-icon {
+      margin-bottom: 13px;
+      color: var(--aqua);
+      font-size: 47px;
+    }
+
+    .empty-cart h3 {
+      font-family: var(--font-heading);
+      font-size: 30px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(181,241,232,.12);
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .cart-item h4 {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      line-height: .95;
+    }
+
+    .cart-item-price {
+      margin-top: 4px;
+      color: var(--gold);
+      font-family: var(--font-number);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 8px;
+    }
+
+    .quantity-control button {
+      width: 25px;
+      height: 25px;
+      border: 0;
+      border-radius: 5px;
+      background: rgba(255,255,255,.12);
+      color: white;
+    }
+
+    .quantity-control span {
+      min-width: 14px;
+      text-align: center;
+      font-family: var(--font-number);
+      font-size: 12px;
+    }
+
+    .remove-item {
+      align-self: start;
+      padding: 5px;
+      border: 0;
+      background: transparent;
+      color: #87a4ad;
+    }
+
+    .remove-item:hover {
+      color: var(--coral);
+    }
+
+    .cart-checkout {
+      padding: 20px 21px 23px;
+      border-top: 1px solid rgba(181,241,232,.15);
+      background: #041d2b;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-family: var(--font-number);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .total-row span:last-child {
+      color: var(--gold);
+    }
+
+    .customer-input {
+      width: 100%;
+      margin-bottom: 9px;
+      padding: 11px 12px;
+      border: 1px solid rgba(181,241,232,.24);
+      border-radius: 7px;
+      outline: none;
+      background: rgba(255,255,255,.07);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 13px;
+    }
+
+    .customer-input:focus {
+      border-color: var(--aqua);
+    }
+
+    textarea.customer-input {
+      min-height: 60px;
+      resize: vertical;
+    }
+
+    .checkout-button {
+      width: 100%;
+      min-height: 48px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--whatsapp);
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: .7px;
+    }
+
+    .checkout-button:hover {
+      background: #17ad51;
+    }
+
+    .checkout-button:disabled {
+      cursor: not-allowed;
+      opacity: .45;
+    }
+
+    .checkout-note {
+      margin-top: 10px;
+      color: #83a6af;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 23px;
+      z-index: 3000;
+      padding: 12px 17px;
+      border-radius: 8px;
+      background: var(--seafoam);
+      color: var(--deep-ocean);
+      font-family: var(--font-number);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 11px 28px rgba(0,0,0,.3);
+      transform: translate(-50%, 120px);
+      transition: .3s ease;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+    }
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 950px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      header {
+        height: 69px;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .order-now {
+        display: none;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 69px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 18px 18px;
+        background: #041d2b;
+        border-bottom: 1px solid rgba(181,241,232,.13);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid rgba(181,241,232,.09);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 4px;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .special-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .logo-symbol {
+        width: 40px;
+        height: 40px;
+      }
+
+      .logo-divider {
+        height: 35px;
+      }
+
+      .logo-word {
+        font-size: 30px;
+      }
+
+      .logo-sub {
+        margin-top: 6px;
+        font-size: 12px;
+      }
+
+      .menu-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .food-image {
+        height: 210px;
+      }
+
+      .hero h1 {
+        letter-spacing: 2px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .location-pill {
+        font-size: 11px;
+      }
+
+      section {
+        padding: 63px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAVIGATION -->
-<header>
-  <div class="wrap nav">
-    <a href="#" class="brand">
-      <!-- REPLACE WITH YOUR WHITE LOGO -->
-      <img src="data:image/png;base64,PLACEHOLDER_WHITE_LOGO" alt="Bahamas" class="brand-logo" id="navLogo">
-    </a>
-    <nav>
-      <ul id="menu">
+  <header>
+    <div class="container navbar">
+
+      <a href="#" class="logo" aria-label="Bahamas Cafe Restaurant Lounge Home">
+        <div class="logo-symbol"><span class="logo-mark">B</span></div>
+        <div class="logo-divider"></div>
+        <div>
+          <div class="logo-word">Bahamas</div>
+          <span class="logo-sub">Cafe | Restaurant | Lounge.</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#grill">Grill</a></li>
         <li><a href="#chicken">Chicken</a></li>
+        <li><a href="#quick">Quick Meals</a></li>
         <li><a href="#drinks">Drinks</a></li>
-        <li><a href="#visit">Visit</a></li>
+        <li><a href="#visit">Visit Us</a></li>
       </ul>
-    </nav>
-    <div class="nav-actions">
-      <button class="cart-btn" onclick="toggleCart()">
-        <i class="fas fa-shopping-bag"></i>
-        <span class="cart-count font-numbers" id="cartCount">0</span>
-      </button>
-      <a href="tel:+256762831177" class="btn btn-p btn-sm font-numbers">+256 762 831 177</a>
-      <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')"><i class="fas fa-bars"></i></button>
-    </div>
-  </div>
-</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <!-- REPLACE WITH YOUR WHITE LOGO (LARGE) -->
-    <img src="data:image/png;base64,PLACEHOLDER_WHITE_LOGO_LARGE" alt="Bahamas" class="hero-logo" id="heroLogo">
-    
-    <span class="script font-script">Est. 2024</span>
-    <h1 class="font-heading">MENU</h1>
-    <p class="tag">Flame‑grilled pork, crispy kikalayi, craft cocktails & ocean‑fresh smoothies.<br>Order online for delivery across Kampala.</p>
-    <div class="loc">
-      <i class="fas fa-map-pin"></i>
-      <span>Opposite Bukoto Heights Apartments, Bukoto — Kampala (UG)</span>
-    </div>
-    <div class="btns">
-      <a href="#grill" class="btn btn-s font-heading">Explore Menu</a>
-      <a href="https://wa.me/256762831177?text=Hello%20Bahamas%20Cafe%2C%20I%20would%20like%20to%20place%20an%20order" class="btn btn-wa font-numbers" target="_blank"><i class="fab fa-whatsapp"></i> Quick Order</a>
-    </div>
-  </div>
-</section>
+      <div class="nav-actions">
+        <button class="cart-button" onclick="toggleCart()" aria-label="Open order cart">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
 
-<!-- GRILL SECTION -->
-<section class="sec" id="grill">
-  <div class="wrap">
-    <div class="sec-header">
-      <h2 class="font-heading"><span style="color:var(--aqua)">Grill</span> Menu</h2>
-      <div class="line"></div>
-    </div>
-    <div class="grid-2">
-      <div class="grid-3" id="grillGrid"></div>
-      
-      <div class="combo-box">
-        <div class="combo-header">
-          <i class="fas fa-crown"></i>
-          <h3 class="font-script">Combo <small class="font-heading">MEALS</small></h3>
-        </div>
-        <div class="combo-list">
-          <div class="combo-item"><div><h4>Bahamas Pork Combo</h4><p>Fried pork + side + kachumbali</p></div><div class="price font-numbers">25,000/=</div><button class="add-btn" onclick="addItem('Bahamas Pork Combo',25000,'Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Pork Kikalayi Combo</h4><p>Kikalayi + extra side</p></div><div class="price font-numbers">28,000/=</div><button class="add-btn" onclick="addItem('Pork Kikalayi Combo',28000,'Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Pork Skewer Combo</h4><p>Skewers + chips/wedges</p></div><div class="price font-numbers">18,000/=</div><button class="add-btn" onclick="addItem('Pork Skewer Combo',18000,'Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Pork Chops Combo</h4><p>Chops + choice of side</p></div><div class="price font-numbers">26,000/=</div><button class="add-btn" onclick="addItem('Pork Chops Combo',26000,'Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Family Grill Platter</h4><p>Assorted pork, chicken & sides (sharing)</p></div><div class="price font-numbers">85,000/=</div><button class="add-btn" onclick="addItem('Family Grill Platter',85000,'Combo')"><i class="fas fa-plus"></i></button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <a class="order-now" href="https://wa.me/256762831177" target="_blank">
+          ☎ WhatsApp Order
+        </a>
 
-<!-- CHICKEN SECTION -->
-<section class="sec" id="chicken" style="background:#0d1b2a">
-  <div class="wrap">
-    <div class="sec-header">
-      <h2 class="font-heading"><span style="color:var(--aqua)">Chicken</span> Menu</h2>
-      <div class="line"></div>
-    </div>
-    <div class="grid-2">
-      <div class="grid-3" id="chickenGrid"></div>
-      
-      <div class="combo-box" style="background:linear-gradient(145deg,#1e3a8a,#0f172a);border-color:rgba(99,102,241,.3)">
-        <div class="combo-header">
-          <i class="fas fa-drumstick-bite" style="color:var(--aqua)"></i>
-          <h3 class="font-heading" style="font-family:var(--font-heading)!important;font-size:42px;letter-spacing:4px;font-weight:800">Chicken <span style="color:var(--sand)">Combos</span></h3>
-        </div>
-        <div class="combo-list">
-          <div class="combo-item"><div><h4>Quarter Chicken Meal</h4><p>1/4 Chicken + chips/matooke</p></div><div class="price font-numbers">18,000/=</div><button class="add-btn" onclick="addItem('Quarter Chicken Meal',18000,'Chicken Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Half Chicken Meal</h4><p>1/2 Chicken + 2 sides</p></div><div class="price font-numbers">28,000/=</div><button class="add-btn" onclick="addItem('Half Chicken Meal',28000,'Chicken Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Whole Chicken Feast</h4><p>Full chicken + large chips & salad (3–4 pax)</p></div><div class="price font-numbers">55,000/=</div><button class="add-btn" onclick="addItem('Whole Chicken Feast',55000,'Chicken Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Chicken Kikalayi Combo</h4><p>Kikalayi + extra side</p></div><div class="price font-numbers">30,000/=</div><button class="add-btn" onclick="addItem('Chicken Kikalayi Combo',30000,'Chicken Combo')"><i class="fas fa-plus"></i></button></div>
-          <div class="combo-item"><div><h4>Chicken Rolex Combo</h4><p>Chicken rolex + chips</p></div><div class="price font-numbers">15,000/=</div><button class="add-btn" onclick="addItem('Chicken Rolex Combo',15000,'Chicken Combo')"><i class="fas fa-plus"></i></button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DRINKS SECTION -->
-<section class="sec" id="drinks">
-  <div class="wrap">
-    <div class="sec-header">
-      <h2 class="font-heading"><span style="color:var(--aqua)">Drinks</span> & Lounge</h2>
-      <div class="line"></div>
-    </div>
-    
-    <div class="drinks-cat">
-      <h3 class="font-heading"><i class="fas fa-coffee"></i> Coffee & Hot</h3>
-      <div class="grid-3" id="coffeeGrid"></div>
-    </div>
-    
-    <div class="drinks-cat">
-      <h3 class="font-heading"><i class="fas fa-beer"></i> Beers & Ciders</h3>
-      <div class="grid-3" id="beerGrid"></div>
-    </div>
-    
-    <div class="drinks-cat">
-      <h3 class="font-heading"><i class="fas fa-glass-whiskey"></i> Whiskey, Gin & Spirits</h3>
-      <div class="grid-3" id="spiritGrid"></div>
-    </div>
-    
-    <div class="drinks-cat">
-      <h3 class="font-heading"><i class="fas fa-blender"></i> Smoothies & Soft</h3>
-      <div class="grid-3" id="smoothieGrid"></div>
-    </div>
-  </div>
-</section>
-
-<!-- VISIT SECTION -->
-<section class="sec info" id="visit">
-  <div class="wrap">
-    <div class="sec-header">
-      <h2 class="font-heading"><span style="color:var(--aqua)">Visit</span> Us</h2>
-      <div class="line"></div>
-    </div>
-    <div class="info-grid">
-      <div class="info-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h4 class="font-heading">Location</h4>
-        <p>Opposite Bukoto Heights Apartments<br>Bukoto, Kampala<br>Uganda</p>
-      </div>
-      <div class="info-card">
-        <i class="fas fa-phone-alt"></i>
-        <h4 class="font-heading">Call / WhatsApp</h4>
-        <a href="tel:+256762831177" class="font-numbers" style="font-size:20px;color:var(--sand)">+256 762 831 177</a>
-        <a href="https://wa.me/256762831177" target="_blank">Open in WhatsApp</a>
-      </div>
-      <div class="info-card">
-        <i class="fas fa-clock"></i>
-        <h4 class="font-heading">Opening Hours</h4>
-        <p>Monday – Sunday<br>10:00 AM – Late Night<br>Kitchen closes 11:00 PM</p>
-      </div>
-      <div class="info-card">
-        <i class="fas fa-motorcycle"></i>
-        <h4 class="font-heading">Delivery</h4>
-        <p>Free delivery within Bukoto<br><span class="font-numbers" style="color:var(--sand)">5,000/=</span> to Ntinda, Kololo, Naguru<br>Cash or Mobile Money</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <img src="data:image/png;base64,PLACEHOLDER_WHITE_LOGO_SMALL" alt="Bahamas" class="footer-logo" id="footerLogo">
-  <p><strong class="font-heading" style="color:var(--seafoam);font-size:20px;letter-spacing:4px">BAHAMAS CAFE | RESTAURANT | LOUNGE</strong></p>
-  <p style="margin:10px 0">© <span class="font-numbers" id="year"></span> All rights reserved. Prices in UGX.</p>
-  <small style="color:#334155;font-family:var(--font-numbers)">Bukoto, Kampala, Uganda</small>
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/256762831177" class="float-wa" target="_blank" title="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- CART SIDEBAR -->
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-<div class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <h3 class="font-heading"><i class="fas fa-shopping-bag"></i> Your Order</h3>
-    <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <div class="empty-cart">
-      <i class="fas fa-utensils"></i>
-      <p>Your cart is empty.<br>Add items from the menu.</p>
-    </div>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-total font-numbers">
-      <span>Total:</span>
-      <span id="cartTotal" class="font-numbers">0/=</span>
-    </div>
-    <textarea class="note-box" id="orderNote" rows="3" placeholder="Delivery address, phone number, special requests..."></textarea>
-    <button class="btn btn-wa checkout-btn font-heading" onclick="checkoutWhatsApp()">
-      <i class="fab fa-whatsapp"></i> Order via WhatsApp
-    </button>
-  </div>
-</div>
-
-<!-- JAVASCRIPT -->
-<script>
-// Menu Data
-const grillItems = [
-  {name:"Fried Pork",price:20000,img:"https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=600&q=80",desc:"Well‑seasoned deep‑fried pork portions."},
-  {name:"Pork Kikalayi",price:25000,img:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80",desc:"Sautéed pork with vegetables & spices."},
-  {name:"Pork Skewers",price:15000,img:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80",desc:"Flame‑grilled pork skewers (2–3 sticks)."},
-  {name:"Pork Chops",price:22000,img:"https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=600&q=80",desc:"Juicy grilled pork chops marinated in herbs."},
-  {name:"Pork Ribs",price:25000,img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",desc:"Slow‑grilled marinated ribs with BBQ glaze."}
-];
-
-const chickenItems = [
-  {name:"Quarter Chicken",price:18000,img:"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=600&q=80",desc:"Flame‑grilled quarter chicken."},
-  {name:"Half Chicken",price:22000,img:"https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80",desc:"Flame‑grilled half chicken."},
-  {name:"Whole Chicken",price:40000,img:"https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80",desc:"Full flame‑grilled chicken."},
-  {name:"Chicken Kikalayi",price:28000,img:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=600&q=80",desc:"Fried chicken with cabbage, carrots & garlic."},
-  {name:"Chicken Rolex",price:10000,img:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=600&q=80",desc:"Egg chapati filled with grilled chicken."}
-];
-
-const coffeeItems = [
-  {name:"Espresso",price:8000,img:"https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=600&q=80",type:"Hot Coffee"},
-  {name:"Cappuccino",price:12000,img:"https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80",type:"Hot Coffee"},
-  {name:"Latte",price:12000,img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80",type:"Hot Coffee"},
-  {name:"Local Black Coffee",price:6000,img:"https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80",type:"Hot Coffee"},
-  {name:"Mocha",price:14000,img:"https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=600&q=80",type:"Hot Coffee"}
-];
-
-const beerItems = [
-  {name:"Bell Lager",price:6000,img:"https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80",type:"Beer"},
-  {name:"Castle Lite",price:6500,img:"https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80",type:"Beer"},
-  {name:"Tusker Premium",price:6000,img:"https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80",type:"Beer"},
-  {name:"Heineken",price:8000,img:"https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80",type:"Import"},
-  {name:"Savanna/Strongbow",price:9000,img:"https://images.unsplash.com/photo-1623934298980-30b837133a58?auto=format&fit=crop&w=600&q=80",type:"Cider"}
-];
-
-const spiritItems = [
-  {name:"Jameson (Single)",price:18000,img:"https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80",type:"Whiskey"},
-  {name:"Jack Daniels",price:20000,img:"https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80",type:"Whiskey"},
-  {name:"Johnnie Walker Black",price:25000,img:"https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80",type:"Whiskey"},
-  {name:"Gordon's Gin",price:15000,img:"https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80",type:"Gin"},
-  {name:"Signature Cocktail",price:22000,img:"https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80",type:"Cocktail"}
-];
-
-const smoothieItems = [
-  {name:"Tropical Passion",price:12000,img:"https://images.unsplash.com/photo-1623598092775-e4f1c2e5a049?auto=format&fit=crop&w=600&q=80",type:"Smoothie"},
-  {name:"Berry Blast",price:14000,img:"https://images.unsplash.com/photo-1610970881699-44a5587cabec?auto=format&fit=crop&w=600&q=80",type:"Smoothie"},
-  {name:"Mango Tango",price:12000,img:"https://images.unsplash.com/photo-1623598092775-e4f1c2e5a049?auto=format&fit=crop&w=600&q=80",type:"Smoothie"},
-  {name:"Fresh Juice",price:8000,img:"https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=600&q=80",type:"Juice"},
-  {name:"Soda / Tonic",price:4000,img:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",type:"Soft Drink"},
-  {name:"Water (500ml)",price:2000,img:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80",type:"Water"}
-];
-
-// Render Functions
-function renderCard(item,category){
-  return `
-    <div class="card">
-      <div class="card-img">
-        <img src="${item.img}" alt="${item.name}" loading="lazy">
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <h3 class="font-heading">${item.name}</h3>
-          <div class="price font-numbers">${item.price.toLocaleString()}/=</div>
-        </div>
-        <p>${item.desc}</p>
-        <button class="btn btn-p btn-sm font-heading" style="width:100%;justify-content:center;letter-spacing:2px;background:var(--teal)" onclick="addItem('${item.name}',${item.price},'${category}')">
-          <i class="fas fa-plus"></i> Add to Order
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
+          ☰
         </button>
       </div>
     </div>
-  `;
-}
+  </header>
 
-function renderDrink(item){
-  return `
-    <div class="drink-card">
-      <img src="${item.img}" class="drink-thumb" alt="${item.name}">
-      <div class="drink-info">
-        <span>${item.type}</span>
-        <h4 class="font-heading">${item.name}</h4>
-      </div>
-      <div class="drink-price font-numbers">${item.price.toLocaleString()}/=</div>
-      <button class="add-btn" onclick="addItem('${item.name}',${item.price},'Drinks')"><i class="fas fa-plus"></i></button>
-    </div>
-  `;
-}
+  <main>
 
-// Initialize
-document.getElementById('grillGrid').innerHTML = grillItems.map(i=>renderCard(i,'Grill')).join('');
-document.getElementById('chickenGrid').innerHTML = chickenItems.map(i=>renderCard(i,'Chicken')).join('');
-document.getElementById('coffeeGrid').innerHTML = coffeeItems.map(renderDrink).join('');
-document.getElementById('beerGrid').innerHTML = beerItems.map(renderDrink).join('');
-document.getElementById('spiritGrid').innerHTML = spiritItems.map(renderDrink).join('');
-document.getElementById('smoothieGrid').innerHTML = smoothieItems.map(renderDrink).join('');
-document.getElementById('year').textContent = new Date().getFullYear();
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-tag">⌖ OPPOSITE BUKOTO HEIGHTS APARTMENTS · KAMPALA</div>
+        <div class="hero-brand">Bahamas</div>
+        <h1>MENU</h1>
 
-// Cart System
-let cart = [];
+        <p class="hero-description">
+          Grilled pork, flame-roasted chicken, local favourites, fresh coffee,
+          chilled smoothies, beers and premium spirits in the heart of Bukoto.
+        </p>
 
-function addItem(name,price,category){
-  const existing = cart.find(i=>i.name===name);
-  if(existing){
-    existing.qty++;
-  }else{
-    cart.push({name,price,category,qty:1});
-  }
-  updateCart();
-  toggleCart(true);
-}
-
-function removeItem(index){
-  cart.splice(index,1);
-  updateCart();
-}
-
-function changeQty(index,delta){
-  cart[index].qty += delta;
-  if(cart[index].qty<1) cart[index].qty=1;
-  updateCart();
-}
-
-function updateCart(){
-  const count = cart.reduce((a,b)=>a+b.qty,0);
-  document.getElementById('cartCount').textContent = count;
-  
-  const container = document.getElementById('cartItems');
-  if(cart.length===0){
-    container.innerHTML = `
-      <div class="empty-cart">
-        <i class="fas fa-utensils"></i>
-        <p>Your cart is empty.<br>Add items from the menu.</p>
-      </div>`;
-  }else{
-    container.innerHTML = cart.map((item,idx)=>`
-      <div class="cart-item">
-        <div style="width:70px;height:70px;background:var(--ocean-deep);border-radius:12px;display:grid;place-items:center;font-size:28px;color:var(--teal);border:1px solid var(--line)">
-          <i class="fas fa-utensils"></i>
+        <div class="location-pill">
+          📍 Bukoto, Kampala (UG) &nbsp; | &nbsp; +256 762 831 177
         </div>
-        <div class="cart-item-info">
-          <h4 class="font-heading">${item.name}</h4>
-          <div class="item-price font-numbers">${item.price.toLocaleString()}/= each</div>
-          <div class="qty-control">
-            <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
-            <span class="font-numbers" style="font-weight:700;color:var(--foam)">${item.qty}</span>
-            <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+
+        <div class="hero-buttons">
+          <a href="#grill" class="btn btn-teal">Explore Menu ↓</a>
+          <button onclick="toggleCart()" class="btn btn-outline">🛒 Start Order</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRILL -->
+    <section id="grill">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">♨</div>
+          <div>
+            <h2><span>Grill</span> Menu</h2>
+            <p>Freshly grilled favourites, seasoned and served hot.</p>
           </div>
         </div>
-        <button class="remove-btn" onclick="removeItem(${idx})"><i class="fas fa-trash"></i></button>
+
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=85" alt="Fried pork">
+              <span class="badge">Popular</span>
+            </div>
+            <div class="menu-content">
+              <h3>Fried Pork</h3>
+              <p>Well-seasoned deep-fried pork portions, served fresh and crispy.</p>
+              <div class="price-row">
+                <span class="price">UGX 20,000</span>
+                <button class="add-button" onclick="addToCart('Fried Pork',20000,'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" alt="Pork Kikalayi">
+              <span class="badge">Local Favourite</span>
+            </div>
+            <div class="menu-content">
+              <h3>Pork Kikalayi</h3>
+              <p>Sautéed pork with vegetables, spices and matooke or Irish potatoes.</p>
+              <div class="price-row">
+                <span class="price">UGX 25,000</span>
+                <button class="add-button" onclick="addToCart('Pork Kikalayi',25000,'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=85" alt="Pork skewers">
+            </div>
+            <div class="menu-content">
+              <h3>Pork Skewers</h3>
+              <p>Tender flame-grilled pork skewers. Served as 2–3 delicious sticks.</p>
+              <div class="price-row">
+                <span class="price">UGX 15,000</span>
+                <button class="add-button" onclick="addToCart('Pork Skewers',15000,'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=800&q=85" alt="Pork chops">
+            </div>
+            <div class="menu-content">
+              <h3>Pork Chops</h3>
+              <p>Juicy grilled pork chops marinated in aromatic herbs and spices.</p>
+              <div class="price-row">
+                <span class="price">UGX 22,000</span>
+                <button class="add-button" onclick="addToCart('Pork Chops',22000,'https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Pork ribs">
+              <span class="badge">Best Seller</span>
+            </div>
+            <div class="menu-content">
+              <h3>Pork Ribs</h3>
+              <p>Slow-grilled marinated pork ribs coated in a smoky BBQ glaze.</p>
+              <div class="price-row">
+                <span class="price">UGX 25,000</span>
+                <button class="add-button" onclick="addToCart('Pork Ribs',25000,'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=85" alt="Family grill platter">
+              <span class="badge">Sharing</span>
+            </div>
+            <div class="menu-content">
+              <h3>Family Grill Platter</h3>
+              <p>Assorted pork, chicken, skewers and mixed sides for sharing.</p>
+              <div class="price-row">
+                <span class="price">UGX 85,000</span>
+                <button class="add-button" onclick="addToCart('Family Grill Platter',85000,'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=200&q=80')">+</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    `).join('');
-  }
-  
-  const total = cart.reduce((a,b)=>a+(b.price*b.qty),0);
-  document.getElementById('cartTotal').textContent = total.toLocaleString()+'/=';
-}
+    </section>
 
-function toggleCart(forceOpen=false){
-  const overlay = document.getElementById('cartOverlay');
-  const sidebar = document.getElementById('cartSidebar');
-  if(forceOpen || !sidebar.classList.contains('open')){
-    overlay.classList.add('open');
-    sidebar.classList.add('open');
-  }else{
-    overlay.classList.remove('open');
-    sidebar.classList.remove('open');
-  }
-}
+    <!-- CHICKEN -->
+    <section class="section-dark" id="chicken">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">🍗</div>
+          <div>
+            <h2><span>Chicken</span> Menu</h2>
+            <p>Flame grilled chicken, hearty meals and sharing feasts.</p>
+          </div>
+        </div>
 
-function checkoutWhatsApp(){
-  if(cart.length===0){
-    alert('Please add items to your cart first.');
-    return;
-  }
-  const note = document.getElementById('orderNote').value;
-  let text = `*Hello Bahamas Cafe!*%0A%0AI would like to order:%0A%0A`;
-  cart.forEach(item=>{
-    text += `• ${item.name} x${item.qty} - ${(item.price*item.qty).toLocaleString()}/=%0A`;
-  });
-  const total = cart.reduce((a,b)=>a+(b.price*b.qty),0);
-  text += `%0A*Total: ${total.toLocaleString()}/=*%0A%0A`;
-  if(note) text += `*Note:* ${note}%0A%0A`;
-  text += `Please confirm. Thank you!`;
-  
-  window.open(`https://wa.me/256762831177?text=${text}`, '_blank');
-}
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=85" alt="Quarter chicken"></div>
+            <div class="menu-content">
+              <h3>Quarter Chicken</h3>
+              <p>Flame-grilled quarter chicken, seasoned in Bahamas signature spices.</p>
+              <div class="price-row"><span class="price">UGX 18,000</span><button class="add-button" onclick="addToCart('Quarter Chicken',18000,'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
 
-// Close mobile menu on link click
-document.querySelectorAll('#menu a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open'));
-});
-</script>
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=85" alt="Half chicken"></div>
+            <div class="menu-content">
+              <h3>Half Chicken</h3>
+              <p>Juicy half chicken, flame grilled for a smoky rich finish.</p>
+              <div class="price-row"><span class="price">UGX 22,000</span><button class="add-button" onclick="addToCart('Half Chicken',22000,'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=85" alt="Whole chicken"></div>
+            <div class="menu-content">
+              <h3>Whole Chicken</h3>
+              <p>Whole flame-grilled chicken, perfect for a group meal.</p>
+              <div class="price-row"><span class="price">UGX 40,000</span><button class="add-button" onclick="addToCart('Whole Chicken',40000,'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=85" alt="Chicken Kikalayi"></div>
+            <div class="menu-content">
+              <h3>Chicken Kikalayi</h3>
+              <p>Fried chicken with cabbage, carrots, garlic and matooke or Irish.</p>
+              <div class="price-row"><span class="price">UGX 28,000</span><button class="add-button" onclick="addToCart('Chicken Kikalayi',28000,'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=85" alt="Half chicken meal"></div>
+            <div class="menu-content">
+              <h3>Half Chicken Meal</h3>
+              <p>Half chicken with your choice of two delicious sides.</p>
+              <div class="price-row"><span class="price">UGX 28,000</span><button class="add-button" onclick="addToCart('Half Chicken Meal',28000,'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=800&q=85" alt="Whole chicken feast"></div>
+            <div class="menu-content">
+              <h3>Whole Chicken Feast</h3>
+              <p>Whole chicken, large chips and salad. Serves 3–4 people.</p>
+              <div class="price-row"><span class="price">UGX 55,000</span><button class="add-button" onclick="addToCart('Whole Chicken Feast',55000,'https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK MEALS -->
+    <section id="quick">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">🍲</div>
+          <div>
+            <h2><span>Quick Meals</span> & Soups</h2>
+            <p>Local soups, rolex and easy favourites served fast.</p>
+          </div>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=85" alt="Pork soup"></div>
+            <div class="menu-content">
+              <h3>Pork Soup</h3>
+              <p>Rich traditional pork broth prepared with local spices.</p>
+              <div class="price-row"><span class="price">UGX 12,000</span><button class="add-button" onclick="addToCart('Pork Soup',12000,'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=800&q=85" alt="Chicken soup"></div>
+            <div class="menu-content">
+              <h3>Chicken Soup</h3>
+              <p>Hearty chicken broth, warming, fresh and full of flavour.</p>
+              <div class="price-row"><span class="price">UGX 12,000</span><button class="add-button" onclick="addToCart('Chicken Soup',12000,'https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=85" alt="Chicken rolex"></div>
+            <div class="menu-content">
+              <h3>Chicken Rolex</h3>
+              <p>Egg and rolled chapati filled with shredded grilled chicken.</p>
+              <div class="price-row"><span class="price">UGX 10,000</span><button class="add-button" onclick="addToCart('Chicken Rolex',10000,'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=800&q=85" alt="Pork rolex"></div>
+            <div class="menu-content">
+              <h3>Pork Rolex</h3>
+              <p>Egg and rolled chapati filled with seasoned fried pork.</p>
+              <div class="price-row"><span class="price">UGX 10,000</span><button class="add-button" onclick="addToCart('Pork Rolex',10000,'https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85" alt="French fries"></div>
+            <div class="menu-content">
+              <h3>Chips / Fries</h3>
+              <p>Golden crispy chips, freshly fried and served hot.</p>
+              <div class="price-row"><span class="price">UGX 8,000</span><button class="add-button" onclick="addToCart('Chips / Fries',8000,'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image"><img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=85" alt="Kachumbali salad"></div>
+            <div class="menu-content">
+              <h3>Fresh Kachumbali</h3>
+              <p>Tomatoes, onions, herbs and a refreshing local dressing.</p>
+              <div class="price-row"><span class="price">UGX 5,000</span><button class="add-button" onclick="addToCart('Fresh Kachumbali',5000,'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRINKS -->
+    <section class="section-drinks" id="drinks">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">🍸</div>
+          <div>
+            <h2><span>Drinks</span> Menu</h2>
+            <p>Coffee, fresh smoothies, ice-cold beer, whisky and more.</p>
+          </div>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85" alt="Coffee">
+              <span class="badge">Coffee</span>
+            </div>
+            <div class="menu-content">
+              <h3>Espresso / Black Coffee</h3>
+              <p>Freshly brewed, bold and aromatic coffee.</p>
+              <div class="price-row"><span class="price">UGX 5,000</span><button class="add-button" onclick="addToCart('Espresso / Black Coffee',5000,'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=85" alt="Cappuccino">
+              <span class="badge">Coffee</span>
+            </div>
+            <div class="menu-content">
+              <h3>Cappuccino / Latte</h3>
+              <p>Creamy milk coffee made with rich espresso.</p>
+              <div class="price-row"><span class="price">UGX 8,000</span><button class="add-button" onclick="addToCart('Cappuccino / Latte',8000,'https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1553530666-ba11a90a0868?auto=format&fit=crop&w=800&q=85" alt="Fruit smoothie">
+              <span class="badge">Fresh</span>
+            </div>
+            <div class="menu-content">
+              <h3>Fruit Smoothie</h3>
+              <p>Mango, passion fruit, banana, strawberry or mixed fruit.</p>
+              <div class="price-row"><span class="price">UGX 10,000</span><button class="add-button" onclick="addToCart('Fruit Smoothie',10000,'https://images.unsplash.com/photo-1553530666-ba11a90a0868?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85" alt="Fresh juice">
+              <span class="badge">Fresh Juice</span>
+            </div>
+            <div class="menu-content">
+              <h3>Natural Fresh Juice</h3>
+              <p>Mango, passion, pineapple, watermelon or mixed juice.</p>
+              <div class="price-row"><span class="price">UGX 7,000</span><button class="add-button" onclick="addToCart('Natural Fresh Juice',7000,'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=85" alt="Beer">
+              <span class="badge">Beer</span>
+            </div>
+            <div class="menu-content">
+              <h3>Local Beer</h3>
+              <p>Nile Special, Club, Bell, Guinness and other available choices.</p>
+              <div class="price-row"><span class="price">FROM UGX 6,000</span><button class="add-button" onclick="addToCart('Local Beer',6000,'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=85" alt="Whisky">
+              <span class="badge">Whisky</span>
+            </div>
+            <div class="menu-content">
+              <h3>Whisky Shot</h3>
+              <p>Whisky, bourbon and premium spirits. Ask for available brands.</p>
+              <div class="price-row"><span class="price">FROM UGX 10,000</span><button class="add-button" onclick="addToCart('Whisky Shot',10000,'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=800&q=85" alt="Cocktail">
+              <span class="badge">Cocktail</span>
+            </div>
+            <div class="menu-content">
+              <h3>Classic Cocktail</h3>
+              <p>Refreshing cocktail mixes crafted by our bar team.</p>
+              <div class="price-row"><span class="price">UGX 15,000</span><button class="add-button" onclick="addToCart('Classic Cocktail',15000,'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=85" alt="Soda">
+              <span class="badge">Cold Drinks</span>
+            </div>
+            <div class="menu-content">
+              <h3>Soda / Water</h3>
+              <p>Soft drinks, mineral water and chilled refreshment.</p>
+              <div class="price-row"><span class="price">FROM UGX 3,000</span><button class="add-button" onclick="addToCart('Soda / Water',3000,'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="food-image">
+              <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=85" alt="Milkshake">
+              <span class="badge">Sweet Treat</span>
+            </div>
+            <div class="menu-content">
+              <h3>Milkshake</h3>
+              <p>Vanilla, chocolate, strawberry and seasonal flavours.</p>
+              <div class="price-row"><span class="price">UGX 12,000</span><button class="add-button" onclick="addToCart('Milkshake',12000,'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=200&q=80')">+</button></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="special-banner">
+          <div>
+            <h3>ORDER FOOD & DRINKS TOGETHER</h3>
+            <p>Add items to your cart and send the complete order to Bahamas via WhatsApp.</p>
+          </div>
+          <button class="btn btn-outline" onclick="toggleCart()">🛒 VIEW MY ORDER</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="section-dark" id="visit">
+      <div class="container">
+        <div class="section-heading">
+          <div class="heading-symbol">⌖</div>
+          <div>
+            <h2>Visit <span>Bahamas</span></h2>
+            <p>Great food, great drinks and a relaxed lounge atmosphere.</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">⌖</div>
+            <h3>Location</h3>
+            <p>Opposite Bukoto Heights Apartments,<br>Bukoto, Kampala, Uganda.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">☎</div>
+            <h3>Call Us</h3>
+            <p><a href="tel:+256762831177">+256 762 831 177</a><br>For delivery and reservations.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">◉</div>
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/256762831177" target="_blank">Chat with Bahamas</a><br>Fast online ordering.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">◷</div>
+            <h3>Opening Hours</h3>
+            <p>Monday – Sunday<br>10:00 AM until late.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="logo footer-logo">
+      <div class="logo-symbol"><span class="logo-mark">B</span></div>
+      <div class="logo-divider"></div>
+      <div>
+        <div class="logo-word">Bahamas</div>
+        <span class="logo-sub">Cafe | Restaurant | Lounge.</span>
+      </div>
+    </div>
+
+    <p>
+      <strong>Bahamas Cafe Restaurant Lounge</strong><br>
+      Bukoto, Kampala, Uganda · +256 762 831 177<br><br>
+      © <span id="year"></span> Bahamas Cafe. All prices are in Uganda Shillings.
+    </p>
+  </footer>
+
+  <!-- CART -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCartFromOverlay(event)">
+    <aside class="cart-panel">
+      <div class="cart-header">
+        <h2>🛒 YOUR ORDER</h2>
+        <button class="close-cart" onclick="toggleCart()" aria-label="Close cart">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-checkout">
+        <div class="total-row">
+          <span>TOTAL</span>
+          <span id="cartTotal">UGX 0</span>
+        </div>
+
+        <input class="customer-input" id="customerName" type="text" placeholder="Your name">
+        <input class="customer-input" id="customerPhone" type="tel" placeholder="Your phone number">
+        <textarea class="customer-input" id="customerLocation" placeholder="Delivery location or special instructions"></textarea>
+
+        <button class="checkout-button" id="checkoutButton" onclick="checkoutWhatsApp()" disabled>
+          ◉ SEND ORDER VIA WHATSAPP
+        </button>
+
+        <div class="checkout-note">
+          Delivery charges may apply depending on your location.
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const WHATSAPP_NUMBER = "256762831177";
+    let cart = JSON.parse(localStorage.getItem("bahamasOceanCart")) || [];
+
+    function money(amount) {
+      return "UGX " + Number(amount).toLocaleString();
+    }
+
+    function saveCart() {
+      localStorage.setItem("bahamasOceanCart", JSON.stringify(cart));
+    }
+
+    function addToCart(name, price, image) {
+      const existingItem = cart.find(item => item.name === name);
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          name: name,
+          price: price,
+          image: image,
+          quantity: 1
+        });
+      }
+
+      saveCart();
+      renderCart();
+      showToast(name + " added to your order.");
+    }
+
+    function updateQuantity(index, change) {
+      cart[index].quantity += change;
+
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+
+      saveCart();
+      renderCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById("cartItems");
+      const cartCount = document.getElementById("cartCount");
+      const cartTotal = document.getElementById("cartTotal");
+      const checkoutButton = document.getElementById("checkoutButton");
+
+      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+      const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+      cartCount.textContent = itemCount;
+      cartTotal.textContent = money(totalAmount);
+      checkoutButton.disabled = cart.length === 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            <div>
+              <div class="empty-icon">🛒</div>
+              <h3>YOUR CART IS EMPTY</h3>
+              <p>Add food and drinks from the menu to begin your order.</p>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <h4>${item.name}</h4>
+            <div class="cart-item-price">${money(item.price)}</div>
+            <div class="quantity-control">
+              <button onclick="updateQuantity(${index}, -1)" aria-label="Reduce quantity">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${index}, 1)" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+          <button class="remove-item" onclick="removeFromCart(${index})" aria-label="Remove item">✕</button>
+        </div>
+      `).join("");
+    }
+
+    function toggleCart() {
+      document.getElementById("cartOverlay").classList.toggle("open");
+      document.body.classList.toggle("cart-active");
+    }
+
+    function closeCartFromOverlay(event) {
+      if (event.target.id === "cartOverlay") {
+        toggleCart();
+      }
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2400);
+    }
+
+    function checkoutWhatsApp() {
+      if (!cart.length) return;
+
+      const name = document.getElementById("customerName").value.trim() || "Not provided";
+      const phone = document.getElementById("customerPhone").value.trim() || "Not provided";
+      const location = document.getElementById("customerLocation").value.trim() || "Not provided";
+
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      let message = "*NEW BAHAMAS ONLINE ORDER*%0A%0A";
+      message += "*Customer:* " + encodeURIComponent(name) + "%0A";
+      message += "*Phone:* " + encodeURIComponent(phone) + "%0A";
+      message += "*Delivery Location / Notes:* " + encodeURIComponent(location) + "%0A%0A";
+      message += "*ORDER DETAILS*%0A";
+
+      cart.forEach((item, index) => {
+        message += `${index + 1}. ${encodeURIComponent(item.name)} x${item.quantity} — ${encodeURIComponent(money(item.price * item.quantity))}%0A`;
+      });
+
+      message += "%0A*TOTAL: " + encodeURIComponent(money(total)) + "*";
+      message += "%0A%0APlease confirm availability, delivery fee and payment options. Thank you.";
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("show");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderCart();
+  </script>
 </body>
 </html>
