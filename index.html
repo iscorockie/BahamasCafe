@@ -1,700 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0b0906" />
-<title>Bahamas Cafe Restaurant Lounge | Bukoto Kampala</title>
-<meta name="description" content="Bahamas Cafe Restaurant Lounge, Bukoto Kampala. Elegant dining, grill, drinks and table reservations. Order via WhatsApp." />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1512">
+<title>Bahamas · Cafe Restaurant Lounge · Bukoto Kampala</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Big+Shoulders+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* =====================================================
-     LOCAL BRAND FONTS
-     Place font files inside /fonts/ next to this HTML file:
-       /fonts/Beyonest.woff2
-       /fonts/Nexa-Regular.woff2
-       /fonts/Nexa-Bold.woff2
+/* ==================== BRAND FONTS ==================== */
+@font-face {
+  font-family: "Beyonest";
+  src: url("fonts/Beyonest.woff2") format("woff2"),
+       url("fonts/Beyonest.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("fonts/Nexa-Bold.woff2") format("woff2"),
+       url("fonts/Nexa-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("fonts/Nexa-Regular.woff2") format("woff2"),
+       url("fonts/Nexa-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
 
-     For a fully single-file deployment, replace each url()
-     with a Base64 string:
-       src: url("data:font/woff2;base64,PASTE_DATA_HERE") format("woff2");
-     ===================================================== */
+:root{
+  --bg:#0a1512; --bg2:#0d1a16; --panel:#111f1a;
+  --gold:#c9a24b; --gold-lt:#e3c579; --gold-soft:#b8944a;
+  --cream:#f4ecdd; --white:#fff; --muted:#93a89c; --deep:#061009;
+  --wa:#25d366;
 
-  @font-face{
-    font-family:"Beyonest";
-    src: url("fonts/Beyonest.woff2") format("woff2"),
-         local("Beyonest"), local("Beyonest Script");
-    font-display: swap;
-  }
+  /* FONT SYSTEM */
+  --fbrand:"Beyonest", "Cormorant Garamond", cursive;
+  --fdisplay:"Big Shoulders Display", sans-serif;
+  --fserif:"Cormorant Garamond", serif;
+  --fnumber:"Nexa", "DM Sans", sans-serif;
+  --fbody:"DM Sans", sans-serif;
+  --shadow:0 30px 70px -20px rgba(0,0,0,.7);
+}
 
-  @font-face{
-    font-family:"Nexa";
-    src: url("fonts/Nexa-Regular.woff2") format("woff2"),
-         local("Nexa"), local("Nexa Regular");
-    font-weight: 400;
-    font-display: swap;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--fbody);overflow-x:hidden;line-height:1.6}
+img{display:block;width:100%}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--gold);color:var(--deep)}
 
-  @font-face{
-    font-family:"Nexa";
-    src: url("fonts/Nexa-Bold.woff2") format("woff2"),
-         local("Nexa Bold"), local("Nexa Heavy");
-    font-weight: 700 900;
-    font-display: swap;
-  }
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:.4s;padding:18px 0}
+header.scrolled{background:rgba(10,21,18,.92);backdrop-filter:blur(16px);box-shadow:0 10px 40px rgba(0,0,0,.4);padding:10px 0}
+.navbar{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-text{font-family:var(--fbrand);font-size:34px;font-weight:400;letter-spacing:1px;color:var(--white);line-height:.75}
+.logo-sub{font-family:var(--fdisplay);font-size:9px;letter-spacing:4px;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font-family:var(--fdisplay);font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);opacity:.85;transition:.3s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:.3s}
+.nav-links a:hover{color:var(--gold-lt);opacity:1}.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+.socials{display:flex;gap:14px}
+.socials a{color:var(--cream);opacity:.7;transition:.3s}.socials a:hover{color:var(--gold);opacity:1}
+.socials svg{width:17px;height:17px;fill:currentColor}
+.cart-ic{position:relative;background:none;border:1px solid rgba(201,162,75,.4);width:44px;height:44px;border-radius:50%;color:var(--cream);cursor:pointer;display:grid;place-items:center;transition:.3s}
+.cart-ic:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.cart-ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.cart-count{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--deep);font-family:var(--fnumber);font-weight:700;font-size:10px;min-width:19px;height:19px;border-radius:50%;display:grid;place-items:center}
+.mtoggle{display:none;background:none;border:none;color:var(--cream);font-size:26px;cursor:pointer}
 
-  :root{
-    --noir:#0b0906; --charcoal:#141110; --espresso:#1c1712; --espresso-2:#241d16;
-    --gold:#c9a227; --gold-light:#e8c874; --cream:#f3ead9;
-    --deep-green:#0e2a20; --deep-green-2:#123626; --sage:#6f8f78;
-    --muted:#b3a690; --whatsapp:#25d366;
-    --glass:rgba(255,255,255,.045); --glass-b:rgba(232,200,116,.16);
-    --shadow:0 26px 60px rgba(0,0,0,.5);
+/* ===== HERO ===== */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 8%,rgba(10,21,18,.55) 55%,rgba(10,21,18,.3)),linear-gradient(0deg,var(--bg),transparent 45%)}
+.hero-content{position:relative;z-index:3;max-width:660px;animation:fade 1.2s ease both}
+.overline{display:flex;align-items:center;gap:14px;font-family:var(--fdisplay);letter-spacing:4px;font-size:14px;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+.overline .line{width:50px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--fserif);font-size:clamp(58px,9vw,120px);font-weight:500;line-height:.9;color:var(--white);margin-bottom:8px}
+.hero h1 em{font-style:italic;color:var(--gold-lt)}
+.hero p{font-family:var(--fserif);font-size:22px;font-style:italic;color:var(--cream);opacity:.9;margin:20px 0 34px;max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px}
+.btn{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:14px;padding:17px 34px;cursor:pointer;border:none;transition:.35s;display:inline-flex;align-items:center;gap:10px}
+.btn-gold{background:var(--gold);color:var(--deep)}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-3px);box-shadow:0 15px 35px rgba(201,162,75,.35)}
+.btn-outline{background:transparent;color:var(--cream);border:1px solid rgba(244,236,221,.4)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-lt);transform:translateY(-3px)}
+.btn svg{width:17px;height:17px}
 
-    /* ===== FONT ROLES ===== */
-    --font-body:"DM Sans",Arial,sans-serif;
-    --font-heading:"Big Shoulders Display",Impact,sans-serif;      /* headings, buttons, labels */
-    --font-serif:"Playfair Display",Georgia,serif;                  /* italic emphasis words */
-    --font-brand:"Beyonest","Playfair Display",cursive;             /* Bahamas script wordmark */
-    --font-number:"Nexa","DM Sans",Arial,sans-serif;                /* prices, phone, totals, qty */
-  }
+/* ===== SECTION SHARED ===== */
+section{position:relative;padding:120px 0}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--fdisplay);letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--gold);margin-bottom:16px}
+.eyebrow .line{width:40px;height:1px;background:var(--gold)}
+.eyebrow.center{justify-content:center}
+.title{font-family:var(--fserif);font-size:clamp(40px,5.5vw,68px);font-weight:500;line-height:1;color:var(--white)}
+.title em{font-style:italic;color:var(--gold-lt)}
+.center{text-align:center}
+.flourish{margin:22px auto 0;width:180px;height:20px;color:var(--gold)}
+.flourish svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5}
 
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--noir);color:var(--cream);font-family:var(--font-body);overflow-x:hidden;}
-  body.locked{overflow:hidden;}
-  a{color:inherit;text-decoration:none;}
-  button{font:inherit;cursor:pointer;}
-  img{width:100%;display:block;}
-  .container{width:min(1180px,calc(100% - 36px));margin-inline:auto;}
-  em{font-family:var(--font-serif);font-style:italic;color:var(--gold-light);font-weight:600;}
+/* ===== ABOUT ===== */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-imgs{position:relative}
+.about-imgs .main{border:1px solid rgba(201,162,75,.25);box-shadow:var(--shadow)}
+.about-imgs .sub{position:absolute;bottom:-40px;right:-30px;width:55%;border:5px solid var(--bg2);box-shadow:var(--shadow)}
+.about-txt p{color:var(--muted);margin-bottom:20px;font-size:15.5px}
+.about-txt .lead{font-family:var(--fserif);font-size:26px;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:26px}
 
-  .icon{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;}
-  .icon-fill{fill:currentColor;stroke:none;}
+/* ===== MENU ===== */
+.menu-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:44px 0 54px}
+.menu-nav button{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:14px;padding:12px 26px;background:transparent;border:1px solid rgba(201,162,75,.3);color:var(--cream);cursor:pointer;transition:.3s}
+.menu-nav button.active,.menu-nav button:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:30px}
+.dish{background:var(--panel);border:1px solid rgba(201,162,75,.14);overflow:hidden;transition:.45s;position:relative}
+.dish:hover{transform:translateY(-8px);border-color:rgba(201,162,75,.5);box-shadow:var(--shadow)}
+.dish-img{height:230px;overflow:hidden;position:relative}
+.dish-img img{height:100%;object-fit:cover;transition:.7s}.dish:hover .dish-img img{transform:scale(1.08)}
+.dish-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(17,31,26,.85),transparent 55%)}
+.tag{position:absolute;top:16px;left:16px;z-index:2;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:11px;padding:5px 13px;background:rgba(6,16,9,.7);border:1px solid rgba(201,162,75,.4);color:var(--gold-lt)}
+.tag.combo{background:var(--gold);color:var(--deep);border:none}
+.dish-body{padding:26px}
+.dish-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.dish-head h3{font-family:var(--fserif);font-size:26px;font-weight:600;color:var(--white);line-height:1}
+.dish-price{font-family:var(--fnumber);font-size:22px;color:var(--gold-lt);white-space:nowrap}
+.dish-price small{font-size:12px;color:var(--muted);font-weight:500}
+.dish-desc{color:var(--muted);font-size:14px;margin-bottom:20px;min-height:44px}
+.dish-add{width:100%;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:13px;padding:14px;background:transparent;border:1px solid rgba(201,162,75,.4);color:var(--gold-lt);cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.dish-add:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.dish-add svg{width:15px;height:15px}
 
-  /* ===== LEAF DECOR ===== */
-  .leaf-decor{position:absolute;color:var(--sage);opacity:.55;pointer-events:none;z-index:1;}
-  .leaf-decor svg{width:100%;height:100%;}
-  .swirl{display:block;margin:16px auto;width:150px;color:var(--gold);opacity:.8;}
+/* ===== RESERVATION ===== */
+.reserve{background:var(--deep);position:relative;overflow:hidden}
+.reserve-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.form-box .field{margin-bottom:22px}
+.form-box label{display:block;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:9px}
+.form-box label span{color:#c86a5a}
+.form-box input,.form-box select{width:100%;background:var(--panel);border:1px solid rgba(201,162,75,.2);color:var(--cream);padding:15px 16px;font-family:var(--fbody);font-size:14px;transition:.3s}
+.form-box input:focus,.form-box select:focus{outline:none;border-color:var(--gold);background:#152621}
+.form-box input::placeholder{color:#5f7168}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.reserve-img{position:relative}
+.reserve-img img{border:1px solid rgba(201,162,75,.25);box-shadow:var(--shadow)}
+.reserve-badge{position:absolute;bottom:-28px;left:-28px;background:var(--gold);color:var(--deep);padding:24px 30px;text-align:center;box-shadow:var(--shadow)}
+.reserve-badge .n{font-family:var(--fnumber);font-size:44px;font-weight:700;line-height:.9}
+.reserve-badge .t{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:11px;margin-top:4px}
 
-  /* ===== IMAGE FALLBACK WRAPPER ===== */
-  .img-wrap{position:relative;overflow:hidden;background:linear-gradient(120deg,#1c1712,#2a2117,#1c1712);background-size:200% 100%;}
-  .img-wrap:not(.loaded){animation:shimmer 1.4s infinite linear;}
-  @keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
-  .img-wrap img{height:100%;object-fit:cover;opacity:0;transition:transform .5s ease,opacity .4s ease;}
-  .img-wrap.loaded img{opacity:1;}
+/* ===== EXPERIENCE ===== */
+.exp{position:relative;padding:160px 0;text-align:center;overflow:hidden}
+.exp-bg{position:absolute;inset:0;z-index:0}.exp-bg img{height:100%;object-fit:cover}
+.exp-bg::after{content:"";position:absolute;inset:0;background:rgba(6,16,9,.78)}
+.exp-content{position:relative;z-index:2;max-width:640px;margin:auto}
+.exp h2{font-family:var(--fserif);font-size:clamp(46px,7vw,84px);font-weight:500;color:var(--white);line-height:.95;margin:18px 0 24px}
+.exp h2 em{font-style:italic;color:var(--gold-lt)}
+.exp p{color:var(--cream);opacity:.85;font-size:16px;margin-bottom:34px;font-family:var(--fserif);font-style:italic;font-size:20px}
 
-  /* ===== BRAND / LOGO ===== */
-  .bahamas-icon{width:52px;height:52px;color:var(--gold-light);flex:none;}
-  .bahamas-icon.lg{width:92px;height:92px;margin-inline:auto;}
-  .logo{display:flex;align-items:center;gap:13px;min-width:max-content;}
-  .logo-divider{width:1px;height:42px;background:rgba(232,200,116,.5);}
-  .logo-word{font-family:var(--font-brand);font-size:36px;line-height:.72;color:var(--cream);letter-spacing:.5px;}
-  .logo-sub{display:block;margin-top:7px;font-family:var(--font-heading);font-size:12px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);}
+/* ===== GALLERY ===== */
+.gallery{background:var(--bg2)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal-grid .g{overflow:hidden;position:relative}
+.gal-grid .g img{height:100%;object-fit:cover;transition:.6s}
+.gal-grid .g:hover img{transform:scale(1.1)}
+.gal-grid .g::after{content:"";position:absolute;inset:0;background:rgba(6,16,9,.15);transition:.4s}
+.gal-grid .g:hover::after{background:rgba(201,162,75,.15)}
+.gal-grid .tall{grid-row:span 2}.gal-grid .wide{grid-column:span 2}
 
-  /* ===== HEADER ===== */
-  header{position:sticky;top:0;z-index:1000;background:rgba(11,9,6,.82);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--glass-b);}
-  .navbar{height:82px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .nav-links{list-style:none;display:flex;align-items:center;gap:26px;}
-  .nav-links a{font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);transition:.2s;}
-  .nav-links a:hover{color:var(--gold-light);}
-  .nav-actions{display:flex;align-items:center;gap:9px;}
-  .icon-btn{position:relative;width:44px;height:44px;border-radius:2px;border:1px solid var(--glass-b);background:var(--glass);color:var(--cream);display:grid;place-items:center;font-size:18px;transition:.2s;}
-  .icon-btn:hover{border-color:var(--gold);color:var(--gold-light);}
-  .cart-count{position:absolute;top:-6px;right:-6px;width:19px;height:19px;border-radius:50%;background:var(--gold);color:#1c1712;display:grid;place-items:center;font-family:var(--font-number);font-size:10px;font-weight:900;}
-  .nav-cta{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border:1px solid var(--gold);background:transparent;color:var(--gold-light);font-family:var(--font-heading);font-size:14px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;transition:.25s;}
-  .nav-cta:hover{background:var(--gold);color:#1c1712;}
-  .mobile-btn{display:none;}
+/* ===== FOOTER ===== */
+footer{background:var(--deep);padding:80px 0 34px;border-top:1px solid rgba(201,162,75,.15)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.foot-col h4{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:14px;color:var(--gold);margin-bottom:22px}
+.foot-col p,.foot-col a{color:var(--muted);font-size:14px;display:block;margin-bottom:12px;transition:.3s}
+.foot-col a:hover{color:var(--gold-lt)}
+.foot-about p{margin-bottom:18px}
+.foot-bottom{border-top:1px solid rgba(201,162,75,.15);padding-top:26px;text-align:center;color:var(--muted);font-size:13px}
 
-  /* ===== HERO ===== */
-  .hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;isolation:isolate;overflow:hidden;
-    background:linear-gradient(180deg,rgba(11,9,6,.55),rgba(11,9,6,.88)),
-      radial-gradient(circle at 20% 20%,rgba(201,162,39,.14),transparent 32%),
-      radial-gradient(circle at 82% 78%,rgba(15,54,38,.5),transparent 40%), #171310;
-  }
-  .hero-content{padding:70px 0;position:relative;z-index:3;}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-family:var(--font-heading);font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;}
-  .hero-eyebrow::before,.hero-eyebrow::after{content:"";width:34px;height:1px;background:var(--gold);}
-  .hero .bahamas-icon.lg{margin-top:26px;margin-bottom:6px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.4));}
-  .hero-brand{font-family:var(--font-brand);font-size:clamp(46px,6vw,72px);line-height:.7;color:var(--gold-light);margin-top:4px;}
-  .hero h1{margin-top:14px;font-family:var(--font-heading);font-weight:800;font-size:clamp(48px,8.5vw,100px);letter-spacing:1px;line-height:.98;text-transform:uppercase;color:var(--cream);}
-  .hero h1 span{display:block;color:var(--gold-light);}
-  .hero-desc{max-width:600px;margin:22px auto 0;color:#e6dcc8;font-size:16.5px;line-height:1.8;font-family:var(--font-serif);}
-  .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:34px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 30px;border:1px solid transparent;border-radius:2px;font-family:var(--font-heading);font-size:15px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;transition:.25s;}
-  .btn-gold{background:var(--gold);color:#1c1712;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
-  .btn-ghost{border-color:rgba(243,234,217,.55);color:var(--cream);}
-  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);}
-  .btn-whatsapp{background:var(--whatsapp);color:#fff;}
-  .btn-whatsapp:hover{background:#1eb959;}
+/* ===== CART DRAWER ===== */
+.cart-ov{position:fixed;inset:0;background:rgba(4,10,7,.72);backdrop-filter:blur(4px);z-index:2000;opacity:0;visibility:hidden;transition:.4s}
+.cart-ov.open{opacity:1;visibility:visible}
+.cart-panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:var(--bg2);border-left:1px solid rgba(201,162,75,.2);display:flex;flex-direction:column;transform:translateX(100%);transition:.45s cubic-bezier(.2,.8,.2,1)}
+.cart-ov.open .cart-panel{transform:translateX(0)}
+.cart-h{padding:26px;border-bottom:1px solid rgba(201,162,75,.15);display:flex;justify-content:space-between;align-items:center}
+.cart-h h3{font-family:var(--fserif);font-size:28px;font-weight:600;color:var(--white)}
+.close-c{background:none;border:none;color:var(--cream);font-size:28px;cursor:pointer;transition:.3s}.close-c:hover{color:var(--gold)}
+.cart-list{flex:1;overflow-y:auto;padding:14px 26px}
+.citem{display:grid;grid-template-columns:66px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid rgba(201,162,75,.1);animation:fade .3s}
+.citem img{width:66px;height:66px;object-fit:cover}
+.citem h5{font-family:var(--fserif);font-size:19px;color:var(--white)}
+.citem .cp{color:var(--gold-lt);font-family:var(--fnumber);font-size:14px;margin-top:2px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:9px}
+.qty button{width:28px;height:28px;border:1px solid rgba(201,162,75,.3);background:none;color:var(--cream);cursor:pointer;transition:.3s}.qty button:hover{background:var(--gold);color:var(--deep)}
+.qty span{min-width:20px;text-align:center;font-family:var(--fnumber)}
+.rm{background:none;border:none;color:#c86a5a;font-size:20px;cursor:pointer;align-self:start}
+.empty-c{height:100%;display:grid;place-items:center;text-align:center;color:var(--muted);padding:40px}
+.empty-c svg{width:60px;height:60px;stroke:var(--gold-soft);fill:none;stroke-width:1;margin-bottom:16px;opacity:.6}
+.cart-f{padding:24px 26px;border-top:1px solid rgba(201,162,75,.15)}
+.ctot{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.ctot .l{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:15px}
+.ctot .v{font-family:var(--fnumber);font-size:30px;color:var(--gold-lt)}
+.cinput{width:100%;background:var(--panel);border:1px solid rgba(201,162,75,.2);color:var(--cream);padding:13px 15px;margin-bottom:11px;font-family:var(--fbody);font-size:14px}
+.cinput:focus{outline:none;border-color:var(--gold)}
+.checkout-btn{width:100%;background:var(--wa);color:#fff;border:none;padding:16px;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:.3s}
+.checkout-btn:hover:not(:disabled){background:#1eb858}.checkout-btn:disabled{opacity:.4;cursor:not-allowed}
+.checkout-btn svg{width:22px;height:22px;fill:#fff}
 
-  .hero-leaf-tl{top:-40px;left:-40px;width:220px;height:220px;transform:rotate(200deg);}
-  .hero-leaf-br{bottom:-50px;right:-50px;width:260px;height:260px;color:var(--gold);opacity:.25;}
+/* toast */
+.toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,120px);background:var(--gold);color:var(--deep);padding:15px 30px;font-family:var(--fdisplay);letter-spacing:1px;text-transform:uppercase;font-size:14px;z-index:3000;opacity:0;transition:.4s;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:18px;height:18px;stroke:var(--deep);fill:none;stroke-width:2.5}
 
-  /* ===== SECTIONS ===== */
-  section{padding:100px 0;position:relative;}
-  .section-espresso{background:var(--espresso);}
-  .section-green{background:radial-gradient(circle at 85% 10%,rgba(201,162,39,.08),transparent 30%), linear-gradient(180deg,var(--deep-green),var(--deep-green-2));}
-  .section-noir{background:var(--noir);}
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:.9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-  .eyebrow-line{display:flex;align-items:center;gap:12px;color:var(--gold);font-family:var(--font-heading);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
-  .eyebrow-line::before{content:"";width:30px;height:1px;background:var(--gold);}
-
-  .section-heading h2{font-family:var(--font-heading);font-weight:800;font-size:clamp(36px,5vw,56px);letter-spacing:.5px;line-height:1.02;text-transform:uppercase;color:var(--cream);}
-  .section-heading h2 em{text-transform:none;}
-  .section-heading p{margin-top:14px;color:var(--muted);font-size:14.5px;max-width:520px;line-height:1.8;font-family:var(--font-body);}
-  .section-heading.center{text-align:center;}
-  .section-heading.center .eyebrow-line{justify-content:center;}
-  .section-heading.center .eyebrow-line::before{display:none;}
-  .section-heading.center p{margin-inline:auto;}
-
-  /* ===== COMMITMENT ===== */
-  .commit-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-  .commit-images{position:relative;}
-  .commit-images .img-wrap{border-radius:2px;}
-  .commit-main{aspect-ratio:4/5;}
-  .commit-float{position:absolute;bottom:-40px;right:-40px;width:46%;aspect-ratio:1/1;border:6px solid var(--noir);box-shadow:var(--shadow);}
-  .commit-title{font-family:var(--font-heading);font-size:clamp(32px,4.5vw,48px);font-weight:800;text-transform:uppercase;color:var(--cream);line-height:1.05;}
-  .commit-text p{margin-top:16px;color:#d9cdb4;font-size:14.5px;line-height:1.9;font-family:var(--font-body);}
-
-  /* ===== MENU GRID ===== */
-  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
-  .reveal.in-view{opacity:1;transform:translateY(0);}
-
-  .menu-card{position:relative;background:var(--glass);border:1px solid var(--glass-b);border-radius:2px;overflow:hidden;transition:.35s ease;}
-  .menu-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:var(--shadow);}
-  .food-image{height:210px;}
-  .menu-card:hover .food-image img{transform:scale(1.08);}
-  .badge{position:absolute;top:14px;left:14px;padding:6px 12px;background:rgba(11,9,6,.82);border:1px solid var(--glass-b);color:var(--gold-light);font-family:var(--font-heading);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;z-index:2;}
-  .menu-content{padding:22px;}
-  .menu-content h3{font-family:var(--font-heading);font-size:24px;font-weight:700;letter-spacing:.3px;color:var(--cream);}
-  .menu-content .desc{margin:10px 0 18px;color:var(--muted);font-size:13.5px;line-height:1.7;min-height:44px;font-family:var(--font-body);}
-  .price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--glass-b);padding-top:16px;}
-  .price{color:var(--gold-light);font-family:var(--font-number);font-size:17px;font-weight:900;letter-spacing:.2px;}
-  .add-btn{width:38px;height:38px;border:1px solid var(--gold);background:transparent;color:var(--gold-light);display:grid;place-items:center;transition:.2s;border-radius:2px;}
-  .add-btn:hover{background:var(--gold);color:#1c1712;}
-  .add-btn.added{background:var(--gold-light);color:#1c1712;border-color:var(--gold-light);}
-
-  .drinks-grid .menu-card{background:rgba(255,255,255,.03);}
-
-  /* ===== RESERVATION ===== */
-  .reservation-grid{display:grid;grid-template-columns:1fr .85fr;gap:60px;align-items:flex-start;}
-  .reservation-form{background:var(--espresso-2);border:1px solid var(--glass-b);padding:40px;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
-  .form-group label{display:block;font-family:var(--font-heading);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
-  .form-group label .req{color:var(--gold);}
-  .form-group input,.form-group select,.form-group textarea{width:100%;height:48px;padding:0 14px;background:rgba(255,255,255,.04);border:1px solid var(--glass-b);color:var(--cream);font-family:var(--font-body);font-size:13.5px;outline:none;border-radius:1px;}
-  .form-group textarea{height:auto;padding:12px 14px;min-height:80px;resize:vertical;}
-  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
-  .form-group input::placeholder,.form-group textarea::placeholder{color:#7d7364;}
-  .reservation-submit{margin-top:8px;width:100%;}
-  .reservation-image{position:relative;}
-  .reservation-image .img-wrap{aspect-ratio:4/5;}
-
-  /* ===== GALLERY ===== */
-  .gallery-heading{text-align:center;color:var(--gold-light);font-family:var(--font-brand);font-size:32px;margin-bottom:26px;}
-  .gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
-  .gallery-grid .img-wrap{aspect-ratio:1/1;}
-  .gallery-grid .img-wrap:nth-child(1),.gallery-grid .img-wrap:nth-child(4){grid-column:span 2;grid-row:span 2;}
-
-  /* ===== CONTACT BANNER ===== */
-  .contact-banner{position:relative;min-height:420px;display:grid;place-items:center;text-align:center;isolation:isolate;
-    background:linear-gradient(180deg,rgba(11,9,6,.65),rgba(11,9,6,.88));
-  }
-  .contact-banner-bg{position:absolute;inset:0;z-index:-1;}
-  .contact-banner h2{font-family:var(--font-heading);font-size:clamp(34px,6vw,58px);text-transform:uppercase;font-weight:800;margin:16px 0 26px;}
-
-  /* ===== FOOTER ===== */
-  footer{background:#080604;border-top:1px solid var(--glass-b);}
-  .footer-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:44px 0;border-bottom:1px solid var(--glass-b);}
-  .strip-item{display:flex;align-items:center;gap:14px;}
-  .strip-item .icon-circle{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-light);flex:none;font-size:18px;}
-  .strip-item .label{font-family:var(--font-heading);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-  .strip-item .value{font-family:var(--font-number);font-size:14px;font-weight:700;color:var(--cream);margin-top:4px;}
-
-  .footer-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;padding:50px 0 40px;}
-  .footer-about p{margin-top:16px;color:#a99d87;font-size:13px;line-height:1.9;max-width:320px;font-family:var(--font-body);}
-  .social-row{display:flex;gap:10px;margin-top:20px;}
-  .social-row a{width:38px;height:38px;border:1px solid var(--glass-b);display:grid;place-items:center;color:var(--gold-light);transition:.2s;}
-  .social-row a:hover{background:var(--gold);color:#1c1712;border-color:var(--gold);}
-  .footer-col h4{font-family:var(--font-heading);font-size:16px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:18px;color:var(--gold-light);}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
-  .footer-col a{color:#a99d87;font-size:13px;transition:.2s;font-family:var(--font-body);}
-  .footer-col a:hover{color:var(--gold-light);}
-  .footer-bottom{border-top:1px solid var(--glass-b);padding:22px 0;text-align:center;color:#6e6555;font-size:11.5px;letter-spacing:.4px;font-family:var(--font-number);}
-
-  /* ===== CART DRAWER ===== */
-  .cart-overlay{position:fixed;inset:0;z-index:2000;visibility:hidden;opacity:0;background:rgba(5,4,2,.78);transition:.3s;}
-  .cart-overlay.open{visibility:visible;opacity:1;}
-  .cart-panel{position:absolute;top:0;right:0;width:min(450px,100%);height:100%;display:flex;flex-direction:column;background:var(--espresso);box-shadow:-25px 0 55px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .32s ease;}
-  .cart-overlay.open .cart-panel{transform:translateX(0);}
-  .cart-header{display:flex;justify-content:space-between;align-items:center;padding:22px;background:linear-gradient(110deg,var(--deep-green),var(--deep-green-2));border-bottom:1px solid var(--glass-b);}
-  .cart-header h2{font-family:var(--font-heading);font-size:26px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:10px;color:var(--gold-light);}
-  .close-cart{border:1px solid rgba(232,200,116,.4);background:transparent;color:var(--cream);width:36px;height:36px;display:grid;place-items:center;}
-  .cart-items{flex:1;padding:8px 22px;overflow-y:auto;}
-  .empty-cart{height:100%;display:grid;place-items:center;text-align:center;color:var(--muted);}
-  .empty-cart h3{margin-top:16px;font-family:var(--font-heading);font-size:24px;font-weight:700;text-transform:uppercase;color:var(--cream);}
-  .cart-item{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--glass-b);}
-  .cart-item .img-wrap{width:58px;height:58px;}
-  .cart-item h4{font-family:var(--font-heading);font-size:18px;font-weight:700;color:var(--cream);}
-  .cart-item-price{margin-top:4px;color:var(--gold-light);font-family:var(--font-number);font-size:12px;font-weight:900;}
-  .qty{display:flex;align-items:center;gap:8px;margin-top:8px;}
-  .qty button{width:24px;height:24px;border:1px solid var(--glass-b);background:transparent;color:var(--cream);display:grid;place-items:center;}
-  .qty span{min-width:14px;text-align:center;font-family:var(--font-number);font-size:12px;font-weight:900;}
-  .remove-item{align-self:start;border:0;background:transparent;color:#8a7f6c;padding:5px;}
-  .remove-item:hover{color:#e2795e;}
-  .checkout{padding:20px 22px 24px;border-top:1px solid var(--glass-b);}
-  .total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;}
-  .total-row span:first-child{font-family:var(--font-heading);font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-  .total-row span:last-child{font-family:var(--font-number);font-size:20px;font-weight:900;color:var(--gold-light);}
-  .field{width:100%;margin-bottom:9px;padding:11px 12px;border:1px solid var(--glass-b);outline:none;background:rgba(255,255,255,.04);color:var(--cream);font-family:var(--font-body);font-size:13px;}
-  .field:focus{border-color:var(--gold);}
-  textarea.field{min-height:58px;resize:vertical;}
-  .checkout-btn{width:100%;min-height:50px;border:0;background:var(--whatsapp);color:#fff;display:flex;align-items:center;justify-content:center;gap:9px;font-family:var(--font-heading);font-size:16px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;}
-  .checkout-btn:hover{background:#1eb959;}
-  .checkout-btn:disabled{opacity:.4;cursor:not-allowed;}
-  .note{margin-top:9px;color:#7c7261;text-align:center;font-size:10px;font-family:var(--font-body);}
-
-  .fab-whatsapp{position:fixed;bottom:24px;right:22px;z-index:1500;width:58px;height:58px;border-radius:50%;background:var(--whatsapp);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.5);font-size:26px;}
-  .fab-whatsapp::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--whatsapp);animation:pulse-ring 2s infinite;}
-  @keyframes pulse-ring{0%{transform:scale(.9);opacity:.8;}80%{transform:scale(1.5);opacity:0;}100%{opacity:0;}}
-
-  .toast{position:fixed;left:50%;bottom:96px;z-index:3000;padding:13px 20px;background:var(--gold);color:#1c1712;font-family:var(--font-number);font-size:12px;font-weight:900;box-shadow:0 12px 28px rgba(0,0,0,.4);transform:translate(-50%,120px);transition:.3s;display:flex;align-items:center;gap:8px;}
-  .toast.show{transform:translate(-50%,0);}
-
-  @media(max-width:1000px){
-    .commit-grid,.reservation-grid{grid-template-columns:1fr;}
-    .commit-float{display:none;}
-    .footer-strip{grid-template-columns:repeat(2,1fr);}
-    .footer-top{grid-template-columns:1fr 1fr;}
-    .gallery-grid{grid-template-columns:repeat(3,1fr);}
-  }
-  @media(max-width:950px){
-    .menu-grid{grid-template-columns:repeat(2,1fr);}
-    .nav-links{gap:16px;}
-  }
-  @media(max-width:760px){
-    .navbar{height:70px;}
-    .mobile-btn{display:grid;}
-    .nav-cta{display:none;}
-    .nav-links{position:absolute;top:70px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:10px 18px 18px;background:var(--espresso);border-bottom:1px solid var(--glass-b);}
-    .nav-links.show{display:flex;}
-    .nav-links li{border-bottom:1px solid rgba(232,200,116,.08);}
-    .nav-links a{display:block;padding:13px 4px;}
-    section{padding:64px 0;}
-    .form-row{grid-template-columns:1fr;}
-    .reservation-form{padding:26px;}
-    .footer-top{grid-template-columns:1fr;}
-  }
-  @media(max-width:540px){
-    .menu-grid,.footer-strip{grid-template-columns:1fr;}
-    .food-image{height:220px;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    .gallery-grid .img-wrap:nth-child(1),.gallery-grid .img-wrap:nth-child(4){grid-column:span 1;grid-row:span 1;}
-  }
+@media(max-width:920px){
+  .nav-links,.socials{display:none}.mtoggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(10,21,18,.98);backdrop-filter:blur(16px);padding:20px 24px;border-bottom:1px solid rgba(201,162,75,.2)}
+  .nav-links.open li{padding:14px 0;border-bottom:1px solid rgba(201,162,75,.1)}
+  .about-grid,.reserve-grid{grid-template-columns:1fr;gap:50px}
+  .about-imgs .sub{position:static;width:100%;margin-top:20px;border:none}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .form-row,.foot-grid,.menu-grid{grid-template-columns:1fr}
+  section{padding:80px 0}.hero p{font-size:18px}
+}
 </style>
 </head>
 <body>
 
-<!-- ============ ICON SPRITE ============ -->
-<svg width="0" height="0" style="position:absolute">
-  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
-  <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
-  <symbol id="i-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
-  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
-  <symbol id="i-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><polyline points="22 6 12 13 2 6"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
-  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
-  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.91 1.17A4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
-  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
-  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
-
-  <!-- ================= BAHAMAS EMBLEM =================
-       Recreation of the circular four-lobe knot with
-       diamond lattice, matching the supplied logo artwork.
-       Replace with your exact vector paths / <image> Base64
-       for pixel-perfect brand accuracy. -->
-  <symbol id="bahamasIcon" viewBox="0 0 100 100">
-    <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="50" cy="50" r="48"/>
-      <circle cx="50" cy="50" r="45.4"/>
-      <circle cx="50" cy="50" r="42.8"/>
-
-      <!-- Four interlocking lobes (top/bottom/left/right) -->
-      <path d="M50 32c-7-11-16-18-25-16-8 2-13 10-11 19s12 16 22 20"/>
-      <path d="M50 32c7-11 16-18 25-16 8 2 13 10 11 19s-12 16-22 20"/>
-      <path d="M50 68c-7 11-16 18-25 16-8-2-13-10-11-19s12-16 22-20"/>
-      <path d="M50 68c7 11 16 18 25 16 8-2 13-10 11-19s-12-16-22-20"/>
-
-      <path d="M50 36c-6-9-13-14-20-13-6 2-10 8-9 15s10 12 18 16"/>
-      <path d="M50 36c6-9 13-14 20-13 6 2 10 8 9 15s-10 12-18 16"/>
-      <path d="M50 64c-6 9-13 14-20 13-6-2-10-8-9-15s10-12 18-16"/>
-      <path d="M50 64c6 9 13 14 20 13 6-2 10-8 9-15s-10-12-18-16"/>
-
-      <!-- Central diamond lattice -->
-      <path d="M50 17 L83 50 L50 83 L17 50 Z"/>
-      <path d="M50 23 L77 50 L50 77 L23 50 Z"/>
-      <path d="M50 29 L71 50 L50 71 L29 50 Z"/>
-
-      <!-- Cardinal small diamonds -->
-      <path d="M50 10 L64 24 L50 38 L36 24 Z"/>
-      <path d="M50 15 L59 24 L50 33 L41 24 Z"/>
-      <path d="M50 62 L64 76 L50 90 L36 76 Z"/>
-      <path d="M50 67 L59 76 L50 85 L41 76 Z"/>
-      <path d="M10 50 L24 36 L38 50 L24 64 Z"/>
-      <path d="M15 50 L24 41 L33 50 L24 59 Z"/>
-      <path d="M62 50 L76 36 L90 50 L76 64 Z"/>
-      <path d="M67 50 L76 41 L85 50 L76 59 Z"/>
-    </g>
-  </symbol>
-
-  <symbol id="i-leaf" viewBox="0 0 200 200">
-    <g fill="currentColor">
-      <path d="M100 5C50 25 10 70 10 130c0 35 25 60 60 60 55 0 90-45 100-120 5-40-30-75-70-65Z"/>
-      <path d="M100 20c-5 60-30 110-75 130" stroke="#08060488" stroke-width="3" fill="none"/>
-    </g>
-  </symbol>
-
-  <symbol id="i-swirl" viewBox="0 0 200 30">
-    <g fill="none" stroke="currentColor" stroke-width="1.6">
-      <path d="M0 15c15-15 30 15 45 0s30-15 45 0 30 15 45 0 30-15 45 0"/>
-      <circle cx="10" cy="15" r="3" fill="currentColor" stroke="none"/>
-      <circle cx="190" cy="15" r="3" fill="currentColor" stroke="none"/>
-    </g>
-  </symbol>
-</svg>
-
-<!-- ============ HEADER ============ -->
-<header>
+<!-- HEADER -->
+<header id="hdr">
   <div class="container navbar">
-    <a href="#" class="logo" aria-label="Bahamas Cafe Restaurant Lounge">
-      <svg class="bahamas-icon"><use href="#bahamasIcon"></use></svg>
-      <div class="logo-divider"></div>
+    <a href="#" class="logo">
       <div>
-        <div class="logo-word">Bahamas</div>
-        <span class="logo-sub">Cafe | Restaurant | Lounge</span>
+        <div class="logo-text">Bahamas</div>
+        <div class="logo-sub">CAFE · RESTAURANT · LOUNGE</div>
       </div>
     </a>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#grill">Grill</a></li>
-      <li><a href="#drinks">Drinks</a></li>
-      <li><a href="#reservation">Reservation</a></li>
-      <li><a href="#visit">Contact</a></li>
+    <ul class="nav-links" id="nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reserve">Reservation</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-
-    <div class="nav-actions">
-      <button class="icon-btn" onclick="toggleCart()" aria-label="Open cart">
-        <svg class="icon"><use href="#i-cart"></use></svg>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-      <a class="nav-cta" href="#reservation">Reserve A Table</a>
-      <button class="icon-btn mobile-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
-        <svg class="icon"><use href="#i-menu"></use></svg>
-      </button>
+    <div class="nav-right">
+      <div class="socials">
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.1 15.6 2.1 15.2 2.1 12s0-3.6.1-4.9C2.3 3.9 3.9 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+        <a href="https://wa.me/256762831177"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.5-.5-.5-.7-.5H7c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5 2.9 1.2 2.9.8 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg></a>
+      </div>
+      <button class="cart-ic" onclick="toggleCart()"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg><span class="cart-count" id="cc">0</span></button>
+      <button class="mtoggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     </div>
   </div>
 </header>
 
-<main>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="leaf-decor hero-leaf-tl"><svg viewBox="0 0 200 200"><use href="#i-leaf"></use></svg></div>
-    <div class="leaf-decor hero-leaf-br"><svg viewBox="0 0 200 200"><use href="#i-leaf"></use></svg></div>
-
-    <div class="container hero-content">
-      <div class="hero-eyebrow">Bukoto, Kampala</div>
-
-      <svg class="bahamas-icon lg"><use href="#bahamasIcon"></use></svg>
-      <div class="hero-brand">Bahamas</div>
-
-      <h1>Taste The<br><span>Difference</span></h1>
-      <p class="hero-desc">
-        An elegant fusion of flame-grilled favourites, hand-crafted cocktails and warm
-        hospitality — <em>savoured</em> the Bahamas way, in the heart of Bukoto.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="#grill">View Our Menu</a>
-        <a class="btn btn-ghost" href="#reservation">Reserve A Table</a>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"><img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="overline"><span class="line"></span>Bukoto · Kampala · Uganda</div>
+      <h1>Taste The <em>Difference</em></h1>
+      <p>Flame-grilled perfection, island soul and a lounge experience savored to the last bite — right in the heart of Bukoto.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-gold">Explore Menu</a>
+        <a href="#reserve" class="btn btn-outline">Reserve A Table</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ OUR STORY / COMMITMENT ============ -->
-  <section class="section-espresso" id="story">
-    <div class="container commit-grid">
-      <div class="commit-images">
-        <div class="img-wrap commit-main">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Bahamas dining ambience" data-name="Bahamas Dining" data-emoji="🍽️" onload="handleImgLoad(this)" onerror="handleImgError(this)">
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-imgs reveal">
+      <img class="main" src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Restaurant interior">
+      <img class="sub" src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dining">
+    </div>
+    <div class="about-txt reveal">
+      <div class="eyebrow"><span class="line"></span>Our Commitment</div>
+      <h2 class="title">A Premium Taste That Yearns To Be <em>Savored</em></h2>
+      <p class="lead">We are committed to serving wholeheartedly — from our chefs to our waiters, every plate is crafted with rich local flavor and genuine care.</p>
+      <p>We provide valuable experiences you will never forget with friends and partners. Delicious food and refreshing drinks in an atmosphere designed to make you feel happier and more satisfied with every visit.</p>
+      <a href="#menu" class="btn btn-gold" style="margin-top:14px">View Our Menus</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow center"><span class="line"></span>Delight In Every Bite<span class="line"></span></div>
+      <h2 class="title">Our <em>Signature</em> Menu</h2>
+      <div class="flourish"><svg viewBox="0 0 180 20"><path d="M2 10 Q40 2 60 10 T118 10 T178 10 M85 10 a5 5 0 1010 0 a5 5 0 10-10 0"/></svg></div>
+    </div>
+    <div class="menu-nav">
+      <button class="active" data-cat="grill">Grill</button>
+      <button data-cat="chicken">Chicken</button>
+      <button data-cat="quick">Quick Meals</button>
+      <button data-cat="drinks">Drinks</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reserve" id="reserve">
+  <div class="container reserve-grid">
+    <div class="form-box reveal">
+      <div class="eyebrow"><span class="line"></span>Your Details</div>
+      <h2 class="title" style="margin-bottom:34px">Reserve A <em>Table</em></h2>
+      <form id="resForm">
+        <div class="form-row">
+          <div class="field"><label>Name <span>*</span></label><input id="rName" placeholder="John Doe" required></div>
+          <div class="field"><label>Email Address</label><input type="email" id="rEmail" placeholder="email@gmail.com"></div>
         </div>
-        <div class="img-wrap commit-float">
-          <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=700&q=80" alt="Table setting" data-name="Table Setting" data-emoji="🥂" onload="handleImgLoad(this)" onerror="handleImgError(this)">
-        </div>
-      </div>
-
-      <div class="commit-text">
-        <div class="eyebrow-line">Our Commitment</div>
-        <h2 class="commit-title">Every Plate, <em>Crafted</em><br>With Heart</h2>
-        <p>We are committed to providing the best, served wholeheartedly to every guest. From our grill to our bar, every dish and drink carries an abundant, delicious flavour that lingers on the tongue.</p>
-        <p>We want you to leave happier than when you arrived. That is the true Bahamas experience — warm, generous, and unforgettable.</p>
-        <svg class="swirl"><use href="#i-swirl"></use></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ GRILL ============ -->
-  <section id="grill">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div class="eyebrow-line">Flame &amp; Fire</div>
-        <h2>Grill <em>Menu</em></h2>
-        <p>Freshly grilled pork favourites, seasoned to perfection and served hot from the coals.</p>
-      </div>
-      <div class="menu-grid" id="grillGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ CHICKEN ============ -->
-  <section class="section-espresso" id="chicken">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div class="eyebrow-line">Chicken</div>
-        <h2>Flame-Grilled <em>Chicken</em></h2>
-        <p>Whole, half or quarter chicken, grilled over open flame with signature spices.</p>
-      </div>
-      <div class="menu-grid" id="chickenGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ COMBOS ============ -->
-  <section id="combos">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div class="eyebrow-line">Complete Meals</div>
-        <h2>Combo <em>Meals</em></h2>
-        <p>Generous plates with sides, salads and sharing platters for every appetite.</p>
-      </div>
-      <div class="menu-grid" id="comboGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ QUICK MEALS ============ -->
-  <section class="section-espresso" id="quick">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div class="eyebrow-line">Light Bites</div>
-        <h2>Quick Meals &amp; <em>Soups</em></h2>
-        <p>Local soups, rolex and easy favourites, made fresh and served fast.</p>
-      </div>
-      <div class="menu-grid" id="quickGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ DRINKS ============ -->
-  <section class="section-green" id="drinks">
-    <div class="container">
-      <div class="section-heading center reveal">
-        <div class="eyebrow-line">Ignite Your Senses</div>
-        <h2>The <em>Drinks</em> Menu</h2>
-        <p>Coffee, fresh smoothies, ice-cold beer, aged whisky and hand-crafted cocktails.</p>
-      </div>
-      <div class="menu-grid drinks-grid" id="drinksGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ RESERVATION ============ -->
-  <section class="section-noir" id="reservation">
-    <div class="container">
-      <div class="eyebrow-line">Your Details</div>
-      <h2 style="font-family:var(--font-heading);font-size:clamp(32px,5vw,52px);font-weight:800;text-transform:uppercase;margin-bottom:40px;">Reserve A <em>Table</em></h2>
-
-      <div class="reservation-grid">
-        <div class="reservation-form">
-          <form id="reservationForm" onsubmit="submitReservation(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Name <span class="req">*</span></label>
-                <input type="text" id="resName" placeholder="John Doe" required>
-              </div>
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="resEmail" placeholder="email@gmail.com">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label>Mobile Number <span class="req">*</span></label>
-                <input type="tel" id="resPhone" placeholder="+256 700 000 000" required>
-              </div>
-              <div class="form-group">
-                <label>Number Of Persons <span class="req">*</span></label>
-                <select id="resGuests" required>
-                  <option value="" disabled selected>Select</option>
-                  <option>1 Person</option>
-                  <option>2 People</option>
-                  <option>3 People</option>
-                  <option>4 People</option>
-                  <option>5–8 People</option>
-                  <option>9+ People (Group)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label>Date <span class="req">*</span></label>
-                <input type="date" id="resDate" required>
-              </div>
-              <div class="form-group">
-                <label>Time <span class="req">*</span></label>
-                <input type="time" id="resTime" required>
-              </div>
-            </div>
-
-            <div class="form-group" style="margin-bottom:24px;">
-              <label>Special Request (Optional)</label>
-              <textarea id="resNotes" placeholder="Birthday celebration, window seating, dietary needs..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-gold reservation-submit">
-              <svg class="icon"><use href="#i-calendar"></use></svg> Make A Reservation
-            </button>
-          </form>
-        </div>
-
-        <div class="reservation-image">
-          <div class="img-wrap">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Reserved table setting" data-name="Reserved Table" data-emoji="🍷" onload="handleImgLoad(this)" onerror="handleImgError(this)">
+        <div class="field"><label>Mobile Number <span>*</span></label><input id="rPhone" placeholder="+256 …" required></div>
+        <div class="form-row">
+          <div class="field"><label>Date <span>*</span></label><input type="date" id="rDate" required></div>
+          <div class="field"><label>Time <span>*</span></label>
+            <select id="rTime" required>
+              <option value="">Select time</option>
+              <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+              <option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option>
+            </select>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ GALLERY ============ -->
-  <section class="section-espresso">
-    <div class="container">
-      <div class="gallery-heading">@BahamasKampala</div>
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT BANNER ============ -->
-  <section class="contact-banner" id="visit">
-    <div class="img-wrap contact-banner-bg">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80" alt="Bahamas lounge interior" data-name="Bahamas Lounge" data-emoji="🕯️" onload="handleImgLoad(this)" onerror="handleImgError(this)">
-    </div>
-    <div class="container" style="position:relative;z-index:2;">
-      <div class="eyebrow-line" style="justify-content:center;"><span style="margin:0 auto;">Any Question?</span></div>
-      <h2>Stay Close <em>With Us</em></h2>
-      <a class="btn btn-gold" href="https://wa.me/256762831177" target="_blank">
-        <svg class="icon"><use href="#i-chat"></use></svg> Contact Us
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="container footer-strip">
-    <div class="strip-item">
-      <div class="icon-circle"><svg class="icon"><use href="#i-pin"></use></svg></div>
-      <div><div class="label">Location</div><div class="value">Opp. Bukoto Heights, Kampala</div></div>
-    </div>
-    <div class="strip-item">
-      <div class="icon-circle"><svg class="icon"><use href="#i-phone"></use></svg></div>
-      <div><div class="label">Call Us</div><div class="value">+256 762 831 177</div></div>
-    </div>
-    <div class="strip-item">
-      <div class="icon-circle"><svg class="icon"><use href="#i-mail"></use></svg></div>
-      <div><div class="label">Email</div><div class="value">reservation@bahamas.co.ug</div></div>
-    </div>
-    <div class="strip-item">
-      <div class="icon-circle"><svg class="icon"><use href="#i-clock"></use></svg></div>
-      <div><div class="label">Open Hours</div><div class="value">10:00 AM – Late</div></div>
-    </div>
-  </div>
-
-  <div class="container footer-top">
-    <div class="footer-about">
-      <div class="logo">
-        <svg class="bahamas-icon"><use href="#bahamasIcon"></use></svg>
-        <div class="logo-divider"></div>
-        <div>
-          <div class="logo-word">Bahamas</div>
-          <span class="logo-sub">Cafe | Restaurant | Lounge</span>
+        <div class="field"><label>Number Of Persons <span>*</span></label>
+          <select id="rPax" required>
+            <option value="">Select</option>
+            <option>1 Person</option><option>2 People</option><option>3 People</option>
+            <option>4 People</option><option>5–6 People</option><option>7+ People</option>
+          </select>
         </div>
-      </div>
-      <p>An elegant island-inspired escape in the heart of Bukoto — flame-grilled favourites, crafted cocktails and warm hospitality for every occasion.</p>
-      <div class="social-row">
-        <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-insta"></use></svg></a>
-        <a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-fb"></use></svg></a>
-        <a href="https://wa.me/256762831177" target="_blank" aria-label="WhatsApp"><svg class="icon"><use href="#i-chat"></use></svg></a>
-      </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:8px">Make A Reservation</button>
+      </form>
     </div>
-
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#grill">Grill Menu</a></li>
-        <li><a href="#drinks">Drinks Menu</a></li>
-        <li><a href="#reservation">Reservations</a></li>
-        <li><a href="#visit">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li>Opposite Bukoto Heights Apartments, Kampala</li>
-        <li><a href="tel:+256762831177">+256 762 831 177</a></li>
-        <li><a href="https://wa.me/256762831177" target="_blank">Order on WhatsApp</a></li>
-        <li>Open Daily · 10:00 AM – Late</li>
-      </ul>
+    <div class="reserve-img reveal">
+      <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fine dining">
+      <div class="reserve-badge"><div class="n">10+</div><div class="t">Years of Flavor</div></div>
     </div>
   </div>
+</section>
 
-  <div class="footer-bottom">Bahamas Cafe Restaurant Lounge — Bukoto, Kampala, Uganda. All prices are in Uganda Shillings.</div>
+<!-- EXPERIENCE -->
+<section class="exp">
+  <div class="exp-bg"><img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""></div>
+  <div class="exp-content">
+    <div class="eyebrow center" style="justify-content:center;color:var(--gold)"><span class="line"></span>Any Question?<span class="line"></span></div>
+    <h2>Stay Close <em>With Us</em></h2>
+    <p>Great food, warm hospitality and an unforgettable lounge atmosphere await you.</p>
+    <a href="#contact" class="btn btn-gold">Contact Us</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:50px">
+      <div class="eyebrow center"><span class="line"></span>@BahamasKampala<span class="line"></span></div>
+      <h2 class="title">Moments At <em>Bahamas</em></h2>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="g tall"><img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+      <div class="g"><img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
+      <div class="g wide"><img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></div>
+      <div class="g"><img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
+      <div class="g wide"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></div>
+      <div class="g"><img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <a href="#" class="logo" style="margin-bottom:20px">
+          <div>
+            <div class="logo-text">Bahamas</div>
+            <div class="logo-sub">CAFE · RESTAURANT · LOUNGE</div>
+          </div>
+        </a>
+        <p>An island-inspired dining experience serving flame-grilled favorites, comfort classics and handcrafted drinks in Bukoto, Kampala.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Location</h4>
+        <p>Opposite Bukoto Heights Apartments, Bukoto — Kampala, Uganda</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+256762831177">+256 762 831 177</a>
+        <a href="https://wa.me/256762831177">WhatsApp Us</a>
+        <a href="mailto:hello@bahamas.ug">hello@bahamas.ug</a>
+      </div>
+      <div class="foot-col">
+        <h4>Opening Hours</h4>
+        <p>Monday – Sunday<br>10:00 AM – Late Night</p>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="yr"></span> Bahamas Cafe Restaurant Lounge · Crafted with flavor in Kampala.</div>
+  </div>
 </footer>
 
-<a class="fab-whatsapp" href="https://wa.me/256762831177" target="_blank" aria-label="Chat on WhatsApp">
-  <svg class="icon" style="width:26px;height:26px"><use href="#i-chat"></use></svg>
-</a>
-
-<!-- ============ CART DRAWER ============ -->
-<div class="cart-overlay" id="cartOverlay" onclick="closeCartFromOverlay(event)">
+<!-- CART -->
+<div class="cart-ov" id="cartOv" onclick="if(event.target.id==='cartOv')toggleCart()">
   <aside class="cart-panel">
-    <div class="cart-header">
-      <h2><svg class="icon"><use href="#i-cart"></use></svg> Your Order</h2>
-      <button class="close-cart" onclick="toggleCart()" aria-label="Close cart"><svg class="icon"><use href="#i-close"></use></svg></button>
-    </div>
-
-    <div class="cart-items" id="cartItems"></div>
-
-    <div class="checkout">
-      <div class="total-row"><span>TOTAL</span><span id="cartTotal">UGX 0</span></div>
-      <input class="field" id="customerName" type="text" placeholder="Your name">
-      <input class="field" id="customerPhone" type="tel" placeholder="Your phone number">
-      <textarea class="field" id="customerLocation" placeholder="Delivery location or special instructions"></textarea>
-      <button class="checkout-btn" id="checkoutBtn" onclick="checkoutWhatsApp()" disabled>
-        <svg class="icon"><use href="#i-chat"></use></svg> Send Order via WhatsApp
+    <div class="cart-h"><h3>Your Order</h3><button class="close-c" onclick="toggleCart()">×</button></div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-f">
+      <div class="ctot"><span class="l">Total</span><span class="v" id="cTotal">UGX 0</span></div>
+      <input class="cinput" id="oName" placeholder="Your name">
+      <input class="cinput" id="oPhone" placeholder="Phone number">
+      <input class="cinput" id="oLoc" placeholder="Delivery location / notes">
+      <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.5-.5-.5-.7-.5H7c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5 2.9 1.2 2.9.8 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
+        Order via WhatsApp
       </button>
-      <div class="note">Delivery charges may apply depending on your location.</div>
     </div>
   </aside>
 </div>
@@ -702,295 +434,111 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const WHATSAPP_NUMBER = "256762831177";
+const WA="256762831177", Q="?auto=compress&cs=tinysrgb&w=600";
+const menu={
+grill:[
+ {n:"Fried Pork",d:"Well-seasoned deep-fried pork portions, crispy and hot.",p:20000,t:"Popular",i:"https://images.pexels.com/photos/1352296/pexels-photo-1352296.jpeg"},
+ {n:"Pork Kikalayi",d:"Sautéed pork with vegetables, spices & matooke or Irish.",p:25000,t:"Local",i:"https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg"},
+ {n:"Pork Skewers",d:"Tender flame-grilled pork skewers (2–3 sticks).",p:15000,i:"https://images.pexels.com/photos/8477/pexels-photo.jpg"},
+ {n:"Pork Chops",d:"Juicy grilled pork chops marinated in aromatic herbs.",p:22000,i:"https://images.pexels.com/photos/8308126/pexels-photo-8308126.jpeg"},
+ {n:"Pork Ribs",d:"Slow-grilled ribs glazed with smoky BBQ.",p:25000,t:"Chef's Pick",i:"https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg"},
+ {n:"Family Grill Platter",d:"Assorted pork, chicken, skewers & sides. Serves 3–4.",p:85000,t:"Combo",c:1,i:"https://images.pexels.com/photos/1247755/pexels-photo-1247755.jpeg"},
+ {n:"Bahamas Pork Combo",d:"Fried pork + side + small kachumbari.",p:25000,t:"Combo",c:1,i:"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"},
+ {n:"Pork Kikalayi Combo",d:"Pork kikalayi with an extra side.",p:28000,t:"Combo",c:1,i:"https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg"}
+],
+chicken:[
+ {n:"Quarter Chicken",d:"Flame-grilled quarter chicken, signature seasoning.",p:18000,i:"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"},
+ {n:"Half Chicken",d:"Juicy half chicken grilled over open flame.",p:22000,i:"https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg"},
+ {n:"Whole Chicken",d:"Full flame-grilled chicken, ideal for sharing.",p:40000,i:"https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg"},
+ {n:"Chicken Kikalayi",d:"Fried chicken tossed with cabbage, carrots & garlic.",p:28000,t:"Local",i:"https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg"},
+ {n:"Half Chicken Combo",d:"Half grilled chicken + choice of 2 sides.",p:28000,t:"Combo",c:1,i:"https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg"},
+ {n:"Whole Chicken Feast",d:"Whole chicken + large chips + salad. Serves 3–4.",p:55000,t:"Combo",c:1,i:"https://images.pexels.com/photos/6210747/pexels-photo-6210747.jpeg"},
+ {n:"Chicken Rolex Combo",d:"Chicken rolex + a side portion of chips.",p:15000,t:"Combo",c:1,i:"https://images.pexels.com/photos/5175537/pexels-photo-5175537.jpeg"}
+],
+quick:[
+ {n:"Pork Soup",d:"Rich traditional pork broth with local spices.",p:12000,i:"https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg"},
+ {n:"Chicken Soup",d:"Hearty chicken broth, made fresh daily.",p:12000,i:"https://images.pexels.com/photos/6249508/pexels-photo-6249508.jpeg"},
+ {n:"Chicken Rolex",d:"Rolled chapati with egg, veg & grilled chicken.",p:10000,i:"https://images.pexels.com/photos/5175537/pexels-photo-5175537.jpeg"},
+ {n:"Pork Rolex",d:"Rolled chapati with egg, veg & seasoned pork.",p:10000,i:"https://images.pexels.com/photos/4676640/pexels-photo-4676640.jpeg"},
+ {n:"Chips / Fries",d:"Golden crispy fries, freshly prepared.",p:8000,i:"https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg"},
+ {n:"Fresh Kachumbali",d:"Crisp tomatoes, onions, herbs & local dressing.",p:5000,i:"https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg"}
+],
+drinks:[
+ {n:"Espresso / Coffee",d:"Freshly brewed, bold and aromatic.",p:5000,t:"Coffee",i:"https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"},
+ {n:"Cappuccino / Latte",d:"Velvety milk coffee with rich espresso.",p:8000,t:"Coffee",i:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"},
+ {n:"Fruit Smoothie",d:"Mango, passion, banana, strawberry or mixed.",p:10000,t:"Fresh",i:"https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg"},
+ {n:"Natural Fresh Juice",d:"Mango, passion, pineapple or watermelon.",p:7000,t:"Fresh",i:"https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg"},
+ {n:"Local Beer",d:"Nile Special, Club, Bell, Guinness & more.",p:6000,t:"Beer",m:1,i:"https://images.pexels.com/photos/1552750/pexels-photo-1552750.jpeg"},
+ {n:"Whisky Shot",d:"Premium whisky & spirits (ask for brands).",p:10000,t:"Whisky",m:1,i:"https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg"},
+ {n:"Classic Cocktail",d:"Refreshing cocktails from our bar team.",p:15000,t:"Cocktail",i:"https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg"},
+ {n:"Soda / Water",d:"Soft drinks, mineral water & chilled refreshers.",p:3000,t:"Cold",m:1,i:"https://images.pexels.com/photos/2775860/pexels-photo-2775860.jpeg"}
+]};
 
-/* ================= IMAGE FALLBACK SYSTEM ================= */
-function placeholderSVG(label, emoji){
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500">
-    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1c1712"/><stop offset="100%" stop-color="#0e2a20"/>
-    </linearGradient></defs>
-    <rect width="700" height="500" fill="url(#g)"/>
-    <text x="50%" y="42%" font-size="90" text-anchor="middle" dominant-baseline="middle">${emoji}</text>
-    <text x="50%" y="70%" font-size="30" fill="#e8c874" font-family="Georgia, serif" font-weight="700" text-anchor="middle">${label}</text>
-  </svg>`;
-  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+const money=n=>"UGX "+Number(n).toLocaleString();
+const esc=s=>s.replace(/'/g,"\\'");
+function dishHTML(x){
+  const tag=x.t?`<span class="tag ${x.c?'combo':''}">${x.t}</span>`:'';
+  return `<article class="dish">
+    <div class="dish-img">${tag}<img loading="lazy" src="${x.i}${Q}" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg${Q}'" alt="${x.n}"></div>
+    <div class="dish-body">
+      <div class="dish-head"><h3>${x.n}</h3><span class="dish-price">${x.m?'<small>from </small>':''}${money(x.p)}</span></div>
+      <p class="dish-desc">${x.d}</p>
+      <button class="dish-add" onclick="add('${esc(x.n)}',${x.p},'${x.i}${Q}')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Add to Order</button>
+    </div></article>`;
 }
-function handleImgLoad(img){ img.closest(".img-wrap")?.classList.add("loaded"); }
-function handleImgError(img){
-  if(img.dataset.fallbackDone) return;
-  img.dataset.fallbackDone = "1";
-  img.src = placeholderSVG(img.dataset.name || "Bahamas", img.dataset.emoji || "🍽️");
-  img.closest(".img-wrap")?.classList.add("loaded");
-}
-
-/* ================= MENU DATA ================= */
-const menuData = {
-  grill:[
-    {name:"Fried Pork",desc:"Well-seasoned deep-fried pork, served fresh and crispy.",price:20000,badge:"Popular",emoji:"🍖",image:"https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=900&q=80"},
-    {name:"Pork Kikalayi",desc:"Sautéed pork with vegetables, spices and matooke or Irish.",price:25000,badge:"Local Favourite",emoji:"🥘",image:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80"},
-    {name:"Pork Skewers",desc:"Tender flame-grilled skewers. Served as 2–3 sticks.",price:15000,badge:"Grill",emoji:"🍢",image:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=900&q=80"},
-    {name:"Pork Chops",desc:"Juicy grilled chops marinated in aromatic herbs.",price:22000,badge:"Grill",emoji:"🥩",image:"https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=80"},
-    {name:"Pork Ribs",desc:"Slow-grilled marinated ribs with a smoky BBQ glaze.",price:25000,badge:"Best Seller",emoji:"🍖",image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"},
-    {name:"Family Grill Platter",desc:"Assorted pork, chicken, skewers and mixed sides.",price:85000,badge:"Sharing",emoji:"🍽️",image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"}
-  ],
-  chicken:[
-    {name:"Quarter Chicken",desc:"Flame-grilled quarter chicken in signature spices.",price:18000,badge:"Chicken",emoji:"🍗",image:"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=900&q=80"},
-    {name:"Half Chicken",desc:"Juicy half chicken, flame grilled to perfection.",price:22000,badge:"Chicken",emoji:"🍗",image:"https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=80"},
-    {name:"Whole Chicken",desc:"Whole flame-grilled chicken, perfect for groups.",price:40000,badge:"Sharing",emoji:"🐓",image:"https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=900&q=80"},
-    {name:"Chicken Kikalayi",desc:"Fried chicken with cabbage, carrots, garlic and matooke.",price:28000,badge:"Local Favourite",emoji:"🥘",image:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=900&q=80"},
-    {name:"Half Chicken Meal",desc:"Half chicken with your choice of two sides.",price:28000,badge:"Combo",emoji:"🍗",image:"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=900&q=85"},
-    {name:"Whole Chicken Feast",desc:"Whole chicken, large chips and salad. Serves 3–4.",price:55000,badge:"Feast",emoji:"🍗",image:"https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=900&q=85"}
-  ],
-  combos:[
-    {name:"Bahamas Pork Combo",desc:"Fried pork with your choice of side and kachumbali.",price:25000,badge:"Pork Combo",emoji:"🍖",image:"https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=900&q=85"},
-    {name:"Pork Kikalayi Combo",desc:"Pork kikalayi served with an extra side.",price:28000,badge:"Local Combo",emoji:"🥘",image:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85"},
-    {name:"Pork Skewer Combo",desc:"Skewers served with chips or wedges.",price:18000,badge:"Skewer Combo",emoji:"🍢",image:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=900&q=85"},
-    {name:"Pork Chops Combo",desc:"Pork chops served with your choice of side.",price:26000,badge:"Chops Combo",emoji:"🥩",image:"https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=85"},
-    {name:"Pork Ribs Combo",desc:"Grilled ribs served with your choice of side.",price:28000,badge:"Ribs Combo",emoji:"🍖",image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"},
-    {name:"Whole Chicken Feast",desc:"Full chicken, large chips and salad. Serves 3–4.",price:55000,badge:"Feast",emoji:"🍗",image:"https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=900&q=80"},
-    {name:"Chicken Kikalayi Combo",desc:"Chicken kikalayi served with an extra side.",price:30000,badge:"Local Combo",emoji:"🥘",image:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=900&q=85"},
-    {name:"Chicken Rolex Combo",desc:"Chicken rolex served with a side of chips.",price:15000,badge:"Rolex Combo",emoji:"🌯",image:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80"},
-    {name:"Pork Rolex Combo",desc:"Pork rolex served with a side of chips.",price:15000,badge:"Rolex Combo",emoji:"🌯",image:"https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=80"},
-    {name:"Pork Local Meal Soup",desc:"Pork soup served with matooke, posho or cassava.",price:15000,badge:"Soup Combo",emoji:"🍲",image:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80"},
-    {name:"Chicken Local Meal Soup",desc:"Chicken soup served with matooke, posho or cassava.",price:15000,badge:"Soup Combo",emoji:"🍲",image:"https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=900&q=80"}
-  ],
-  quick:[
-    {name:"Pork Soup",desc:"Rich traditional pork broth with local spices.",price:12000,badge:"Soup",emoji:"🍲",image:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85"},
-    {name:"Chicken Soup",desc:"Hearty chicken broth, warming and flavourful.",price:12000,badge:"Soup",emoji:"🍲",image:"https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=900&q=85"},
-    {name:"Chicken Rolex",desc:"Egg and rolled chapati with shredded chicken.",price:10000,badge:"Rolex",emoji:"🌯",image:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85"},
-    {name:"Pork Rolex",desc:"Egg and rolled chapati with seasoned fried pork.",price:10000,badge:"Rolex",emoji:"🌯",image:"https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=85"},
-    {name:"Chips / Fries",desc:"Golden crispy chips, freshly fried.",price:8000,badge:"Side",emoji:"🍟",image:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80"},
-    {name:"Fresh Kachumbali",desc:"Tomatoes, onions, herbs and fresh dressing.",price:5000,badge:"Side",emoji:"🥗",image:"https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=900&q=80"}
-  ],
-  drinks:[
-    {name:"Espresso / Black Coffee",desc:"Freshly brewed, bold and aromatic coffee.",price:5000,badge:"Coffee",emoji:"☕",image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"},
-    {name:"Cappuccino / Latte",desc:"Creamy milk coffee made with rich espresso.",price:8000,badge:"Coffee",emoji:"☕",image:"https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=80"},
-    {name:"Fruit Smoothie",desc:"Mango, passion fruit, banana or mixed fruit.",price:10000,badge:"Smoothie",emoji:"🥤",image:"https://images.unsplash.com/photo-1553530666-ba11a90a0868?auto=format&fit=crop&w=900&q=80"},
-    {name:"Natural Fresh Juice",desc:"Mango, passion, pineapple or watermelon.",price:7000,badge:"Fresh Juice",emoji:"🧃",image:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80"},
-    {name:"Local Beer",desc:"Nile Special, Club, Bell, Guinness and more.",price:6000,badge:"From",emoji:"🍺",image:"https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=900&q=80"},
-    {name:"Whisky Shot",desc:"Whisky, bourbon and premium spirits.",price:10000,badge:"From",emoji:"🥃",image:"https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=900&q=80"},
-    {name:"Classic Cocktail",desc:"Refreshing cocktail mixes crafted by our bar team.",price:15000,badge:"Cocktail",emoji:"🍹",image:"https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=900&q=80"},
-    {name:"Soda / Water",desc:"Soft drinks, mineral water and chilled refreshment.",price:3000,badge:"From",emoji:"🥤",image:"https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=900&q=80"},
-    {name:"Milkshake",desc:"Vanilla, chocolate, strawberry and seasonal flavours.",price:12000,badge:"Sweet Treat",emoji:"🥤",image:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=80"}
-  ]
-};
-
-const galleryImages = [
-  {img:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",emoji:"🍽️",name:"Ambience"},
-  {img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",emoji:"🍖",name:"Grill"},
-  {img:"https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=400&q=80",emoji:"🍹",name:"Cocktail"},
-  {img:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",emoji:"🍷",name:"Table"},
-  {img:"https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=400&q=80",emoji:"🥃",name:"Whisky"},
-  {img:"https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=400&q=80",emoji:"🍗",name:"Chicken"}
-];
-
-let cart = JSON.parse(localStorage.getItem("bahamasCartElegant")) || [];
-function money(n){ return "UGX " + Number(n).toLocaleString(); }
-
-function renderMenuSection(gridId, items){
-  const grid = document.getElementById(gridId);
-  grid.innerHTML = items.map(item => `
-    <article class="menu-card reveal">
-      <div class="img-wrap food-image">
-        <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async"
-             data-name="${item.name}" data-emoji="${item.emoji}"
-             onload="handleImgLoad(this)" onerror="handleImgError(this)">
-        <span class="badge">${item.badge}</span>
-      </div>
-      <div class="menu-content">
-        <h3>${item.name}</h3>
-        <div class="desc">${item.desc}</div>
-        <div class="price-row">
-          <span class="price">${money(item.price)}</span>
-          <button class="add-btn" aria-label="Add ${item.name}" onclick='cartAddClick(this, ${JSON.stringify(item)})'>
-            <svg class="icon"><use href="#i-plus"></use></svg>
-          </button>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderGallery(){
-  document.getElementById("galleryGrid").innerHTML = galleryImages.map(g => `
-    <div class="img-wrap reveal">
-      <img src="${g.img}" alt="${g.name}" loading="lazy" data-name="${g.name}" data-emoji="${g.emoji}"
-           onload="handleImgLoad(this)" onerror="handleImgError(this)">
-    </div>
-  `).join("");
-}
-
-function renderAllMenus(){
-  renderMenuSection("grillGrid", menuData.grill);
-  renderMenuSection("chickenGrid", menuData.chicken);
-  renderMenuSection("comboGrid", menuData.combos);
-  renderMenuSection("quickGrid", menuData.quick);
-  renderMenuSection("drinksGrid", menuData.drinks);
-  renderGallery();
-  observeReveal();
-}
-
-function cartAddClick(btn, item){
-  addToCart(item);
-  btn.classList.add("added");
-  btn.innerHTML = '<svg class="icon"><use href="#i-check"></use></svg>';
-  setTimeout(()=>{
-    btn.classList.remove("added");
-    btn.innerHTML = '<svg class="icon"><use href="#i-plus"></use></svg>';
-  }, 900);
-}
-
-function saveCart(){ localStorage.setItem("bahamasCartElegant", JSON.stringify(cart)); }
-
-function addToCart(item){
-  const existing = cart.find(c => c.name === item.name);
-  if(existing){ existing.quantity += 1; }
-  else{ cart.push({name:item.name, price:item.price, image:item.image, emoji:item.emoji, quantity:1}); }
-  saveCart(); renderCart(); showToast(item.name + " added to your order.");
-}
-
-function updateQuantity(index, change){
-  cart[index].quantity += change;
-  if(cart[index].quantity <= 0) cart.splice(index,1);
-  saveCart(); renderCart();
-}
-function removeFromCart(index){ cart.splice(index,1); saveCart(); renderCart(); }
-
-function renderCart(){
-  const cartItems = document.getElementById("cartItems");
-  const cartCount = document.getElementById("cartCount");
-  const cartTotal = document.getElementById("cartTotal");
-  const checkoutBtn = document.getElementById("checkoutBtn");
-
-  const count = cart.reduce((s,i)=>s+i.quantity,0);
-  const total = cart.reduce((s,i)=>s+i.price*i.quantity,0);
-
-  cartCount.textContent = count;
-  cartTotal.textContent = money(total);
-  checkoutBtn.disabled = cart.length === 0;
-
-  if(!cart.length){
-    cartItems.innerHTML = `
-      <div class="empty-cart">
-        <div>
-          <svg class="bahamas-icon" style="width:64px;height:64px;color:#c9a227"><use href="#bahamasIcon"></use></svg>
-          <h3>Your cart is empty</h3>
-          <p>Add food and drinks from the menu to begin your order.</p>
-        </div>
-      </div>`;
-    return;
-  }
-
-  cartItems.innerHTML = cart.map((item,index)=>`
-    <div class="cart-item">
-      <div class="img-wrap">
-        <img src="${item.image}" alt="${item.name}" loading="lazy"
-             data-name="${item.name}" data-emoji="${item.emoji}"
-             onload="handleImgLoad(this)" onerror="handleImgError(this)">
-      </div>
-      <div>
-        <h4>${item.name}</h4>
-        <div class="cart-item-price">${money(item.price)}</div>
-        <div class="qty">
-          <button onclick="updateQuantity(${index},-1)" aria-label="Reduce"><svg class="icon"><use href="#i-minus"></use></svg></button>
-          <span>${item.quantity}</span>
-          <button onclick="updateQuantity(${index},1)" aria-label="Increase"><svg class="icon"><use href="#i-plus"></use></svg></button>
-        </div>
-      </div>
-      <button class="remove-item" onclick="removeFromCart(${index})" aria-label="Remove"><svg class="icon"><use href="#i-trash"></use></svg></button>
-    </div>
-  `).join("");
-}
-
-function toggleCart(){
-  document.getElementById("cartOverlay").classList.toggle("open");
-  document.body.classList.toggle("locked");
-}
-function closeCartFromOverlay(e){ if(e.target.id === "cartOverlay") toggleCart(); }
-function toggleMobileMenu(){ document.getElementById("navLinks").classList.toggle("show"); }
-
-function showToast(message){
-  const toast = document.getElementById("toast");
-  toast.innerHTML = `<svg class="icon"><use href="#i-check"></use></svg> ${message}`;
-  toast.classList.add("show");
-  setTimeout(()=> toast.classList.remove("show"), 2600);
-}
-
-function checkoutWhatsApp(){
-  if(!cart.length) return;
-  const name = document.getElementById("customerName").value.trim() || "Not provided";
-  const phone = document.getElementById("customerPhone").value.trim() || "Not provided";
-  const location = document.getElementById("customerLocation").value.trim() || "Not provided";
-  const total = cart.reduce((s,i)=>s+i.price*i.quantity,0);
-
-  let msg = "*NEW BAHAMAS ONLINE ORDER*%0A%0A";
-  msg += "*Customer:* " + encodeURIComponent(name) + "%0A";
-  msg += "*Phone:* " + encodeURIComponent(phone) + "%0A";
-  msg += "*Delivery Location / Notes:* " + encodeURIComponent(location) + "%0A%0A";
-  msg += "*ORDER DETAILS*%0A";
-  cart.forEach((item,i)=>{
-    msg += `${i+1}. ${encodeURIComponent(item.name)} x${item.quantity} — ${encodeURIComponent(money(item.price*item.quantity))}%0A`;
-  });
-  msg += "%0A*TOTAL: " + encodeURIComponent(money(total)) + "*";
-  msg += "%0A%0APlease confirm availability, delivery fee and payment options. Thank you.";
-
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
-}
-
-/* ================= TABLE RESERVATION ================= */
-function submitReservation(event){
-  event.preventDefault();
-
-  const name = document.getElementById("resName").value.trim();
-  const email = document.getElementById("resEmail").value.trim() || "Not provided";
-  const phone = document.getElementById("resPhone").value.trim();
-  const guests = document.getElementById("resGuests").value;
-  const date = document.getElementById("resDate").value;
-  const time = document.getElementById("resTime").value;
-  const notes = document.getElementById("resNotes").value.trim() || "None";
-
-  if(!name || !phone || !guests || !date || !time){
-    showToast("Please fill all required reservation fields.");
-    return;
-  }
-
-  const formattedDate = new Date(date).toLocaleDateString("en-GB", { day:"2-digit", month:"long", year:"numeric" });
-
-  let msg = "*NEW TABLE RESERVATION - BAHAMAS*%0A%0A";
-  msg += "*Name:* " + encodeURIComponent(name) + "%0A";
-  msg += "*Email:* " + encodeURIComponent(email) + "%0A";
-  msg += "*Phone:* " + encodeURIComponent(phone) + "%0A";
-  msg += "*Number Of Guests:* " + encodeURIComponent(guests) + "%0A";
-  msg += "*Date:* " + encodeURIComponent(formattedDate) + "%0A";
-  msg += "*Time:* " + encodeURIComponent(time) + "%0A";
-  msg += "*Special Request:* " + encodeURIComponent(notes) + "%0A%0A";
-  msg += "Please confirm my table reservation. Thank you.";
-
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
-  showToast("Reservation request sent via WhatsApp!");
-  document.getElementById("reservationForm").reset();
-}
-
-/* ================= REVEAL ON SCROLL ================= */
-function observeReveal(){
-  const revealObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("in-view");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.12});
-  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
-}
-
-document.querySelectorAll(".nav-links a").forEach(link=>{
-  link.addEventListener("click", ()=> document.getElementById("navLinks").classList.remove("show"));
+function renderMenu(cat){document.getElementById('menuGrid').innerHTML=menu[cat].map(dishHTML).join('')}
+renderMenu('grill');
+document.querySelectorAll('.menu-nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.menu-nav button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');renderMenu(b.dataset.cat);
 });
 
-renderAllMenus();
-renderCart();
+/* CART */
+let cart=JSON.parse(localStorage.getItem("bh2"))||[];
+const save=()=>localStorage.setItem("bh2",JSON.stringify(cart));
+function add(n,p,i){const e=cart.find(x=>x.n===n);e?e.q++:cart.push({n,p,i,q:1});save();render();toast(n+" added");}
+function upd(k,d){cart[k].q+=d;if(cart[k].q<1)cart.splice(k,1);save();render()}
+function del(k){cart.splice(k,1);save();render()}
+function render(){
+  const box=document.getElementById('cartList');
+  const items=cart.reduce((a,c)=>a+c.q,0),tot=cart.reduce((a,c)=>a+c.p*c.q,0);
+  document.getElementById('cc').textContent=items;
+  document.getElementById('cTotal').textContent=money(tot);
+  document.getElementById('checkoutBtn').disabled=!cart.length;
+  if(!cart.length){box.innerHTML=`<div class="empty-c"><div><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg><p>Your order is empty.</p></div></div>`;return}
+  box.innerHTML=cart.map((it,k)=>`<div class="citem"><img src="${it.i}"><div><h5>${it.n}</h5><div class="cp">${money(it.p)}</div><div class="qty"><button onclick="upd(${k},-1)">−</button><span>${it.q}</span><button onclick="upd(${k},1)">+</button></div></div><button class="rm" onclick="del(${k})">×</button></div>`).join('');
+}
+function toggleCart(){document.getElementById('cartOv').classList.toggle('open')}
+function toast(m){const t=document.getElementById('toast');t.innerHTML=`<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>${m}`;t.classList.add('show');clearTimeout(t._);t._=setTimeout(()=>t.classList.remove('show'),2100)}
+function checkout(){
+  if(!cart.length)return;
+  const nm=document.getElementById('oName').value.trim()||"Customer",
+        ph=document.getElementById('oPhone').value.trim(),
+        lc=document.getElementById('oLoc').value.trim()||"Not specified",
+        tot=cart.reduce((a,c)=>a+c.p*c.q,0);
+  let t=`*NEW ORDER — BAHAMAS*%0A%0A*Name:* ${encodeURIComponent(nm)}%0A*Phone:* ${encodeURIComponent(ph)}%0A*Location:* ${encodeURIComponent(lc)}%0A%0A*ITEMS*%0A`;
+  cart.forEach((it,i)=>t+=`${i+1}. ${encodeURIComponent(it.n)} ×${it.q} — ${encodeURIComponent(money(it.p*it.q))}%0A`);
+  t+=`%0A*TOTAL: ${encodeURIComponent(money(tot))}*%0A%0APlease confirm delivery fee. Thank you!`;
+  window.open(`https://wa.me/${WA}?text=${t}`,'_blank');
+}
+
+/* RESERVATION -> WhatsApp */
+document.getElementById('resForm').onsubmit=e=>{
+  e.preventDefault();
+  const g=id=>document.getElementById(id).value;
+  const t=`*TABLE RESERVATION — BAHAMAS*%0A%0A*Name:* ${encodeURIComponent(g('rName'))}%0A*Email:* ${encodeURIComponent(g('rEmail')||'—')}%0A*Phone:* ${encodeURIComponent(g('rPhone'))}%0A*Date:* ${encodeURIComponent(g('rDate'))}%0A*Time:* ${encodeURIComponent(g('rTime'))}%0A*Guests:* ${encodeURIComponent(g('rPax'))}%0A%0APlease confirm my reservation. Thank you!`;
+  window.open(`https://wa.me/${WA}?text=${t}`,'_blank');
+  toast("Reservation sent!");
+};
+
+/* misc */
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>40));
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
+document.getElementById('yr').textContent=new Date().getFullYear();
+render();
 </script>
 </body>
 </html>
