@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#062b40">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#062b40" />
   <title>Bahamas Cafe Restaurant Lounge | Bukoto Kampala</title>
-  <meta name="description" content="Bahamas Cafe Restaurant Lounge in Bukoto, Kampala. Order grilled pork, chicken, rolex, soups, coffee, smoothies, beers and whisky via WhatsApp.">
+  <meta name="description" content="Bahamas Cafe Restaurant Lounge in Bukoto, Kampala. Order grill, chicken, quick meals, coffee, smoothies, beers, whisky and more via WhatsApp." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:opsz,wght@10..72,400;10..72,500;10..72,600;10..72,700;10..72,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /*
-      -------------------------------------------------------
-      FONT SETUP
-      Beyonest and Nexa are usually licensed font files.
-
-      To use exact brand fonts in a single HTML file:
-      1. Convert licensed .woff2 fonts to Base64.
-      2. Replace the src values below with:
-      src: url("data:font/woff2;base64,PASTE_DATA_HERE") format("woff2");
-      -------------------------------------------------------
+      BEYONEST + NEXA:
+      If you have licensed font files, replace local() with Base64 @font-face sources:
+      src: url("data:font/woff2;base64,PASTE_FONT_DATA") format("woff2");
     */
-
     @font-face {
       font-family: "Beyonest";
       src: local("Beyonest"), local("Beyonest Script");
@@ -38,19 +31,18 @@
     }
 
     :root {
-      --deep-ocean: #031d2d;
+      --deep: #031d2d;
       --ocean: #062b40;
-      --ocean-light: #0a405b;
+      --ocean-2: #08384e;
       --lagoon: #087d8a;
       --teal: #0fa3a7;
       --aqua: #53d5d0;
       --seafoam: #b5f1e8;
-      --sand: #f5eee0;
-      --white: #ffffff;
+      --sand: #f7efe1;
       --coral: #f1764b;
       --gold: #f6ca73;
-      --ink: #10212a;
       --muted: #a9c3cc;
+      --white: #ffffff;
       --whatsapp: #25d366;
 
       --font-body: "DM Sans", Arial, sans-serif;
@@ -70,13 +62,13 @@
     }
 
     body {
-      background: var(--deep-ocean);
+      background: var(--deep);
       color: var(--white);
       font-family: var(--font-body);
       overflow-x: hidden;
     }
 
-    body.cart-active {
+    body.cart-open {
       overflow: hidden;
     }
 
@@ -91,8 +83,8 @@
     }
 
     img {
-      display: block;
       width: 100%;
+      display: block;
     }
 
     .container {
@@ -101,8 +93,22 @@
     }
 
     /* =========================
-       BRAND LOGO
+       SUPPLIED ICON STYLE
        ========================= */
+
+    .bahamas-icon {
+      width: 58px;
+      height: 58px;
+      flex: none;
+      color: #fff;
+      display: block;
+    }
+
+    .bahamas-icon.big {
+      width: 86px;
+      height: 86px;
+      margin-inline: auto;
+    }
 
     .logo {
       display: flex;
@@ -111,46 +117,10 @@
       min-width: max-content;
     }
 
-    .logo-symbol {
-      width: 51px;
-      height: 51px;
-      position: relative;
-      border: 2px solid var(--white);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-
-    .logo-symbol::before,
-    .logo-symbol::after {
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border: 2px solid var(--white);
-      transform: rotate(45deg);
-    }
-
-    .logo-symbol::after {
-      width: 36px;
-      height: 36px;
-      border-color: rgba(255,255,255,.78);
-    }
-
-    .logo-mark {
-      position: relative;
-      z-index: 2;
-      font-family: var(--font-heading);
-      font-size: 24px;
-      color: var(--white);
-      line-height: 1;
-    }
-
     .logo-divider {
       width: 1px;
-      height: 43px;
-      background: rgba(255,255,255,.7);
+      height: 45px;
+      background: rgba(255,255,255,.72);
     }
 
     .logo-word {
@@ -158,17 +128,17 @@
       font-size: 39px;
       line-height: .75;
       letter-spacing: 1px;
-      color: var(--white);
+      color: white;
     }
 
     .logo-sub {
       display: block;
-      margin-top: 7px;
+      margin-top: 8px;
       font-family: var(--font-heading);
       font-size: 15px;
       font-weight: 500;
       letter-spacing: 1.2px;
-      color: var(--white);
+      color: white;
     }
 
     /* =========================
@@ -182,17 +152,17 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(3,29,45,.95);
+      background: rgba(3, 29, 45, .95);
       border-bottom: 1px solid rgba(181,241,232,.16);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(14px);
     }
 
     .navbar {
-      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
+      width: 100%;
     }
 
     .nav-links {
@@ -205,10 +175,10 @@
     .nav-links a {
       font-family: var(--font-heading);
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 1px;
       color: var(--seafoam);
-      transition: .2s ease;
+      transition: .2s;
     }
 
     .nav-links a:hover {
@@ -221,62 +191,63 @@
       gap: 10px;
     }
 
-    .cart-button,
-    .mobile-toggle {
+    .cart-btn,
+    .mobile-btn {
       min-width: 44px;
       height: 44px;
-      border: 1px solid rgba(181,241,232,.3);
-      border-radius: 9px;
+      border: 1px solid rgba(181,241,232,.28);
+      border-radius: 10px;
       background: rgba(255,255,255,.06);
-      color: var(--white);
+      color: white;
       position: relative;
       font-size: 17px;
+      transition: .2s;
     }
 
-    .cart-button:hover,
-    .mobile-toggle:hover {
-      border-color: var(--aqua);
+    .cart-btn:hover,
+    .mobile-btn:hover {
       color: var(--aqua);
+      border-color: var(--aqua);
     }
 
     .cart-count {
       position: absolute;
       top: -7px;
       right: -7px;
-      width: 21px;
-      height: 21px;
+      width: 22px;
+      height: 22px;
       display: grid;
       place-items: center;
       border-radius: 50%;
       background: var(--coral);
-      color: var(--white);
+      color: white;
       font-family: var(--font-number);
       font-size: 10px;
       font-weight: 900;
     }
 
-    .order-now {
+    .whatsapp-nav {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       min-height: 44px;
-      padding: 0 15px;
-      border-radius: 9px;
+      padding: 0 16px;
+      border-radius: 10px;
       background: var(--teal);
-      color: var(--white);
+      color: white;
       font-family: var(--font-heading);
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .8px;
       transition: .2s;
     }
 
-    .order-now:hover {
+    .whatsapp-nav:hover {
       background: var(--aqua);
-      color: var(--deep-ocean);
+      color: var(--deep);
     }
 
-    .mobile-toggle {
+    .mobile-btn {
       display: none;
     }
 
@@ -292,9 +263,8 @@
       position: relative;
       isolation: isolate;
       background:
-        linear-gradient(90deg, rgba(3,29,45,.94), rgba(3,29,45,.50), rgba(3,29,45,.92)),
-        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=90")
-        center/cover;
+        linear-gradient(90deg, rgba(3,29,45,.95), rgba(3,29,45,.48), rgba(3,29,45,.92)),
+        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=90") center/cover;
     }
 
     .hero::before {
@@ -304,21 +274,21 @@
       z-index: -1;
       background:
         radial-gradient(circle at 80% 20%, rgba(83,213,208,.22), transparent 25%),
-        radial-gradient(circle at 18% 78%, rgba(15,163,167,.18), transparent 29%);
+        radial-gradient(circle at 18% 78%, rgba(241,118,75,.14), transparent 28%);
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      bottom: 0;
       inset-inline: 0;
+      bottom: 0;
       height: 180px;
       z-index: -1;
-      background: linear-gradient(transparent, var(--deep-ocean));
+      background: linear-gradient(transparent, var(--deep));
     }
 
     .hero-content {
-      padding: 90px 0;
+      padding: 95px 0;
     }
 
     .hero-tag {
@@ -332,12 +302,18 @@
       font-family: var(--font-heading);
       font-size: 17px;
       letter-spacing: 1.4px;
+      background: rgba(3,29,45,.35);
+    }
+
+    .hero .bahamas-icon.big {
+      margin-top: 24px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,.35));
     }
 
     .hero-brand {
-      margin-top: 25px;
       font-family: var(--font-brand);
-      font-size: clamp(56px, 8vw, 96px);
+      font-size: clamp(58px, 8vw, 96px);
       line-height: .65;
       color: var(--aqua);
     }
@@ -345,15 +321,15 @@
     .hero h1 {
       font-family: var(--font-heading);
       font-size: clamp(84px, 16vw, 190px);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 6px;
-      line-height: .92;
+      line-height: .9;
       text-transform: uppercase;
     }
 
     .hero-description {
       max-width: 690px;
-      margin: 23px auto 0;
+      margin: 22px auto 0;
       color: #defaf5;
       font-size: 17px;
       line-height: 1.7;
@@ -372,10 +348,10 @@
       color: white;
       font-family: var(--font-number);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -394,9 +370,9 @@
       border-radius: 8px;
       font-family: var(--font-heading);
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .8px;
-      transition: .2s ease;
+      transition: .2s;
     }
 
     .btn-teal {
@@ -407,18 +383,18 @@
     .btn-teal:hover {
       transform: translateY(-2px);
       background: var(--aqua);
-      color: var(--deep-ocean);
+      color: var(--deep);
     }
 
     .btn-outline {
-      border: 1px solid rgba(255,255,255,.8);
+      border: 1px solid rgba(255,255,255,.82);
       background: rgba(255,255,255,.07);
       color: white;
     }
 
     .btn-outline:hover {
-      background: var(--white);
-      color: var(--deep-ocean);
+      background: white;
+      color: var(--deep);
     }
 
     .btn-whatsapp {
@@ -432,14 +408,14 @@
     }
 
     /* =========================
-       MENU SECTIONS
+       SECTIONS
        ========================= */
 
     section {
       padding: 84px 0;
     }
 
-    .section-dark {
+    .section-alt {
       background:
         radial-gradient(circle at 10% 15%, rgba(15,163,167,.14), transparent 25%),
         var(--ocean);
@@ -455,27 +431,27 @@
     .section-heading {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 16px;
       margin-bottom: 33px;
     }
 
-    .heading-symbol {
-      flex: none;
-      width: 56px;
-      height: 56px;
+    .heading-icon {
+      width: 58px;
+      height: 58px;
       display: grid;
       place-items: center;
+      flex: none;
       border: 1px solid rgba(181,241,232,.35);
-      border-radius: 13px;
+      border-radius: 14px;
       background: rgba(15,163,167,.16);
       color: var(--aqua);
-      font-size: 23px;
+      font-size: 25px;
     }
 
     .section-heading h2 {
       font-family: var(--font-heading);
       font-size: clamp(42px, 5vw, 62px);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
       line-height: .85;
       text-transform: uppercase;
@@ -504,7 +480,7 @@
       background: rgba(255,255,255,.065);
       border: 1px solid rgba(181,241,232,.14);
       border-radius: 14px;
-      transition: .25s ease;
+      transition: .25s;
     }
 
     .menu-card:hover {
@@ -522,7 +498,7 @@
     .food-image img {
       height: 100%;
       object-fit: cover;
-      transition: transform .45s ease;
+      transition: transform .45s;
     }
 
     .menu-card:hover .food-image img {
@@ -531,8 +507,8 @@
 
     .badge {
       position: absolute;
-      left: 12px;
       top: 12px;
+      left: 12px;
       padding: 6px 10px;
       border-radius: 30px;
       background: rgba(3,29,45,.83);
@@ -545,8 +521,8 @@
 
     .menu-content {
       display: flex;
-      flex: 1;
       flex-direction: column;
+      flex: 1;
       padding: 18px;
     }
 
@@ -580,26 +556,27 @@
       letter-spacing: .2px;
     }
 
-    .add-button {
+    .add-btn {
       width: 40px;
       height: 40px;
       border: 0;
       border-radius: 9px;
       background: var(--teal);
       color: white;
-      font-size: 16px;
+      font-size: 20px;
+      font-weight: 800;
       transition: .2s;
     }
 
-    .add-button:hover {
+    .add-btn:hover {
       background: var(--aqua);
-      color: var(--deep-ocean);
+      color: var(--deep);
     }
 
     .special-banner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 22px;
       margin-top: 30px;
       padding: 28px;
@@ -612,6 +589,7 @@
       font-size: 39px;
       line-height: .9;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .special-banner p {
@@ -637,9 +615,9 @@
       border-radius: 12px;
     }
 
-    .info-icon {
+    .info-card .info-symbol {
       color: var(--aqua);
-      font-size: 23px;
+      font-size: 25px;
     }
 
     .info-card h3 {
@@ -647,6 +625,7 @@
       font-family: var(--font-heading);
       font-size: 28px;
       letter-spacing: .5px;
+      text-transform: uppercase;
     }
 
     .info-card p,
@@ -669,10 +648,11 @@
       font-size: 12px;
     }
 
-    footer .footer-logo {
+    .footer-logo {
       justify-content: center;
       margin-bottom: 20px;
-      transform: scale(.84);
+      transform: scale(.86);
+      transform-origin: center;
     }
 
     footer strong {
@@ -691,7 +671,7 @@
       visibility: hidden;
       opacity: 0;
       background: rgba(0,11,18,.72);
-      transition: .3s ease;
+      transition: .3s;
     }
 
     .cart-overlay.open {
@@ -710,7 +690,7 @@
       background: #062637;
       box-shadow: -20px 0 45px rgba(0,0,0,.4);
       transform: translateX(100%);
-      transition: transform .32s ease;
+      transition: transform .32s;
     }
 
     .cart-overlay.open .cart-panel {
@@ -719,8 +699,8 @@
 
     .cart-header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 21px;
       border-bottom: 1px solid rgba(181,241,232,.15);
     }
@@ -729,13 +709,14 @@
       font-family: var(--font-heading);
       font-size: 35px;
       letter-spacing: .8px;
+      text-transform: uppercase;
     }
 
     .close-cart {
       border: 0;
       background: transparent;
       color: white;
-      font-size: 25px;
+      font-size: 28px;
     }
 
     .cart-items {
@@ -748,19 +729,15 @@
       height: 100%;
       display: grid;
       place-items: center;
-      color: var(--muted);
       text-align: center;
-    }
-
-    .empty-cart .empty-icon {
-      margin-bottom: 13px;
-      color: var(--aqua);
-      font-size: 47px;
+      color: var(--muted);
     }
 
     .empty-cart h3 {
+      margin-top: 15px;
       font-family: var(--font-heading);
       font-size: 30px;
+      text-transform: uppercase;
     }
 
     .cart-item {
@@ -775,8 +752,8 @@
     .cart-item img {
       width: 60px;
       height: 60px;
-      border-radius: 8px;
       object-fit: cover;
+      border-radius: 8px;
     }
 
     .cart-item h4 {
@@ -790,17 +767,17 @@
       color: var(--gold);
       font-family: var(--font-number);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .quantity-control {
+    .qty {
       display: flex;
       align-items: center;
       gap: 7px;
       margin-top: 8px;
     }
 
-    .quantity-control button {
+    .qty button {
       width: 25px;
       height: 25px;
       border: 0;
@@ -809,26 +786,27 @@
       color: white;
     }
 
-    .quantity-control span {
+    .qty span {
       min-width: 14px;
       text-align: center;
       font-family: var(--font-number);
       font-size: 12px;
+      font-weight: 900;
     }
 
     .remove-item {
       align-self: start;
-      padding: 5px;
       border: 0;
       background: transparent;
       color: #87a4ad;
+      padding: 5px;
     }
 
     .remove-item:hover {
       color: var(--coral);
     }
 
-    .cart-checkout {
+    .checkout {
       padding: 20px 21px 23px;
       border-top: 1px solid rgba(181,241,232,.15);
       background: #041d2b;
@@ -847,7 +825,7 @@
       color: var(--gold);
     }
 
-    .customer-input {
+    .field {
       width: 100%;
       margin-bottom: 9px;
       padding: 11px 12px;
@@ -860,16 +838,16 @@
       font-size: 13px;
     }
 
-    .customer-input:focus {
+    .field:focus {
       border-color: var(--aqua);
     }
 
-    textarea.customer-input {
+    textarea.field {
       min-height: 60px;
       resize: vertical;
     }
 
-    .checkout-button {
+    .checkout-btn {
       width: 100%;
       min-height: 48px;
       border: 0;
@@ -878,20 +856,20 @@
       color: white;
       font-family: var(--font-heading);
       font-size: 19px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .7px;
     }
 
-    .checkout-button:hover {
+    .checkout-btn:hover {
       background: #17ad51;
     }
 
-    .checkout-button:disabled {
+    .checkout-btn:disabled {
       cursor: not-allowed;
       opacity: .45;
     }
 
-    .checkout-note {
+    .note {
       margin-top: 10px;
       color: #83a6af;
       text-align: center;
@@ -906,22 +884,18 @@
       padding: 12px 17px;
       border-radius: 8px;
       background: var(--seafoam);
-      color: var(--deep-ocean);
+      color: var(--deep);
       font-family: var(--font-number);
       font-size: 12px;
       font-weight: 900;
       box-shadow: 0 11px 28px rgba(0,0,0,.3);
       transform: translate(-50%, 120px);
-      transition: .3s ease;
+      transition: .3s;
     }
 
     .toast.show {
       transform: translate(-50%, 0);
     }
-
-    /* =========================
-       RESPONSIVE
-       ========================= */
 
     @media (max-width: 950px) {
       .menu-grid {
@@ -942,20 +916,37 @@
         height: 69px;
       }
 
-      .mobile-toggle {
+      .bahamas-icon {
+        width: 44px;
+        height: 44px;
+      }
+
+      .logo-divider {
+        height: 36px;
+      }
+
+      .logo-word {
+        font-size: 30px;
+      }
+
+      .logo-sub {
+        font-size: 12px;
+      }
+
+      .mobile-btn {
         display: block;
       }
 
-      .order-now {
+      .whatsapp-nav {
         display: none;
       }
 
       .nav-links {
+        display: none;
         position: absolute;
         top: 69px;
         left: 0;
         right: 0;
-        display: none;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -988,24 +979,6 @@
     }
 
     @media (max-width: 540px) {
-      .logo-symbol {
-        width: 40px;
-        height: 40px;
-      }
-
-      .logo-divider {
-        height: 35px;
-      }
-
-      .logo-word {
-        font-size: 30px;
-      }
-
-      .logo-sub {
-        margin-top: 6px;
-        font-size: 12px;
-      }
-
       .menu-grid,
       .info-grid {
         grid-template-columns: 1fr;
@@ -1036,11 +1009,47 @@
 
 <body>
 
+  <!-- Reusable Bahamas icon based on supplied artwork -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="bahamasIcon" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="50" cy="50" r="47"/>
+        <circle cx="50" cy="50" r="44.6"/>
+        <circle cx="50" cy="50" r="42.2"/>
+
+        <!-- Four rounded loop forms -->
+        <path d="M50 31 C42 20 33 14 25 16 C17 18 12 26 14 35 C16 44 27 51 36 55"/>
+        <path d="M50 31 C58 20 67 14 75 16 C83 18 88 26 86 35 C84 44 73 51 64 55"/>
+        <path d="M50 69 C42 80 33 86 25 84 C17 82 12 74 14 65 C16 56 27 49 36 45"/>
+        <path d="M50 69 C58 80 67 86 75 84 C83 82 88 74 86 65 C84 56 73 49 64 45"/>
+
+        <path d="M50 34 C40 22 31 18 24 20 C18 22 15 28 16 34 C18 42 28 48 38 53"/>
+        <path d="M50 34 C60 22 69 18 76 20 C82 22 85 28 84 34 C82 42 72 48 62 53"/>
+        <path d="M50 66 C40 78 31 82 24 80 C18 78 15 72 16 66 C18 58 28 52 38 47"/>
+        <path d="M50 66 C60 78 69 82 76 80 C82 78 85 72 84 66 C82 58 72 52 62 47"/>
+
+        <!-- Main diamond lattice -->
+        <path d="M50 18 L82 50 L50 82 L18 50 Z"/>
+        <path d="M50 23 L77 50 L50 77 L23 50 Z"/>
+        <path d="M50 28 L72 50 L50 72 L28 50 Z"/>
+
+        <!-- Small diamonds -->
+        <path d="M50 12 L64 26 L50 40 L36 26 Z"/>
+        <path d="M50 17 L59 26 L50 35 L41 26 Z"/>
+        <path d="M50 60 L64 74 L50 88 L36 74 Z"/>
+        <path d="M50 65 L59 74 L50 83 L41 74 Z"/>
+        <path d="M12 50 L26 36 L40 50 L26 64 Z"/>
+        <path d="M17 50 L26 41 L35 50 L26 59 Z"/>
+        <path d="M60 50 L74 36 L88 50 L74 64 Z"/>
+        <path d="M65 50 L74 41 L83 50 L74 59 Z"/>
+      </g>
+    </symbol>
+  </svg>
+
   <header>
     <div class="container navbar">
-
-      <a href="#" class="logo" aria-label="Bahamas Cafe Restaurant Lounge Home">
-        <div class="logo-symbol"><span class="logo-mark">B</span></div>
+      <a href="#" class="logo" aria-label="Bahamas Cafe Restaurant Lounge">
+        <svg class="bahamas-icon"><use href="#bahamasIcon"></use></svg>
         <div class="logo-divider"></div>
         <div>
           <div class="logo-word">Bahamas</div>
@@ -1053,467 +1062,148 @@
         <li><a href="#chicken">Chicken</a></li>
         <li><a href="#quick">Quick Meals</a></li>
         <li><a href="#drinks">Drinks</a></li>
-        <li><a href="#visit">Visit Us</a></li>
+        <li><a href="#visit">Visit</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button class="cart-button" onclick="toggleCart()" aria-label="Open order cart">
+        <button class="cart-btn" onclick="toggleCart()" aria-label="Open cart">
           🛒
           <span class="cart-count" id="cartCount">0</span>
         </button>
-
-        <a class="order-now" href="https://wa.me/256762831177" target="_blank">
-          ☎ WhatsApp Order
-        </a>
-
-        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
-          ☰
-        </button>
+        <a class="whatsapp-nav" href="https://wa.me/256762831177" target="_blank">WhatsApp Order</a>
+        <button class="mobile-btn" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
       </div>
     </div>
   </header>
 
   <main>
-
     <section class="hero">
       <div class="container hero-content">
-        <div class="hero-tag">⌖ OPPOSITE BUKOTO HEIGHTS APARTMENTS · KAMPALA</div>
+        <div class="hero-tag">OPPOSITE BUKOTO HEIGHTS APARTMENTS · KAMPALA</div>
+
+        <svg class="bahamas-icon big"><use href="#bahamasIcon"></use></svg>
+
         <div class="hero-brand">Bahamas</div>
-        <h1>MENU</h1>
+        <h1>Menu</h1>
 
         <p class="hero-description">
-          Grilled pork, flame-roasted chicken, local favourites, fresh coffee,
-          chilled smoothies, beers and premium spirits in the heart of Bukoto.
+          Ocean-inspired lounge dining with grilled pork, flame-roasted chicken,
+          local favourites, coffee, smoothies, beers, whisky and cocktails.
         </p>
 
         <div class="location-pill">
-          📍 Bukoto, Kampala (UG) &nbsp; | &nbsp; +256 762 831 177
+          📍 Bukoto, Kampala (UG) | +256 762 831 177
         </div>
 
-        <div class="hero-buttons">
-          <a href="#grill" class="btn btn-teal">Explore Menu ↓</a>
-          <button onclick="toggleCart()" class="btn btn-outline">🛒 Start Order</button>
+        <div class="hero-actions">
+          <a class="btn btn-teal" href="#grill">Explore Menu</a>
+          <button class="btn btn-outline" onclick="toggleCart()">Start Order</button>
         </div>
       </div>
     </section>
 
-    <!-- GRILL -->
     <section id="grill">
       <div class="container">
         <div class="section-heading">
-          <div class="heading-symbol">♨</div>
+          <div class="heading-icon">♨</div>
           <div>
             <h2><span>Grill</span> Menu</h2>
-            <p>Freshly grilled favourites, seasoned and served hot.</p>
+            <p>Freshly grilled pork favourites, seasoned and served hot.</p>
           </div>
         </div>
-
-        <div class="menu-grid">
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=85" alt="Fried pork">
-              <span class="badge">Popular</span>
-            </div>
-            <div class="menu-content">
-              <h3>Fried Pork</h3>
-              <p>Well-seasoned deep-fried pork portions, served fresh and crispy.</p>
-              <div class="price-row">
-                <span class="price">UGX 20,000</span>
-                <button class="add-button" onclick="addToCart('Fried Pork',20000,'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" alt="Pork Kikalayi">
-              <span class="badge">Local Favourite</span>
-            </div>
-            <div class="menu-content">
-              <h3>Pork Kikalayi</h3>
-              <p>Sautéed pork with vegetables, spices and matooke or Irish potatoes.</p>
-              <div class="price-row">
-                <span class="price">UGX 25,000</span>
-                <button class="add-button" onclick="addToCart('Pork Kikalayi',25000,'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=85" alt="Pork skewers">
-            </div>
-            <div class="menu-content">
-              <h3>Pork Skewers</h3>
-              <p>Tender flame-grilled pork skewers. Served as 2–3 delicious sticks.</p>
-              <div class="price-row">
-                <span class="price">UGX 15,000</span>
-                <button class="add-button" onclick="addToCart('Pork Skewers',15000,'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=800&q=85" alt="Pork chops">
-            </div>
-            <div class="menu-content">
-              <h3>Pork Chops</h3>
-              <p>Juicy grilled pork chops marinated in aromatic herbs and spices.</p>
-              <div class="price-row">
-                <span class="price">UGX 22,000</span>
-                <button class="add-button" onclick="addToCart('Pork Chops',22000,'https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Pork ribs">
-              <span class="badge">Best Seller</span>
-            </div>
-            <div class="menu-content">
-              <h3>Pork Ribs</h3>
-              <p>Slow-grilled marinated pork ribs coated in a smoky BBQ glaze.</p>
-              <div class="price-row">
-                <span class="price">UGX 25,000</span>
-                <button class="add-button" onclick="addToCart('Pork Ribs',25000,'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=85" alt="Family grill platter">
-              <span class="badge">Sharing</span>
-            </div>
-            <div class="menu-content">
-              <h3>Family Grill Platter</h3>
-              <p>Assorted pork, chicken, skewers and mixed sides for sharing.</p>
-              <div class="price-row">
-                <span class="price">UGX 85,000</span>
-                <button class="add-button" onclick="addToCart('Family Grill Platter',85000,'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="menu-grid" id="grillGrid"></div>
       </div>
     </section>
 
-    <!-- CHICKEN -->
-    <section class="section-dark" id="chicken">
+    <section class="section-alt" id="chicken">
       <div class="container">
         <div class="section-heading">
-          <div class="heading-symbol">🍗</div>
+          <div class="heading-icon">🍗</div>
           <div>
             <h2><span>Chicken</span> Menu</h2>
-            <p>Flame grilled chicken, hearty meals and sharing feasts.</p>
+            <p>Flame-grilled chicken, kikalayi and filling combo meals.</p>
           </div>
         </div>
-
-        <div class="menu-grid">
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=85" alt="Quarter chicken"></div>
-            <div class="menu-content">
-              <h3>Quarter Chicken</h3>
-              <p>Flame-grilled quarter chicken, seasoned in Bahamas signature spices.</p>
-              <div class="price-row"><span class="price">UGX 18,000</span><button class="add-button" onclick="addToCart('Quarter Chicken',18000,'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=85" alt="Half chicken"></div>
-            <div class="menu-content">
-              <h3>Half Chicken</h3>
-              <p>Juicy half chicken, flame grilled for a smoky rich finish.</p>
-              <div class="price-row"><span class="price">UGX 22,000</span><button class="add-button" onclick="addToCart('Half Chicken',22000,'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=85" alt="Whole chicken"></div>
-            <div class="menu-content">
-              <h3>Whole Chicken</h3>
-              <p>Whole flame-grilled chicken, perfect for a group meal.</p>
-              <div class="price-row"><span class="price">UGX 40,000</span><button class="add-button" onclick="addToCart('Whole Chicken',40000,'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=85" alt="Chicken Kikalayi"></div>
-            <div class="menu-content">
-              <h3>Chicken Kikalayi</h3>
-              <p>Fried chicken with cabbage, carrots, garlic and matooke or Irish.</p>
-              <div class="price-row"><span class="price">UGX 28,000</span><button class="add-button" onclick="addToCart('Chicken Kikalayi',28000,'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=85" alt="Half chicken meal"></div>
-            <div class="menu-content">
-              <h3>Half Chicken Meal</h3>
-              <p>Half chicken with your choice of two delicious sides.</p>
-              <div class="price-row"><span class="price">UGX 28,000</span><button class="add-button" onclick="addToCart('Half Chicken Meal',28000,'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=800&q=85" alt="Whole chicken feast"></div>
-            <div class="menu-content">
-              <h3>Whole Chicken Feast</h3>
-              <p>Whole chicken, large chips and salad. Serves 3–4 people.</p>
-              <div class="price-row"><span class="price">UGX 55,000</span><button class="add-button" onclick="addToCart('Whole Chicken Feast',55000,'https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-        </div>
+        <div class="menu-grid" id="chickenGrid"></div>
       </div>
     </section>
 
-    <!-- QUICK MEALS -->
     <section id="quick">
       <div class="container">
         <div class="section-heading">
-          <div class="heading-symbol">🍲</div>
+          <div class="heading-icon">🍲</div>
           <div>
             <h2><span>Quick Meals</span> & Soups</h2>
             <p>Local soups, rolex and easy favourites served fast.</p>
           </div>
         </div>
-
-        <div class="menu-grid">
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=85" alt="Pork soup"></div>
-            <div class="menu-content">
-              <h3>Pork Soup</h3>
-              <p>Rich traditional pork broth prepared with local spices.</p>
-              <div class="price-row"><span class="price">UGX 12,000</span><button class="add-button" onclick="addToCart('Pork Soup',12000,'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=800&q=85" alt="Chicken soup"></div>
-            <div class="menu-content">
-              <h3>Chicken Soup</h3>
-              <p>Hearty chicken broth, warming, fresh and full of flavour.</p>
-              <div class="price-row"><span class="price">UGX 12,000</span><button class="add-button" onclick="addToCart('Chicken Soup',12000,'https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=85" alt="Chicken rolex"></div>
-            <div class="menu-content">
-              <h3>Chicken Rolex</h3>
-              <p>Egg and rolled chapati filled with shredded grilled chicken.</p>
-              <div class="price-row"><span class="price">UGX 10,000</span><button class="add-button" onclick="addToCart('Chicken Rolex',10000,'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=800&q=85" alt="Pork rolex"></div>
-            <div class="menu-content">
-              <h3>Pork Rolex</h3>
-              <p>Egg and rolled chapati filled with seasoned fried pork.</p>
-              <div class="price-row"><span class="price">UGX 10,000</span><button class="add-button" onclick="addToCart('Pork Rolex',10000,'https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85" alt="French fries"></div>
-            <div class="menu-content">
-              <h3>Chips / Fries</h3>
-              <p>Golden crispy chips, freshly fried and served hot.</p>
-              <div class="price-row"><span class="price">UGX 8,000</span><button class="add-button" onclick="addToCart('Chips / Fries',8000,'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=85" alt="Kachumbali salad"></div>
-            <div class="menu-content">
-              <h3>Fresh Kachumbali</h3>
-              <p>Tomatoes, onions, herbs and a refreshing local dressing.</p>
-              <div class="price-row"><span class="price">UGX 5,000</span><button class="add-button" onclick="addToCart('Fresh Kachumbali',5000,'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-        </div>
+        <div class="menu-grid" id="quickGrid"></div>
       </div>
     </section>
 
-    <!-- DRINKS -->
     <section class="section-drinks" id="drinks">
       <div class="container">
         <div class="section-heading">
-          <div class="heading-symbol">🍸</div>
+          <div class="heading-icon">🍸</div>
           <div>
             <h2><span>Drinks</span> Menu</h2>
-            <p>Coffee, fresh smoothies, ice-cold beer, whisky and more.</p>
+            <p>Coffee, smoothies, beers, whisky, cocktails and cold drinks.</p>
           </div>
         </div>
-
-        <div class="menu-grid">
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85" alt="Coffee">
-              <span class="badge">Coffee</span>
-            </div>
-            <div class="menu-content">
-              <h3>Espresso / Black Coffee</h3>
-              <p>Freshly brewed, bold and aromatic coffee.</p>
-              <div class="price-row"><span class="price">UGX 5,000</span><button class="add-button" onclick="addToCart('Espresso / Black Coffee',5000,'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=85" alt="Cappuccino">
-              <span class="badge">Coffee</span>
-            </div>
-            <div class="menu-content">
-              <h3>Cappuccino / Latte</h3>
-              <p>Creamy milk coffee made with rich espresso.</p>
-              <div class="price-row"><span class="price">UGX 8,000</span><button class="add-button" onclick="addToCart('Cappuccino / Latte',8000,'https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1553530666-ba11a90a0868?auto=format&fit=crop&w=800&q=85" alt="Fruit smoothie">
-              <span class="badge">Fresh</span>
-            </div>
-            <div class="menu-content">
-              <h3>Fruit Smoothie</h3>
-              <p>Mango, passion fruit, banana, strawberry or mixed fruit.</p>
-              <div class="price-row"><span class="price">UGX 10,000</span><button class="add-button" onclick="addToCart('Fruit Smoothie',10000,'https://images.unsplash.com/photo-1553530666-ba11a90a0868?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85" alt="Fresh juice">
-              <span class="badge">Fresh Juice</span>
-            </div>
-            <div class="menu-content">
-              <h3>Natural Fresh Juice</h3>
-              <p>Mango, passion, pineapple, watermelon or mixed juice.</p>
-              <div class="price-row"><span class="price">UGX 7,000</span><button class="add-button" onclick="addToCart('Natural Fresh Juice',7000,'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=85" alt="Beer">
-              <span class="badge">Beer</span>
-            </div>
-            <div class="menu-content">
-              <h3>Local Beer</h3>
-              <p>Nile Special, Club, Bell, Guinness and other available choices.</p>
-              <div class="price-row"><span class="price">FROM UGX 6,000</span><button class="add-button" onclick="addToCart('Local Beer',6000,'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=85" alt="Whisky">
-              <span class="badge">Whisky</span>
-            </div>
-            <div class="menu-content">
-              <h3>Whisky Shot</h3>
-              <p>Whisky, bourbon and premium spirits. Ask for available brands.</p>
-              <div class="price-row"><span class="price">FROM UGX 10,000</span><button class="add-button" onclick="addToCart('Whisky Shot',10000,'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=800&q=85" alt="Cocktail">
-              <span class="badge">Cocktail</span>
-            </div>
-            <div class="menu-content">
-              <h3>Classic Cocktail</h3>
-              <p>Refreshing cocktail mixes crafted by our bar team.</p>
-              <div class="price-row"><span class="price">UGX 15,000</span><button class="add-button" onclick="addToCart('Classic Cocktail',15000,'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=85" alt="Soda">
-              <span class="badge">Cold Drinks</span>
-            </div>
-            <div class="menu-content">
-              <h3>Soda / Water</h3>
-              <p>Soft drinks, mineral water and chilled refreshment.</p>
-              <div class="price-row"><span class="price">FROM UGX 3,000</span><button class="add-button" onclick="addToCart('Soda / Water',3000,'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image">
-              <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=85" alt="Milkshake">
-              <span class="badge">Sweet Treat</span>
-            </div>
-            <div class="menu-content">
-              <h3>Milkshake</h3>
-              <p>Vanilla, chocolate, strawberry and seasonal flavours.</p>
-              <div class="price-row"><span class="price">UGX 12,000</span><button class="add-button" onclick="addToCart('Milkshake',12000,'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=200&q=80')">+</button></div>
-            </div>
-          </article>
-        </div>
+        <div class="menu-grid" id="drinksGrid"></div>
 
         <div class="special-banner">
           <div>
-            <h3>ORDER FOOD & DRINKS TOGETHER</h3>
-            <p>Add items to your cart and send the complete order to Bahamas via WhatsApp.</p>
+            <h3>Order food & drinks together</h3>
+            <p>Add items to your cart and send the complete order directly to Bahamas via WhatsApp.</p>
           </div>
-          <button class="btn btn-outline" onclick="toggleCart()">🛒 VIEW MY ORDER</button>
+          <button class="btn btn-outline" onclick="toggleCart()">View My Order</button>
         </div>
       </div>
     </section>
 
-    <!-- VISIT -->
-    <section class="section-dark" id="visit">
+    <section class="section-alt" id="visit">
       <div class="container">
         <div class="section-heading">
-          <div class="heading-symbol">⌖</div>
+          <div class="heading-icon">⌖</div>
           <div>
             <h2>Visit <span>Bahamas</span></h2>
-            <p>Great food, great drinks and a relaxed lounge atmosphere.</p>
+            <p>Great food, chilled drinks and a relaxed lounge atmosphere.</p>
           </div>
         </div>
 
         <div class="info-grid">
           <div class="info-card">
-            <div class="info-icon">⌖</div>
+            <div class="info-symbol">⌖</div>
             <h3>Location</h3>
             <p>Opposite Bukoto Heights Apartments,<br>Bukoto, Kampala, Uganda.</p>
           </div>
 
           <div class="info-card">
-            <div class="info-icon">☎</div>
+            <div class="info-symbol">☎</div>
             <h3>Call Us</h3>
             <p><a href="tel:+256762831177">+256 762 831 177</a><br>For delivery and reservations.</p>
           </div>
 
           <div class="info-card">
-            <div class="info-icon">◉</div>
+            <div class="info-symbol">◉</div>
             <h3>WhatsApp</h3>
             <p><a href="https://wa.me/256762831177" target="_blank">Chat with Bahamas</a><br>Fast online ordering.</p>
           </div>
 
           <div class="info-card">
-            <div class="info-icon">◷</div>
+            <div class="info-symbol">◷</div>
             <h3>Opening Hours</h3>
             <p>Monday – Sunday<br>10:00 AM until late.</p>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="logo footer-logo">
-      <div class="logo-symbol"><span class="logo-mark">B</span></div>
+      <svg class="bahamas-icon"><use href="#bahamasIcon"></use></svg>
       <div class="logo-divider"></div>
       <div>
         <div class="logo-word">Bahamas</div>
@@ -1523,8 +1213,8 @@
 
     <p>
       <strong>Bahamas Cafe Restaurant Lounge</strong><br>
-      Bukoto, Kampala, Uganda · +256 762 831 177<br><br>
-      © <span id="year"></span> Bahamas Cafe. All prices are in Uganda Shillings.
+      Bukoto, Kampala, Uganda · +256 762 831 177<br>
+      All prices are in Uganda Shillings.
     </p>
   </footer>
 
@@ -1532,29 +1222,27 @@
   <div class="cart-overlay" id="cartOverlay" onclick="closeCartFromOverlay(event)">
     <aside class="cart-panel">
       <div class="cart-header">
-        <h2>🛒 YOUR ORDER</h2>
+        <h2>Your Order</h2>
         <button class="close-cart" onclick="toggleCart()" aria-label="Close cart">×</button>
       </div>
 
       <div class="cart-items" id="cartItems"></div>
 
-      <div class="cart-checkout">
+      <div class="checkout">
         <div class="total-row">
           <span>TOTAL</span>
           <span id="cartTotal">UGX 0</span>
         </div>
 
-        <input class="customer-input" id="customerName" type="text" placeholder="Your name">
-        <input class="customer-input" id="customerPhone" type="tel" placeholder="Your phone number">
-        <textarea class="customer-input" id="customerLocation" placeholder="Delivery location or special instructions"></textarea>
+        <input class="field" id="customerName" type="text" placeholder="Your name">
+        <input class="field" id="customerPhone" type="tel" placeholder="Your phone number">
+        <textarea class="field" id="customerLocation" placeholder="Delivery location or special instructions"></textarea>
 
-        <button class="checkout-button" id="checkoutButton" onclick="checkoutWhatsApp()" disabled>
-          ◉ SEND ORDER VIA WHATSAPP
+        <button class="checkout-btn" id="checkoutBtn" onclick="checkoutWhatsApp()" disabled>
+          Send Order via WhatsApp
         </button>
 
-        <div class="checkout-note">
-          Delivery charges may apply depending on your location.
-        </div>
+        <div class="note">Delivery charges may apply depending on your location.</div>
       </div>
     </aside>
   </div>
@@ -1563,33 +1251,265 @@
 
   <script>
     const WHATSAPP_NUMBER = "256762831177";
-    let cart = JSON.parse(localStorage.getItem("bahamasOceanCart")) || [];
+
+    const menuData = {
+      grill: [
+        {
+          name: "Fried Pork",
+          desc: "Well-seasoned deep-fried pork portions, served fresh and crispy.",
+          price: 20000,
+          badge: "Popular",
+          image: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Pork Kikalayi",
+          desc: "Sautéed pork with vegetables, spices and matooke or Irish potatoes.",
+          price: 25000,
+          badge: "Local Favourite",
+          image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Pork Skewers",
+          desc: "Tender flame-grilled pork skewers. Served as 2–3 delicious sticks.",
+          price: 15000,
+          badge: "Grill",
+          image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Pork Chops",
+          desc: "Juicy grilled pork chops marinated in aromatic herbs and spices.",
+          price: 22000,
+          badge: "Grill",
+          image: "https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Pork Ribs",
+          desc: "Slow-grilled marinated pork ribs coated in a smoky BBQ glaze.",
+          price: 25000,
+          badge: "Best Seller",
+          image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Family Grill Platter",
+          desc: "Assorted pork, chicken, skewers and mixed sides for sharing.",
+          price: 85000,
+          badge: "Sharing",
+          image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=85"
+        }
+      ],
+
+      chicken: [
+        {
+          name: "Quarter Chicken",
+          desc: "Flame-grilled quarter chicken, seasoned in Bahamas signature spices.",
+          price: 18000,
+          badge: "Chicken",
+          image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Half Chicken",
+          desc: "Juicy half chicken, flame grilled for a smoky rich finish.",
+          price: 22000,
+          badge: "Chicken",
+          image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Whole Chicken",
+          desc: "Whole flame-grilled chicken, perfect for a group meal.",
+          price: 40000,
+          badge: "Sharing",
+          image: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Chicken Kikalayi",
+          desc: "Fried chicken tossed with cabbage, carrots, garlic and matooke or Irish.",
+          price: 28000,
+          badge: "Local Favourite",
+          image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Half Chicken Meal",
+          desc: "Half chicken with your choice of two delicious sides.",
+          price: 28000,
+          badge: "Combo",
+          image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Whole Chicken Feast",
+          desc: "Whole chicken, large chips and salad. Serves 3–4 people.",
+          price: 55000,
+          badge: "Feast",
+          image: "https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=900&q=85"
+        }
+      ],
+
+      quick: [
+        {
+          name: "Pork Soup",
+          desc: "Rich traditional pork broth prepared with local spices.",
+          price: 12000,
+          badge: "Soup",
+          image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Chicken Soup",
+          desc: "Hearty chicken broth, warming, fresh and full of flavour.",
+          price: 12000,
+          badge: "Soup",
+          image: "https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Chicken Rolex",
+          desc: "Egg and rolled chapati filled with shredded grilled chicken.",
+          price: 10000,
+          badge: "Rolex",
+          image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Pork Rolex",
+          desc: "Egg and rolled chapati filled with seasoned fried pork.",
+          price: 10000,
+          badge: "Rolex",
+          image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Chips / Fries",
+          desc: "Golden crispy chips, freshly fried and served hot.",
+          price: 8000,
+          badge: "Side",
+          image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Fresh Kachumbali",
+          desc: "Tomatoes, onions, herbs and a refreshing local dressing.",
+          price: 5000,
+          badge: "Side",
+          image: "https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=900&q=85"
+        }
+      ],
+
+      drinks: [
+        {
+          name: "Espresso / Black Coffee",
+          desc: "Freshly brewed, bold and aromatic coffee.",
+          price: 5000,
+          badge: "Coffee",
+          image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Cappuccino / Latte",
+          desc: "Creamy milk coffee made with rich espresso.",
+          price: 8000,
+          badge: "Coffee",
+          image: "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Fruit Smoothie",
+          desc: "Mango, passion fruit, banana, strawberry or mixed fruit.",
+          price: 10000,
+          badge: "Smoothie",
+          image: "https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Natural Fresh Juice",
+          desc: "Mango, passion, pineapple, watermelon or mixed juice.",
+          price: 7000,
+          badge: "Fresh Juice",
+          image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Local Beer",
+          desc: "Nile Special, Club, Bell, Guinness and other available choices.",
+          price: 6000,
+          badge: "From",
+          image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Whisky Shot",
+          desc: "Whisky, bourbon and premium spirits. Ask for available brands.",
+          price: 10000,
+          badge: "From",
+          image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Classic Cocktail",
+          desc: "Refreshing cocktail mixes crafted by our bar team.",
+          price: 15000,
+          badge: "Cocktail",
+          image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Soda / Water",
+          desc: "Soft drinks, mineral water and chilled refreshment.",
+          price: 3000,
+          badge: "From",
+          image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          name: "Milkshake",
+          desc: "Vanilla, chocolate, strawberry and seasonal flavours.",
+          price: 12000,
+          badge: "Sweet Treat",
+          image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85"
+        }
+      ]
+    };
+
+    let cart = JSON.parse(localStorage.getItem("bahamasCartOcean")) || [];
 
     function money(amount) {
       return "UGX " + Number(amount).toLocaleString();
     }
 
-    function saveCart() {
-      localStorage.setItem("bahamasOceanCart", JSON.stringify(cart));
+    function renderMenus() {
+      renderMenuSection("grillGrid", menuData.grill);
+      renderMenuSection("chickenGrid", menuData.chicken);
+      renderMenuSection("quickGrid", menuData.quick);
+      renderMenuSection("drinksGrid", menuData.drinks);
     }
 
-    function addToCart(name, price, image) {
-      const existingItem = cart.find(item => item.name === name);
+    function renderMenuSection(gridId, items) {
+      const grid = document.getElementById(gridId);
 
-      if (existingItem) {
-        existingItem.quantity += 1;
+      grid.innerHTML = items.map(item => `
+        <article class="menu-card">
+          <div class="food-image">
+            <img src="${item.image}" alt="${item.name}">
+            <span class="badge">${item.badge}</span>
+          </div>
+          <div class="menu-content">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="price-row">
+              <span class="price">${money(item.price)}</span>
+              <button class="add-btn" onclick='addToCart(${JSON.stringify(item)})' aria-label="Add ${item.name}">+</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function saveCart() {
+      localStorage.setItem("bahamasCartOcean", JSON.stringify(cart));
+    }
+
+    function addToCart(item) {
+      const existing = cart.find(cartItem => cartItem.name === item.name);
+
+      if (existing) {
+        existing.quantity += 1;
       } else {
         cart.push({
-          name: name,
-          price: price,
-          image: image,
+          name: item.name,
+          price: item.price,
+          image: item.image,
           quantity: 1
         });
       }
 
       saveCart();
       renderCart();
-      showToast(name + " added to your order.");
+      showToast(item.name + " added to your order.");
     }
 
     function updateQuantity(index, change) {
@@ -1613,21 +1533,21 @@
       const cartItems = document.getElementById("cartItems");
       const cartCount = document.getElementById("cartCount");
       const cartTotal = document.getElementById("cartTotal");
-      const checkoutButton = document.getElementById("checkoutButton");
+      const checkoutBtn = document.getElementById("checkoutBtn");
 
-      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
-      const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-      cartCount.textContent = itemCount;
-      cartTotal.textContent = money(totalAmount);
-      checkoutButton.disabled = cart.length === 0;
+      cartCount.textContent = count;
+      cartTotal.textContent = money(total);
+      checkoutBtn.disabled = cart.length === 0;
 
-      if (cart.length === 0) {
+      if (!cart.length) {
         cartItems.innerHTML = `
           <div class="empty-cart">
             <div>
-              <div class="empty-icon">🛒</div>
-              <h3>YOUR CART IS EMPTY</h3>
+              <svg class="bahamas-icon big"><use href="#bahamasIcon"></use></svg>
+              <h3>Your cart is empty</h3>
               <p>Add food and drinks from the menu to begin your order.</p>
             </div>
           </div>
@@ -1641,7 +1561,7 @@
           <div>
             <h4>${item.name}</h4>
             <div class="cart-item-price">${money(item.price)}</div>
-            <div class="quantity-control">
+            <div class="qty">
               <button onclick="updateQuantity(${index}, -1)" aria-label="Reduce quantity">−</button>
               <span>${item.quantity}</span>
               <button onclick="updateQuantity(${index}, 1)" aria-label="Increase quantity">+</button>
@@ -1654,7 +1574,7 @@
 
     function toggleCart() {
       document.getElementById("cartOverlay").classList.toggle("open");
-      document.body.classList.toggle("cart-active");
+      document.body.classList.toggle("cart-open");
     }
 
     function closeCartFromOverlay(event) {
@@ -1684,7 +1604,7 @@
       const phone = document.getElementById("customerPhone").value.trim() || "Not provided";
       const location = document.getElementById("customerLocation").value.trim() || "Not provided";
 
-      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
       let message = "*NEW BAHAMAS ONLINE ORDER*%0A%0A";
       message += "*Customer:* " + encodeURIComponent(name) + "%0A";
@@ -1708,7 +1628,7 @@
       });
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    renderMenus();
     renderCart();
   </script>
 </body>
