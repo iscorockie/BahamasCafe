@@ -1,911 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#031d2d">
-  <title>Bahamas Cafe Restaurant Lounge | Bukoto Kampala</title>
-  <meta name="description" content="Ocean-inspired cafe in Bukoto. Order grilled pork, chicken, combos, rolex, soups, coffee, smoothies, beers & whisky via WhatsApp.">
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --deep-ocean: #031d2d;
-      --ocean: #062b40;
-      --lagoon: #087d8a;
-      --teal: #0fa3a7;
-      --aqua: #53d5d0;
-      --seafoam: #b5f1e8;
-      --coral: #f1764b;
-      --gold: #f6ca73;
-      --white: #ffffff;
-      --muted: #a9c3cc;
-      --whatsapp: #25d366;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1512">
+<title>Bahamas · Cafe Restaurant Lounge · Bukoto Kampala</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Big+Shoulders+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1512; --bg2:#0d1a16; --panel:#111f1a;
+  --gold:#c9a24b; --gold-lt:#e3c579; --gold-soft:#b8944a;
+  --cream:#f4ecdd; --white:#fff; --muted:#9aab a2;
+  --muted:#93a89c; --deep:#061009;
+  --wa:#25d366;
+  --fdisplay:"Big Shoulders Display",sans-serif;
+  --fserif:"Cormorant Garamond",serif;
+  --fbody:"DM Sans",sans-serif;
+  --shadow:0 30px 70px -20px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--fbody);overflow-x:hidden;line-height:1.6}
+img{display:block;width:100%}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--gold);color:var(--deep)}
+.container{width:min(1240px,calc(100% - 44px));margin:auto}
+::-webkit-scrollbar{width:9px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:9px}
 
-      --font-body: "DM Sans", Arial, sans-serif;
-      --font-heading: "Big Shoulders Display", sans-serif;
-      --font-brand: "Beyonest", cursive;
-      --font-number: "Nexa", "DM Sans", sans-serif;
-    }
+/* decorative leaves */
+.leaf{position:absolute;pointer-events:none;opacity:.9;z-index:1}
+.leaf svg{width:100%;height:100%}
 
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body {
-      background:var(--deep-ocean);
-      color:var(--white);
-      font-family:var(--font-body);
-    }
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:.4s;padding:18px 0}
+header.scrolled{background:rgba(10,21,18,.92);backdrop-filter:blur(16px);box-shadow:0 10px 40px rgba(0,0,0,.4);padding:10px 0}
+.navbar{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:52px;height:52px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;flex-shrink:0}
+.logo-mark svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:6}
+.logo-name{font-family:var(--fserif);font-size:30px;font-weight:600;letter-spacing:1px;line-height:.8;color:var(--white)}
+.logo-sub{font-family:var(--fdisplay);font-size:9px;letter-spacing:4px;color:var(--gold);margin-top:2px}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font-family:var(--fdisplay);font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);opacity:.85;transition:.3s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:.3s}
+.nav-links a:hover{color:var(--gold-lt);opacity:1}.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+.socials{display:flex;gap:14px}
+.socials a{color:var(--cream);opacity:.7;transition:.3s}.socials a:hover{color:var(--gold);opacity:1}
+.socials svg{width:17px;height:17px;fill:currentColor}
+.cart-ic{position:relative;background:none;border:1px solid rgba(201,162,75,.4);width:44px;height:44px;border-radius:50%;color:var(--cream);cursor:pointer;display:grid;place-items:center;transition:.3s}
+.cart-ic:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.cart-ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.cart-count{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--deep);font-family:var(--fbody);font-weight:700;font-size:10px;min-width:19px;height:19px;border-radius:50%;display:grid;place-items:center}
+.mtoggle{display:none;background:none;border:none;color:var(--cream);font-size:26px;cursor:pointer}
 
-    .container { width:min(1180px, calc(100% - 36px)); margin:auto; }
+/* ===== HERO ===== */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{height:100%;object-fit:cover}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 8%,rgba(10,21,18,.55) 55%,rgba(10,21,18,.3)),linear-gradient(0deg,var(--bg),transparent 45%)}
+.hero-content{position:relative;z-index:3;max-width:660px;animation:fade 1.2s ease both}
+.overline{display:flex;align-items:center;gap:14px;font-family:var(--fdisplay);letter-spacing:4px;font-size:14px;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+.overline .line{width:50px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--fserif);font-size:clamp(58px,9vw,120px);font-weight:500;line-height:.9;color:var(--white);margin-bottom:8px}
+.hero h1 em{font-style:italic;color:var(--gold-lt)}
+.hero p{font-family:var(--fserif);font-size:22px;font-style:italic;color:var(--cream);opacity:.9;margin:20px 0 34px;max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px}
+.btn{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:14px;padding:17px 34px;cursor:pointer;border:none;transition:.35s;display:inline-flex;align-items:center;gap:10px}
+.btn-gold{background:var(--gold);color:var(--deep)}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-3px);box-shadow:0 15px 35px rgba(201,162,75,.35)}
+.btn-outline{background:transparent;color:var(--cream);border:1px solid rgba(244,236,221,.4)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-lt);transform:translateY(-3px)}
+.btn svg{width:17px;height:17px}
 
-    /* ====================== LOGO ====================== */
-    .logo {
-      display:flex; align-items:center; gap:12px; text-decoration:none;
-    }
-    .logo-symbol {
-      width:62px; height:62px; border-radius:50%; overflow:hidden;
-      border:3px solid var(--seafoam);
-    }
-    .logo-symbol img { width:100%; height:100%; object-fit:cover; }
+/* ===== SECTION SHARED ===== */
+section{position:relative;padding:120px 0}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--fdisplay);letter-spacing:4px;text-transform:uppercase;font-size:13px;color:var(--gold);margin-bottom:16px}
+.eyebrow .line{width:40px;height:1px;background:var(--gold)}
+.eyebrow.center{justify-content:center}
+.title{font-family:var(--fserif);font-size:clamp(40px,5.5vw,68px);font-weight:500;line-height:1;color:var(--white)}
+.title em{font-style:italic;color:var(--gold-lt)}
+.center{text-align:center}
+.flourish{margin:22px auto 0;width:180px;height:20px;color:var(--gold)}
+.flourish svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5}
 
-    .logo-text {
-      font-family:var(--font-brand);
-      font-size:42px; line-height:.75; color:var(--aqua);
-    }
-    .logo-sub {
-      font-family:var(--font-heading);
-      font-size:13px; letter-spacing:2px; color:var(--seafoam);
-      margin-top:4px;
-    }
+/* ===== ABOUT ===== */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-imgs{position:relative}
+.about-imgs .main{border:1px solid rgba(201,162,75,.25);box-shadow:var(--shadow)}
+.about-imgs .sub{position:absolute;bottom:-40px;right:-30px;width:55%;border:5px solid var(--bg2);box-shadow:var(--shadow)}
+.about-txt p{color:var(--muted);margin-bottom:20px;font-size:15.5px}
+.about-txt .lead{font-family:var(--fserif);font-size:26px;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:26px}
 
-    /* ====================== HEADER ====================== */
-    header {
-      position:sticky; top:0; z-index:1000;
-      background:rgba(3,29,45,.96); backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(181,241,232,.2);
-      height:78px; display:flex; align-items:center;
-    }
-    .navbar { display:flex; justify-content:space-between; align-items:center; width:100%; }
+/* ===== MENU ===== */
+.menu-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:44px 0 54px}
+.menu-nav button{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:14px;padding:12px 26px;background:transparent;border:1px solid rgba(201,162,75,.3);color:var(--cream);cursor:pointer;transition:.3s}
+.menu-nav button.active,.menu-nav button:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:30px}
+.dish{background:var(--panel);border:1px solid rgba(201,162,75,.14);overflow:hidden;transition:.45s;position:relative}
+.dish:hover{transform:translateY(-8px);border-color:rgba(201,162,75,.5);box-shadow:var(--shadow)}
+.dish-img{height:230px;overflow:hidden;position:relative}
+.dish-img img{height:100%;object-fit:cover;transition:.7s}.dish:hover .dish-img img{transform:scale(1.08)}
+.dish-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(17,31,26,.85),transparent 55%)}
+.tag{position:absolute;top:16px;left:16px;z-index:2;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:11px;padding:5px 13px;background:rgba(6,16,9,.7);border:1px solid rgba(201,162,75,.4);color:var(--gold-lt)}
+.tag.combo{background:var(--gold);color:var(--deep);border:none}
+.dish-body{padding:26px}
+.dish-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.dish-head h3{font-family:var(--fserif);font-size:26px;font-weight:600;color:var(--white);line-height:1}
+.dish-price{font-family:var(--fdisplay);font-size:22px;color:var(--gold-lt);white-space:nowrap}
+.dish-price small{font-size:12px;color:var(--muted);letter-spacing:1px}
+.dish-desc{color:var(--muted);font-size:14px;margin-bottom:20px;min-height:44px}
+.dish-add{width:100%;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:13px;padding:14px;background:transparent;border:1px solid rgba(201,162,75,.4);color:var(--gold-lt);cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.dish-add:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.dish-add svg{width:15px;height:15px}
 
-    .nav-links {
-      list-style:none; display:flex; gap:26px;
-    }
-    .nav-links a {
-      font-family:var(--font-heading); font-size:15px; font-weight:700;
-      color:var(--seafoam); text-transform:uppercase; letter-spacing:1px;
-    }
-    .nav-links a:hover { color:var(--aqua); }
+/* ===== RESERVATION ===== */
+.reserve{background:var(--deep);position:relative;overflow:hidden}
+.reserve-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.form-box .field{margin-bottom:22px}
+.form-box label{display:block;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:9px}
+.form-box label span{color:#c86a5a}
+.form-box input,.form-box select{width:100%;background:var(--panel);border:1px solid rgba(201,162,75,.2);color:var(--cream);padding:15px 16px;font-family:var(--fbody);font-size:14px;transition:.3s}
+.form-box input:focus,.form-box select:focus{outline:none;border-color:var(--gold);background:#152621}
+.form-box input::placeholder{color:#5f7168}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.reserve-img{position:relative}
+.reserve-img img{border:1px solid rgba(201,162,75,.25);box-shadow:var(--shadow)}
+.reserve-badge{position:absolute;bottom:-28px;left:-28px;background:var(--gold);color:var(--deep);padding:24px 30px;text-align:center;box-shadow:var(--shadow)}
+.reserve-badge .n{font-family:var(--fserif);font-size:44px;font-weight:600;line-height:.9}
+.reserve-badge .t{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:11px;margin-top:4px}
 
-    .nav-actions { display:flex; align-items:center; gap:12px; }
-    .cart-button, .mobile-toggle {
-      width:46px; height:46px; border:1px solid rgba(181,241,232,.35);
-      background:rgba(255,255,255,.08); color:white; border-radius:10px;
-      font-size:18px; display:grid; place-items:center; position:relative;
-    }
-    .cart-count {
-      position:absolute; top:-6px; right:-6px; background:var(--coral);
-      color:white; font-family:var(--font-number); font-size:10px; font-weight:900;
-      width:20px; height:20px; border-radius:50%; display:grid; place-items:center;
-    }
+/* ===== EXPERIENCE strip ===== */
+.exp{position:relative;padding:160px 0;text-align:center;overflow:hidden}
+.exp-bg{position:absolute;inset:0;z-index:0}.exp-bg img{height:100%;object-fit:cover}
+.exp-bg::after{content:"";position:absolute;inset:0;background:rgba(6,16,9,.78)}
+.exp-content{position:relative;z-index:2;max-width:640px;margin:auto}
+.exp h2{font-family:var(--fserif);font-size:clamp(46px,7vw,84px);font-weight:500;color:var(--white);line-height:.95;margin:18px 0 24px}
+.exp h2 em{font-style:italic;color:var(--gold-lt)}
+.exp p{color:var(--cream);opacity:.85;font-size:16px;margin-bottom:34px;font-family:var(--fserif);font-style:italic;font-size:20px}
 
-    .order-now {
-      background:var(--teal); color:white; padding:0 18px; height:46px;
-      border-radius:10px; font-family:var(--font-heading); font-weight:700;
-      display:flex; align-items:center; gap:8px; font-size:15px;
-    }
+/* ===== GALLERY ===== */
+.gallery{background:var(--bg2)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal-grid .g{overflow:hidden;position:relative}
+.gal-grid .g img{height:100%;object-fit:cover;transition:.6s}
+.gal-grid .g:hover img{transform:scale(1.1)}
+.gal-grid .g::after{content:"";position:absolute;inset:0;background:rgba(6,16,9,.15);transition:.4s}
+.gal-grid .g:hover::after{background:rgba(201,162,75,.15)}
+.gal-grid .tall{grid-row:span 2}.gal-grid .wide{grid-column:span 2}
 
-    /* ====================== HERO ====================== */
-    .hero {
-      min-height:680px; display:grid; place-items:center; text-align:center;
-      background:linear-gradient(rgba(3,29,45,.88), rgba(3,29,45,.88)),
-                  url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=85') center/cover;
-    }
-    .hero-brand { font-family:var(--font-brand); font-size:78px; color:var(--aqua); margin-bottom:-12px; }
-    .hero h1 {
-      font-family:var(--font-heading); font-size:clamp(78px,14vw,170px);
-      font-weight:800; letter-spacing:8px; text-transform:uppercase; line-height:.85;
-    }
-    .hero p { max-width:620px; margin:20px auto; color:var(--seafoam); font-size:17px; }
+/* ===== FOOTER ===== */
+footer{background:var(--deep);padding:80px 0 34px;border-top:1px solid rgba(201,162,75,.15)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.foot-col h4{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:14px;color:var(--gold);margin-bottom:22px}
+.foot-col p,.foot-col a{color:var(--muted);font-size:14px;display:block;margin-bottom:12px;transition:.3s}
+.foot-col a:hover{color:var(--gold-lt)}
+.foot-about p{margin-bottom:18px}
+.foot-bottom{border-top:1px solid rgba(201,162,75,.15);padding-top:26px;text-align:center;color:var(--muted);font-size:13px}
 
-    .location-pill {
-      display:inline-flex; align-items:center; gap:10px; background:var(--coral);
-      padding:12px 22px; border-radius:50px; font-family:var(--font-number);
-      font-size:14px; font-weight:800; margin-top:18px;
-    }
+/* ===== CART DRAWER ===== */
+.cart-ov{position:fixed;inset:0;background:rgba(4,10,7,.72);backdrop-filter:blur(4px);z-index:2000;opacity:0;visibility:hidden;transition:.4s}
+.cart-ov.open{opacity:1;visibility:visible}
+.cart-panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:var(--bg2);border-left:1px solid rgba(201,162,75,.2);display:flex;flex-direction:column;transform:translateX(100%);transition:.45s cubic-bezier(.2,.8,.2,1)}
+.cart-ov.open .cart-panel{transform:translateX(0)}
+.cart-h{padding:26px;border-bottom:1px solid rgba(201,162,75,.15);display:flex;justify-content:space-between;align-items:center}
+.cart-h h3{font-family:var(--fserif);font-size:28px;font-weight:600;color:var(--white)}
+.close-c{background:none;border:none;color:var(--cream);font-size:28px;cursor:pointer;transition:.3s}.close-c:hover{color:var(--gold)}
+.cart-list{flex:1;overflow-y:auto;padding:14px 26px}
+.citem{display:grid;grid-template-columns:66px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid rgba(201,162,75,.1);animation:fade .3s}
+.citem img{width:66px;height:66px;object-fit:cover}
+.citem h5{font-family:var(--fserif);font-size:19px;color:var(--white)}
+.citem .cp{color:var(--gold-lt);font-family:var(--fdisplay);font-size:14px;margin-top:2px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:9px}
+.qty button{width:28px;height:28px;border:1px solid rgba(201,162,75,.3);background:none;color:var(--cream);cursor:pointer;transition:.3s}.qty button:hover{background:var(--gold);color:var(--deep)}
+.qty span{min-width:20px;text-align:center;font-family:var(--fdisplay)}
+.rm{background:none;border:none;color:#c86a5a;font-size:20px;cursor:pointer;align-self:start}
+.empty-c{height:100%;display:grid;place-items:center;text-align:center;color:var(--muted);padding:40px}
+.empty-c svg{width:60px;height:60px;stroke:var(--gold-soft);fill:none;stroke-width:1;margin-bottom:16px;opacity:.6}
+.cart-f{padding:24px 26px;border-top:1px solid rgba(201,162,75,.15)}
+.ctot{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.ctot .l{font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:15px}
+.ctot .v{font-family:var(--fserif);font-size:30px;color:var(--gold-lt)}
+.cinput{width:100%;background:var(--panel);border:1px solid rgba(201,162,75,.2);color:var(--cream);padding:13px 15px;margin-bottom:11px;font-family:var(--fbody);font-size:14px}
+.cinput:focus{outline:none;border-color:var(--gold)}
+.wa-btn{width:100%;background:var(--wa);color:#fff;border:none;padding:16px;font-family:var(--fdisplay);letter-spacing:2px;text-transform:uppercase;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:.3s}
+.wa-btn:hover:not(:disabled){background:#1eb858}.wa-btn:disabled{opacity:.4;cursor:not-allowed}
+.wa-btn svg{width:22px;height:22px;fill:#fff}
 
-    .btn {
-      padding:14px 26px; border-radius:8px; font-family:var(--font-heading);
-      font-size:16px; font-weight:700; letter-spacing:1px; transition:.2s;
-    }
-    .btn-teal { background:var(--teal); color:white; }
-    .btn-teal:hover { background:var(--aqua); color:var(--deep-ocean); }
-    .btn-outline { border:2px solid var(--seafoam); color:var(--seafoam); }
-    .btn-outline:hover { background:var(--seafoam); color:var(--deep-ocean); }
+/* toast */
+.toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,120px);background:var(--gold);color:var(--deep);padding:15px 30px;font-family:var(--fdisplay);letter-spacing:1px;text-transform:uppercase;font-size:14px;z-index:3000;opacity:0;transition:.4s;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:18px;height:18px;stroke:var(--deep);fill:none;stroke-width:2.5}
 
-    /* ====================== MENU ====================== */
-    section { padding:88px 0; }
-    .section-dark { background:var(--ocean); }
-    .section-drinks {
-      background:radial-gradient(circle at 20% 30%, rgba(83,213,208,.18), transparent),
-                 radial-gradient(circle at 80% 70%, rgba(241,118,75,.12), transparent),
-                 #041f2e;
-    }
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:.9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    .section-heading {
-      display:flex; align-items:center; gap:18px; margin-bottom:36px;
-    }
-    .heading-symbol {
-      width:58px; height:58px; border:2px solid var(--aqua);
-      border-radius:12px; display:grid; place-items:center;
-      font-size:26px; color:var(--aqua); background:rgba(15,163,167,.15);
-    }
-    .section-heading h2 {
-      font-family:var(--font-heading); font-size:clamp(38px,5.5vw,58px);
-      font-weight:700; letter-spacing:2px; text-transform:uppercase;
-    }
-    .section-heading h2 span { color:var(--aqua); }
-
-    .menu-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
-    }
-    .menu-card {
-      background:rgba(255,255,255,.07); border:1px solid rgba(181,241,232,.2);
-      border-radius:14px; overflow:hidden; transition:.3s;
-    }
-    .menu-card:hover { transform:translateY(-8px); border-color:var(--aqua); }
-
-    .food-image { height:200px; position:relative; }
-    .food-image img { height:100%; object-fit:cover; transition:.4s; }
-    .menu-card:hover .food-image img { transform:scale(1.08); }
-
-    .badge {
-      position:absolute; top:12px; left:12px; background:rgba(3,29,45,.85);
-      color:var(--seafoam); font-family:var(--font-heading); font-size:12px;
-      padding:4px 12px; border-radius:20px; letter-spacing:1px;
-    }
-
-    .menu-content { padding:18px; flex:1; display:flex; flex-direction:column; }
-    .menu-content h3 {
-      font-family:var(--font-heading); font-size:23px; margin-bottom:8px;
-    }
-    .menu-content p { flex:1; color:var(--muted); font-size:13.5px; line-height:1.6; }
-
-    .price-row {
-      display:flex; justify-content:space-between; align-items:center; margin-top:auto;
-    }
-    .price {
-      font-family:var(--font-number); color:var(--gold); font-size:17px; font-weight:900;
-    }
-    .add-button {
-      width:42px; height:42px; border:none; border-radius:10px;
-      background:var(--teal); color:white; font-size:20px;
-    }
-    .add-button:hover { background:var(--aqua); color:var(--deep-ocean); }
-
-    .combo-card {
-      background:linear-gradient(135deg, var(--lagoon), var(--teal));
-      border:2px solid var(--aqua);
-    }
-
-    .special-banner {
-      margin-top:40px; padding:28px; border-radius:16px;
-      background:linear-gradient(105deg, var(--lagoon), var(--teal));
-      display:flex; justify-content:space-between; align-items:center; gap:20px;
-    }
-    .special-banner h3 {
-      font-family:var(--font-heading); font-size:36px; line-height:1;
-    }
-
-    /* ====================== INFO & FOOTER ====================== */
-    .info-grid {
-      display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
-    }
-    .info-card {
-      background:rgba(255,255,255,.06); padding:26px; border-radius:12px;
-      border-top:4px solid var(--aqua);
-    }
-    .info-card h3 {
-      font-family:var(--font-heading); font-size:26px; margin:12px 0 6px;
-    }
-    .info-card p, .info-card a { color:var(--muted); font-size:13.5px; }
-
-    footer {
-      background:#021521; padding:40px 20px; text-align:center; color:var(--muted);
-      font-size:13px; border-top:1px solid rgba(181,241,232,.15);
-    }
-    .footer-logo { justify-content:center; margin-bottom:18px; opacity:.95; }
-
-    /* ====================== CART ====================== */
-    .cart-overlay {
-      position:fixed; inset:0; background:rgba(3,29,45,.85); z-index:2000;
-      opacity:0; visibility:hidden; transition:.3s;
-    }
-    .cart-overlay.open { opacity:1; visibility:visible; }
-
-    .cart-panel {
-      position:absolute; right:0; top:0; width:min(440px,100%); height:100%;
-      background:#062637; transform:translateX(100%); transition:.35s;
-      display:flex; flex-direction:column;
-    }
-    .cart-overlay.open .cart-panel { transform:translateX(0); }
-
-    .cart-header {
-      padding:22px; border-bottom:1px solid rgba(181,241,232,.2);
-      display:flex; justify-content:space-between; align-items:center;
-    }
-    .cart-header h2 { font-family:var(--font-heading); font-size:32px; }
-
-    .cart-items { flex:1; overflow-y:auto; padding:15px 22px; }
-    .cart-item {
-      display:grid; grid-template-columns:62px 1fr auto; gap:12px;
-      padding:14px 0; border-bottom:1px solid rgba(181,241,232,.15);
-    }
-    .cart-item img { width:62px; height:62px; object-fit:cover; border-radius:8px; }
-
-    .total-row {
-      display:flex; justify-content:space-between; font-family:var(--font-number);
-      font-size:18px; font-weight:900; margin:15px 0;
-    }
-    .total-row span:last-child { color:var(--gold); }
-
-    .customer-input {
-      width:100%; padding:12px; margin-bottom:10px; border-radius:8px;
-      border:1px solid rgba(181,241,232,.3); background:rgba(255,255,255,.08);
-      color:white; font-size:14px;
-    }
-    .checkout-button {
-      width:100%; padding:16px; background:var(--whatsapp); color:white;
-      border:none; border-radius:8px; font-family:var(--font-heading);
-      font-size:17px; font-weight:700;
-    }
-
-    .toast {
-      position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
-      background:var(--seafoam); color:var(--deep-ocean); padding:12px 24px;
-      border-radius:8px; font-family:var(--font-number); font-weight:800;
-      opacity:0; transition:.3s; z-index:3000;
-    }
-    .toast.show { opacity:1; transform:translateX(-50%) translateY(-10px); }
-
-    @media (max-width:820px) {
-      .menu-grid { grid-template-columns:repeat(2,1fr); }
-      .info-grid { grid-template-columns:repeat(2,1fr); }
-      .nav-links { display:none; }
-      .mobile-toggle { display:block; }
-    }
-    @media (max-width:520px) {
-      .menu-grid, .info-grid { grid-template-columns:1fr; }
-      .logo-text { font-size:32px; }
-    }
-  </style>
+@media(max-width:920px){
+  .nav-links,.socials{display:none}.mtoggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(10,21,18,.98);backdrop-filter:blur(16px);padding:20px 24px;border-bottom:1px solid rgba(201,162,75,.2)}
+  .nav-links.open li{padding:14px 0;border-bottom:1px solid rgba(201,162,75,.1)}
+  .about-grid,.reserve-grid{grid-template-columns:1fr;gap:50px}
+  .about-imgs .sub{position:static;width:100%;margin-top:20px;border:none}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .form-row,.foot-grid,.menu-grid{grid-template-columns:1fr}
+  section{padding:80px 0}.hero p{font-size:18px}
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="container navbar">
-      <a href="#" class="logo">
-        <div class="logo-symbol">
-          <img src="https://i.ibb.co.com/0jKzL7v/bahamas-knot-logo.png" alt="Bahamas Logo" style="filter:invert(1);">
-        </div>
-        <div>
-          <div class="logo-text">Bahamas</div>
-          <div class="logo-sub">CAFE • RESTAURANT • LOUNGE</div>
-        </div>
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#grill">Grill</a></li>
-        <li><a href="#chicken">Chicken</a></li>
-        <li><a href="#quick">Quick Meals</a></li>
-        <li><a href="#drinks">Drinks</a></li>
-        <li><a href="#visit">Visit Us</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button class="cart-button" onclick="toggleCart()" style="position:relative">
-          🛒 <span class="cart-count" id="cartCount">0</span>
-        </button>
-        <a href="https://wa.me/256762831177" target="_blank" class="order-now">WhatsApp Order</a>
-        <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container navbar">
+    <a href="#" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 100 100"><path d="M50 12 L68 30 L50 48 L32 30 Z M50 52 L68 70 L50 88 L32 70 Z M12 50 L30 32 L48 50 L30 68 Z M52 50 L70 32 L88 50 L70 68 Z"/></svg></div>
+      <div><div class="logo-name">Bahamas</div><div class="logo-sub">CAFE · RESTAURANT · LOUNGE</div></div>
+    </a>
+    <ul class="nav-links" id="nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reserve">Reservation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="socials">
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.1 15.6 2.1 15.2 2.1 12s0-3.6.1-4.9C2.3 3.9 3.9 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.8-11.1a1.5 1.5 0 11-1.5-1.5 1.5 1.5 0 011.5 1.5z"/></svg></a>
+        <a href="https://wa.me/256762831177"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.5-.5-.5-.7-.5H7c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5 2.9 1.2 2.9.8 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg></a>
       </div>
+      <button class="cart-ic" onclick="toggleCart()"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg><span class="cart-count" id="cc">0</span></button>
+      <button class="mtoggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container" style="text-align:center">
-        <div class="logo" style="justify-content:center; margin-bottom:20px">
-          <div class="logo-symbol" style="width:88px;height:88px">
-            <img src="https://i.ibb.co.com/0jKzL7v/bahamas-knot-logo.png" alt="Bahamas Logo" style="filter:invert(1);">
-          </div>
-        </div>
-        <div class="hero-brand">Bahamas</div>
-        <h1>MENU</h1>
-        <p>Freshly grilled meats, hearty combo meals, local comfort food, handcrafted drinks and a relaxed oceanic vibe in the heart of Bukoto.</p>
-        <div class="location-pill">
-          📍 Opposite Bukoto Heights Apartments, Kampala • +256 762 831 177
-        </div>
-        <div style="margin-top:32px">
-          <a href="#grill" class="btn btn-teal">Browse Menu</a>
-          <button onclick="toggleCart()" class="btn btn-outline" style="margin-left:12px">Start Order</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- GRILL + COMBOS -->
-    <section id="grill">
-      <div class="container">
-        <div class="section-heading">
-          <div class="heading-symbol">🔥</div>
-          <div><h2><span>Grill</span> &amp; Combo Meals</h2></div>
-        </div>
-        <div class="menu-grid">
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=85" alt="Fried Pork"><span class="badge">Popular</span></div>
-            <div class="menu-content">
-              <h3>Fried Pork</h3>
-              <p>Well-seasoned deep-fried pork portions served crispy and hot.</p>
-              <div class="price-row">
-                <span class="price">UGX 20,000</span>
-                <button class="add-button" onclick="addToCart('Fried Pork',20000,'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" alt="Pork Kikalayi"><span class="badge">Local</span></div>
-            <div class="menu-content">
-              <h3>Pork Kikalayi</h3>
-              <p>Sautéed pork with vegetables, spices and matooke or Irish potatoes.</p>
-              <div class="price-row">
-                <span class="price">UGX 25,000</span>
-                <button class="add-button" onclick="addToCart('Pork Kikalayi',25000,'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=85" alt="Pork Skewers"></div>
-            <div class="menu-content">
-              <h3>Pork Skewers</h3>
-              <p>Tender flame-grilled pork skewers (2–3 sticks).</p>
-              <div class="price-row">
-                <span class="price">UGX 15,000</span>
-                <button class="add-button" onclick="addToCart('Pork Skewers',15000,'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=800&q=85" alt="Pork Chops"></div>
-            <div class="menu-content">
-              <h3>Pork Chops</h3>
-              <p>Juicy grilled pork chops marinated in aromatic herbs.</p>
-              <div class="price-row">
-                <span class="price">UGX 22,000</span>
-                <button class="add-button" onclick="addToCart('Pork Chops',22000,'https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Pork Ribs"><span class="badge">Best Seller</span></div>
-            <div class="menu-content">
-              <h3>Pork Ribs</h3>
-              <p>Slow-grilled marinated pork ribs with smoky BBQ glaze.</p>
-              <div class="price-row">
-                <span class="price">UGX 25,000</span>
-                <button class="add-button" onclick="addToCart('Pork Ribs',25000,'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card combo-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=85" alt="Family Grill Platter"><span class="badge">Combo</span></div>
-            <div class="menu-content">
-              <h3>Family Grill Platter</h3>
-              <p>Assorted pork, chicken, skewers &amp; mixed sides (Serves 3–4).</p>
-              <div class="price-row">
-                <span class="price">UGX 85,000</span>
-                <button class="add-button" onclick="addToCart('Family Grill Platter',85000,'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card combo-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Bahamas Pork Combo"><span class="badge">Combo</span></div>
-            <div class="menu-content">
-              <h3>Bahamas Pork Combo</h3>
-              <p>Fried pork + choice of side + small kachumbari.</p>
-              <div class="price-row">
-                <span class="price">UGX 25,000</span>
-                <button class="add-button" onclick="addToCart('Bahamas Pork Combo',25000,'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card combo-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=85" alt="Pork Kikalayi Combo"><span class="badge">Combo</span></div>
-            <div class="menu-content">
-              <h3>Pork Kikalayi Combo</h3>
-              <p>Pork kikalayi + extra side.</p>
-              <div class="price-row">
-                <span class="price">UGX 28,000</span>
-                <button class="add-button" onclick="addToCart('Pork Kikalayi Combo',28000,'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CHICKEN + COMBOS -->
-    <section class="section-dark" id="chicken">
-      <div class="container">
-        <div class="section-heading">
-          <div class="heading-symbol">🍗</div>
-          <div><h2><span>Chicken</span> &amp; Combo Meals</h2></div>
-        </div>
-        <div class="menu-grid">
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=85" alt="Quarter Chicken"></div>
-            <div class="menu-content">
-              <h3>Quarter Chicken</h3>
-              <p>Flame-grilled quarter chicken with signature seasoning.</p>
-              <div class="price-row">
-                <span class="price">UGX 18,000</span>
-                <button class="add-button" onclick="addToCart('Quarter Chicken',18000,'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=85" alt="Half Chicken"></div>
-            <div class="menu-content">
-              <h3>Half Chicken</h3>
-              <p>Juicy half chicken grilled over open flame.</p>
-              <div class="price-row">
-                <span class="price">UGX 22,000</span>
-                <button class="add-button" onclick="addToCart('Half Chicken',22000,'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=85" alt="Whole Chicken"></div>
-            <div class="menu-content">
-              <h3>Whole Chicken</h3>
-              <p>Full flame-grilled chicken, ideal for sharing.</p>
-              <div class="price-row">
-                <span class="price">UGX 40,000</span>
-                <button class="add-button" onclick="addToCart('Whole Chicken',40000,'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=800&q=85" alt="Chicken Kikalayi"></div>
-            <div class="menu-content">
-              <h3>Chicken Kikalayi</h3>
-              <p>Fried chicken tossed with cabbage, carrots, garlic and matooke.</p>
-              <div class="price-row">
-                <span class="price">UGX 28,000</span>
-                <button class="add-button" onclick="addToCart('Chicken Kikalayi',28000,'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card combo-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=85" alt="Half Chicken Combo"><span class="badge">Combo</span></div>
-            <div class="menu-content">
-              <h3>Half Chicken Combo</h3>
-              <p>Half grilled chicken + choice of 2 sides.</p>
-              <div class="price-row">
-                <span class="price">UGX 28,000</span>
-                <button class="add-button" onclick="addToCart('Half Chicken Combo',28000,'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card combo-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=800&q=85" alt="Whole Chicken Feast"><span class="badge">Combo</span></div>
-            <div class="menu-content">
-              <h3>Whole Chicken Feast</h3>
-              <p>Whole chicken + large chips + salad (Serves 3–4).</p>
-              <div class="price-row">
-                <span class="price">UGX 55,000</span>
-                <button class="add-button" onclick="addToCart('Whole Chicken Feast',55000,'https://images.unsplash.com/photo-1606756790138-261d2b21cd75?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card combo-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=85" alt="Chicken Rolex Combo"><span class="badge">Combo</span></div>
-            <div class="menu-content">
-              <h3>Chicken Rolex Combo</h3>
-              <p>Chicken rolex + side portion of chips.</p>
-              <div class="price-row">
-                <span class="price">UGX 15,000</span>
-                <button class="add-button" onclick="addToCart('Chicken Rolex Combo',15000,'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- QUICK MEALS -->
-    <section id="quick">
-      <div class="container">
-        <div class="section-heading">
-          <div class="heading-symbol">🍲</div>
-          <div><h2><span>Quick Meals</span> &amp; Soups</h2></div>
-        </div>
-        <div class="menu-grid">
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=85" alt="Pork Soup"></div>
-            <div class="menu-content">
-              <h3>Pork Soup</h3>
-              <p>Rich traditional pork broth with local spices.</p>
-              <div class="price-row">
-                <span class="price">UGX 12,000</span>
-                <button class="add-button" onclick="addToCart('Pork Soup',12000,'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=800&q=85" alt="Chicken Soup"></div>
-            <div class="menu-content">
-              <h3>Chicken Soup</h3>
-              <p>Hearty chicken broth, made fresh daily.</p>
-              <div class="price-row">
-                <span class="price">UGX 12,000</span>
-                <button class="add-button" onclick="addToCart('Chicken Soup',12000,'https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=85" alt="Chicken Rolex"></div>
-            <div class="menu-content">
-              <h3>Chicken Rolex</h3>
-              <p>Rolled chapati with egg, vegetables and grilled chicken.</p>
-              <div class="price-row">
-                <span class="price">UGX 10,000</span>
-                <button class="add-button" onclick="addToCart('Chicken Rolex',10000,'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=800&q=85" alt="Pork Rolex"></div>
-            <div class="menu-content">
-              <h3>Pork Rolex</h3>
-              <p>Rolled chapati with egg, vegetables and seasoned pork.</p>
-              <div class="price-row">
-                <span class="price">UGX 10,000</span>
-                <button class="add-button" onclick="addToCart('Pork Rolex',10000,'https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85" alt="Chips"></div>
-            <div class="menu-content">
-              <h3>Chips / Fries</h3>
-              <p>Golden crispy fries, freshly prepared.</p>
-              <div class="price-row">
-                <span class="price">UGX 8,000</span>
-                <button class="add-button" onclick="addToCart('Chips / Fries',8000,'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=85" alt="Kachumbali"></div>
-            <div class="menu-content">
-              <h3>Fresh Kachumbali</h3>
-              <p>Crisp tomatoes, onions, herbs and local dressing.</p>
-              <div class="price-row">
-                <span class="price">UGX 5,000</span>
-                <button class="add-button" onclick="addToCart('Fresh Kachumbali',5000,'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRINKS -->
-    <section class="section-drinks" id="drinks">
-      <div class="container">
-        <div class="section-heading">
-          <div class="heading-symbol">🥤</div>
-          <div><h2><span>Drinks</span> Menu</h2></div>
-        </div>
-        <div class="menu-grid">
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85" alt="Black Coffee"><span class="badge">Coffee</span></div>
-            <div class="menu-content">
-              <h3>Espresso / Black Coffee</h3>
-              <p>Freshly brewed aromatic coffee.</p>
-              <div class="price-row">
-                <span class="price">UGX 5,000</span>
-                <button class="add-button" onclick="addToCart('Espresso / Black Coffee',5000,'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=85" alt="Cappuccino"><span class="badge">Coffee</span></div>
-            <div class="menu-content">
-              <h3>Cappuccino / Latte</h3>
-              <p>Velvety milk coffee with rich espresso.</p>
-              <div class="price-row">
-                <span class="price">UGX 8,000</span>
-                <button class="add-button" onclick="addToCart('Cappuccino / Latte',8000,'https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1556881286-fc6915a7c6c7?auto=format&fit=crop&w=800&q=85" alt="Fruit Smoothie"><span class="badge">Fresh</span></div>
-            <div class="menu-content">
-              <h3>Fruit Smoothie</h3>
-              <p>Mango, passion, banana, strawberry or mixed tropical fruits.</p>
-              <div class="price-row">
-                <span class="price">UGX 10,000</span>
-                <button class="add-button" onclick="addToCart('Fruit Smoothie',10000,'https://images.unsplash.com/photo-1556881286-fc6915a7c6c7?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85" alt="Fresh Juice"><span class="badge">Fresh</span></div>
-            <div class="menu-content">
-              <h3>Natural Fresh Juice</h3>
-              <p>Mango, passion, pineapple, watermelon or mixed.</p>
-              <div class="price-row">
-                <span class="price">UGX 7,000</span>
-                <button class="add-button" onclick="addToCart('Natural Fresh Juice',7000,'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=85" alt="Local Beer"><span class="badge">Beer</span></div>
-            <div class="menu-content">
-              <h3>Local Beer</h3>
-              <p>Nile Special, Club, Bell, Guinness and more.</p>
-              <div class="price-row">
-                <span class="price">From UGX 6,000</span>
-                <button class="add-button" onclick="addToCart('Local Beer',6000,'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=85" alt="Whisky"><span class="badge">Whisky</span></div>
-            <div class="menu-content">
-              <h3>Whisky Shot</h3>
-              <p>Premium whisky and spirits (ask for brands).</p>
-              <div class="price-row">
-                <span class="price">From UGX 10,000</span>
-                <button class="add-button" onclick="addToCart('Whisky Shot',10000,'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=800&q=85" alt="Cocktail"><span class="badge">Cocktail</span></div>
-            <div class="menu-content">
-              <h3>Classic Cocktail</h3>
-              <p>Refreshing cocktails prepared by our bar team.</p>
-              <div class="price-row">
-                <span class="price">UGX 15,000</span>
-                <button class="add-button" onclick="addToCart('Classic Cocktail',15000,'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <div class="food-image"><img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=85" alt="Soda"><span class="badge">Cold</span></div>
-            <div class="menu-content">
-              <h3>Soda / Water</h3>
-              <p>Soft drinks, mineral water and chilled refreshers.</p>
-              <div class="price-row">
-                <span class="price">From UGX 3,000</span>
-                <button class="add-button" onclick="addToCart('Soda / Water',3000,'https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=200&q=80')">+</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- VISIT -->
-    <section class="section-dark" id="visit">
-      <div class="container">
-        <div class="section-heading">
-          <div class="heading-symbol">⌖</div>
-          <div><h2>Visit <span>Bahamas</span></h2></div>
-        </div>
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Location</h3>
-            <p>Opposite Bukoto Heights Apartments,<br>Bukoto, Kampala, Uganda.</p>
-          </div>
-          <div class="info-card">
-            <h3>Call / Delivery</h3>
-            <p><a href="tel:+256762831177">+256 762 831 177</a></p>
-          </div>
-          <div class="info-card">
-            <h3>WhatsApp Orders</h3>
-            <p><a href="https://wa.me/256762831177" target="_blank">Chat on WhatsApp</a></p>
-          </div>
-          <div class="info-card">
-            <h3>Hours</h3>
-            <p>Monday – Sunday<br>10:00 AM until late.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="logo footer-logo">
-      <div class="logo-symbol">
-        <img src="https://i.ibb.co.com/0jKzL7v/bahamas-knot-logo.png" alt="Bahamas Logo" style="filter:invert(1);">
-      </div>
-      <div>
-        <div class="logo-text">Bahamas</div>
-        <div class="logo-sub">CAFE • RESTAURANT • LOUNGE</div>
-      </div>
-    </div>
-    <p>
-      <strong>Bahamas Cafe Restaurant Lounge</strong><br>
-      Opposite Bukoto Heights Apartments, Bukoto — Kampala, Uganda<br>
-      +256 762 831 177
-    </p>
-  </footer>
-
-  <!-- CART -->
-  <div class="cart-overlay" id="cartOverlay" onclick="if(event.target.id==='cartOverlay') toggleCart()">
-    <aside class="cart-panel">
-      <div class="cart-header">
-        <h2>🛒 YOUR ORDER</h2>
-        <button onclick="toggleCart()" style="background:none;border:none;color:white;font-size:28px;cursor:pointer;">×</button>
-      </div>
-      <div class="cart-items" id="cartItems"></div>
-      <div style="padding:20px 22px;background:#041d2b;border-top:1px solid rgba(181,241,232,.2)">
-        <div class="total-row">
-          <span>TOTAL</span>
-          <span id="cartTotal">UGX 0</span>
-        </div>
-        <input id="customerName" class="customer-input" placeholder="Your name" type="text">
-        <input id="customerPhone" class="customer-input" placeholder="Phone number" type="tel">
-        <textarea id="customerLocation" class="customer-input" placeholder="Delivery location or notes" rows="3"></textarea>
-        <button onclick="checkoutWhatsApp()" id="checkoutBtn" class="checkout-button" disabled>SEND ORDER VIA WHATSAPP</button>
-      </div>
-    </aside>
   </div>
+</header>
 
-  <div class="toast" id="toast"></div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"><img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="overline"><span class="line"></span>Bukoto · Kampala · Uganda</div>
+      <h1>Taste The <em>Difference</em></h1>
+      <p>Flame-grilled perfection, island soul and a lounge experience savored to the last bite — right in the heart of Bukoto.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-gold">Explore Menu</a>
+        <a href="#reserve" class="btn btn-outline">Reserve A Table</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const WHATSAPP_NUMBER = "256762831177";
-    let cart = JSON.parse(localStorage.getItem("bahamasCart")) || [];
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-imgs reveal">
+      <img class="main" src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Restaurant interior">
+      <img class="sub" src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dining">
+    </div>
+    <div class="about-txt reveal">
+      <div class="eyebrow"><span class="line"></span>Our Commitment</div>
+      <h2 class="title">A Premium Taste That Yearns To Be <em>Savored</em></h2>
+      <p class="lead">We are committed to serving wholeheartedly — from our chefs to our waiters, every plate is crafted with rich local flavor and genuine care.</p>
+      <p>We provide valuable experiences you will never forget with friends and partners. Delicious food and refreshing drinks in an atmosphere designed to make you feel happier and more satisfied with every visit.</p>
+      <a href="#menu" class="btn btn-gold" style="margin-top:14px">View Our Menus</a>
+    </div>
+  </div>
+</section>
 
-    function money(n) { return "UGX " + Number(n).toLocaleString(); }
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="center reveal">
+      <div class="eyebrow center"><span class="line"></span>Delight In Every Bite<span class="line"></span></div>
+      <h2 class="title">Our <em>Signature</em> Menu</h2>
+      <div class="flourish"><svg viewBox="0 0 180 20"><path d="M2 10 Q40 2 60 10 T118 10 T178 10 M85 10 a5 5 0 1010 0 a5 5 0 10-10 0"/></svg></div>
+    </div>
+    <div class="menu-nav">
+      <button class="active" data-cat="grill">Grill</button>
+      <button data-cat="chicken">Chicken</button>
+      <button data-cat="quick">Quick Meals</button>
+      <button data-cat="drinks">Drinks</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
 
-    function saveCart() {
-      localStorage.setItem("bahamasCart", JSON.stringify(cart));
-    }
-
-    function addToCart(name, price, img) {
-      const existing = cart.find(i => i.name === name);
-      if (existing) existing.quantity++;
-      else cart.push({name, price, image:img, quantity:1});
-      saveCart();
-      renderCart();
-      showToast(name + " added");
-    }
-
-    function updateQty(index, delta) {
-      cart[index].quantity += delta;
-      if (cart[index].quantity < 1) cart.splice(index, 1);
-      saveCart();
-      renderCart();
-    }
-
-    function removeItem(index) {
-      cart.splice(index, 1);
-      saveCart();
-      renderCart();
-    }
-
-    function renderCart() {
-      const container = document.getElementById("cartItems");
-      const countEl = document.getElementById("cartCount");
-      const totalEl = document.getElementById("cartTotal");
-      const btn = document.getElementById("checkoutBtn");
-
-      const totalItems = cart.reduce((a, c) => a + c.quantity, 0);
-      const totalPrice = cart.reduce((a, c) => a + c.price * c.quantity, 0);
-
-      countEl.textContent = totalItems;
-      totalEl.textContent = money(totalPrice);
-      btn.disabled = cart.length === 0;
-
-      if (cart.length === 0) {
-        container.innerHTML = `<div style="height:100%;display:grid;place-items:center;text-align:center;color:#a9c3cc"><p>Your cart is empty.<br>Add items from the menu.</p></div>`;
-        return;
-      }
-
-      container.innerHTML = cart.map((item, i) => `
-        <div class="cart-item">
-          <img src="${item.image}" alt="${item.name}">
-          <div>
-            <div style="font-family:var(--font-heading);font-size:17px">${item.name}</div>
-            <div style="color:var(--gold);font-family:var(--font-number)">${money(item.price)}</div>
-            <div style="display:flex;gap:8px;margin-top:8px">
-              <button onclick="updateQty(${i},-1)" style="width:28px;height:28px;background:rgba(255,255,255,.15);border:none;color:white;border-radius:4px">-</button>
-              <span style="font-family:var(--font-number);width:20px;text-align:center">${item.quantity}</span>
-              <button onclick="updateQty(${i},1)" style="width:28px;height:28px;background:rgba(255,255,255,.15);border:none;color:white;border-radius:4px">+</button>
-            </div>
-          </div>
-          <button onclick="removeItem(${i})" style="background:none;border:none;color:#f1764b;font-size:18px;align-self:start">×</button>
+<!-- RESERVATION -->
+<section class="reserve" id="reserve">
+  <div class="leaf" style="top:-30px;right:-40px;width:220px;height:220px;transform:rotate(20deg)"><svg viewBox="0 0 100 100" fill="#16281f"><path d="M50 5 C30 25 20 45 25 75 C40 60 55 45 70 25 C60 40 50 55 45 80 C55 78 75 65 85 40 C75 30 60 15 50 5Z"/></svg></div>
+  <div class="container reserve-grid">
+    <div class="form-box reveal">
+      <div class="eyebrow"><span class="line"></span>Your Details</div>
+      <h2 class="title" style="margin-bottom:34px">Reserve A <em>Table</em></h2>
+      <form id="resForm">
+        <div class="form-row">
+          <div class="field"><label>Name <span>*</span></label><input id="rName" placeholder="John Doe" required></div>
+          <div class="field"><label>Email Address</label><input type="email" id="rEmail" placeholder="email@gmail.com"></div>
         </div>
-      `).join('');
-    }
+        <div class="field"><label>Mobile Number <span>*</span></label><input id="rPhone" placeholder="+256 …" required></div>
+        <div class="form-row">
+          <div class="field"><label>Date <span>*</span></label><input type="date" id="rDate" required></div>
+          <div class="field"><label>Time <span>*</span></label>
+            <select id="rTime" required>
+              <option value="">Select time</option>
+              <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+              <option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Number Of Persons <span>*</span></label>
+          <select id="rPax" required>
+            <option value="">Select</option>
+            <option>1 Person</option><option>2 People</option><option>3 People</option>
+            <option>4 People</option><option>5–6 People</option><option>7+ People</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:8px">Make A Reservation</button>
+      </form>
+    </div>
+    <div class="reserve-img reveal">
+      <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fine dining">
+      <div class="reserve-badge"><div class="n">10+</div><div class="t">Years of Flavor</div></div>
+    </div>
+  </div>
+</section>
 
-    function toggleCart() {
-      document.getElementById("cartOverlay").classList.toggle("open");
-    }
+<!-- EXPERIENCE -->
+<section class="exp">
+  <div class="exp-bg"><img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1600" alt=""></div>
+  <div class="exp-content">
+    <div class="eyebrow center" style="justify-content:center;color:var(--gold)"><span class="line"></span>Any Question?<span class="line"></span></div>
+    <h2>Stay Close <em>With Us</em></h2>
+    <p>Great food, warm hospitality and an unforgettable lounge atmosphere await you.</p>
+    <a href="#contact" class="btn btn-gold">Contact Us</a>
+  </div>
+</section>
 
-    function showToast(msg) {
-      const t = document.getElementById("toast");
-      t.textContent = msg;
-      t.classList.add("show");
-      setTimeout(() => t.classList.remove("show"), 2200);
-    }
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="container">
+    <div class="center reveal" style="margin-bottom:50px">
+      <div class="eyebrow center"><span class="line"></span>@BahamasKampala<span class="line"></span></div>
+      <h2 class="title">Moments At <em>Bahamas</em></h2>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="g tall"><img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+      <div class="g"><img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
+      <div class="g wide"><img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></div>
+      <div class="g"><img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
+      <div class="g wide"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></div>
+      <div class="g"><img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></div>
+    </div>
+  </div>
+</section>
 
-    function checkoutWhatsApp() {
-      if (!cart.length) return;
-      const name = document.getElementById("customerName").value.trim() || "Customer";
-      const phone = document.getElementById("customerPhone").value.trim() || "";
-      const notes = document.getElementById("customerLocation").value.trim() || "No notes";
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <a href="#" class="logo" style="margin-bottom:20px">
+          <div class="logo-mark"><svg viewBox="0 0 100 100"><path d="M50 12 L68 30 L50 48 L32 30 Z M50 52 L68 70 L50 88 L32 70 Z M12 50 L30 32 L48 50 L30 68 Z M52 50 L70 32 L88 50 L70 68 Z"/></svg></div>
+          <div><div class="logo-name">Bahamas</div><div class="logo-sub">CAFE · RESTAURANT · LOUNGE</div></div>
+        </a>
+        <p>An island-inspired dining experience serving flame-grilled favorites, comfort classics and handcrafted drinks in Bukoto, Kampala.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Location</h4>
+        <p>Opposite Bukoto Heights Apartments, Bukoto — Kampala, Uganda</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+256762831177">+256 762 831 177</a>
+        <a href="https://wa.me/256762831177">WhatsApp Us</a>
+        <a href="mailto:hello@bahamas.ug">hello@bahamas.ug</a>
+      </div>
+      <div class="foot-col">
+        <h4>Opening Hours</h4>
+        <p>Monday – Sunday<br>10:00 AM – Late Night</p>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="yr"></span> Bahamas Cafe Restaurant Lounge · Crafted with flavor in Kampala.</div>
+  </div>
+</footer>
 
-      let text = `*NEW ORDER - BAHAMAS*%0A%0A`;
-      text += `*Name:* ${encodeURIComponent(name)}%0A`;
-      text += `*Phone:* ${encodeURIComponent(phone)}%0A`;
-      text += `*Location/Notes:* ${encodeURIComponent(notes)}%0A%0A`;
-      text += `*ITEMS*%0A`;
+<!-- CART -->
+<div class="cart-ov" id="cartOv" onclick="if(event.target.id==='cartOv')toggleCart()">
+  <aside class="cart-panel">
+    <div class="cart-h"><h3>Your Order</h3><button class="close-c" onclick="toggleCart()">×</button></div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-f">
+      <div class="ctot"><span class="l">Total</span><span class="v" id="cTotal">UGX 0</span></div>
+      <input class="cinput" id="oName" placeholder="Your name">
+      <input class="cinput" id="oPhone" placeholder="Phone number">
+      <input class="cinput" id="oLoc" placeholder="Delivery location / notes">
+      <button class="wa-btn" id="checkoutBtn" onclick="checkout()" disabled>
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.5-.5-.5-.7-.5H7c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5 2.9 1.2 2.9.8 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
+        Order via WhatsApp
+      </button>
+    </div>
+  </aside>
+</div>
 
-      cart.forEach((item, i) => {
-        text += `${i+1}. ${encodeURIComponent(item.name)} ×${item.quantity} — ${encodeURIComponent(money(item.price*item.quantity))}%0A`;
-      });
+<div class="toast" id="toast"></div>
 
-      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      text += `%0A*TOTAL: ${encodeURIComponent(money(total))}*%0A%0AThank you! Please confirm delivery fee.`;
+<script>
+const WA="256762831177", Q="?auto=compress&cs=tinysrgb&w=600";
+const menu={
+grill:[
+ {n:"Fried Pork",d:"Well-seasoned deep-fried pork portions, crispy and hot.",p:20000,t:"Popular",i:"https://images.pexels.com/photos/1352296/pexels-photo-1352296.jpeg"},
+ {n:"Pork Kikalayi",d:"Sautéed pork with vegetables, spices & matooke or Irish.",p:25000,t:"Local",i:"https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg"},
+ {n:"Pork Skewers",d:"Tender flame-grilled pork skewers (2–3 sticks).",p:15000,i:"https://images.pexels.com/photos/8477/pexels-photo.jpg"},
+ {n:"Pork Chops",d:"Juicy grilled pork chops marinated in aromatic herbs.",p:22000,i:"https://images.pexels.com/photos/8308126/pexels-photo-8308126.jpeg"},
+ {n:"Pork Ribs",d:"Slow-grilled ribs glazed with smoky BBQ.",p:25000,t:"Chef's Pick",i:"https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg"},
+ {n:"Family Grill Platter",d:"Assorted pork, chicken, skewers & sides. Serves 3–4.",p:85000,t:"Combo",c:1,i:"https://images.pexels.com/photos/1247755/pexels-photo-1247755.jpeg"},
+ {n:"Bahamas Pork Combo",d:"Fried pork + side + small kachumbari.",p:25000,t:"Combo",c:1,i:"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"},
+ {n:"Pork Kikalayi Combo",d:"Pork kikalayi with an extra side.",p:28000,t:"Combo",c:1,i:"https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg"}
+],
+chicken:[
+ {n:"Quarter Chicken",d:"Flame-grilled quarter chicken, signature seasoning.",p:18000,i:"https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"},
+ {n:"Half Chicken",d:"Juicy half chicken grilled over open flame.",p:22000,i:"https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg"},
+ {n:"Whole Chicken",d:"Full flame-grilled chicken, ideal for sharing.",p:40000,i:"https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg"},
+ {n:"Chicken Kikalayi",d:"Fried chicken tossed with cabbage, carrots & garlic.",p:28000,t:"Local",i:"https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg"},
+ {n:"Half Chicken Combo",d:"Half grilled chicken + choice of 2 sides.",p:28000,t:"Combo",c:1,i:"https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg"},
+ {n:"Whole Chicken Feast",d:"Whole chicken + large chips + salad. Serves 3–4.",p:55000,t:"Combo",c:1,i:"https://images.pexels.com/photos/6210747/pexels-photo-6210747.jpeg"},
+ {n:"Chicken Rolex Combo",d:"Chicken rolex + a side portion of chips.",p:15000,t:"Combo",c:1,i:"https://images.pexels.com/photos/5175537/pexels-photo-5175537.jpeg"}
+],
+quick:[
+ {n:"Pork Soup",d:"Rich traditional pork broth with local spices.",p:12000,i:"https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg"},
+ {n:"Chicken Soup",d:"Hearty chicken broth, made fresh daily.",p:12000,i:"https://images.pexels.com/photos/6249508/pexels-photo-6249508.jpeg"},
+ {n:"Chicken Rolex",d:"Rolled chapati with egg, veg & grilled chicken.",p:10000,i:"https://images.pexels.com/photos/5175537/pexels-photo-5175537.jpeg"},
+ {n:"Pork Rolex",d:"Rolled chapati with egg, veg & seasoned pork.",p:10000,i:"https://images.pexels.com/photos/4676640/pexels-photo-4676640.jpeg"},
+ {n:"Chips / Fries",d:"Golden crispy fries, freshly prepared.",p:8000,i:"https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg"},
+ {n:"Fresh Kachumbali",d:"Crisp tomatoes, onions, herbs & local dressing.",p:5000,i:"https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg"}
+],
+drinks:[
+ {n:"Espresso / Coffee",d:"Freshly brewed, bold and aromatic.",p:5000,t:"Coffee",i:"https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"},
+ {n:"Cappuccino / Latte",d:"Velvety milk coffee with rich espresso.",p:8000,t:"Coffee",i:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"},
+ {n:"Fruit Smoothie",d:"Mango, passion, banana, strawberry or mixed.",p:10000,t:"Fresh",i:"https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg"},
+ {n:"Natural Fresh Juice",d:"Mango, passion, pineapple or watermelon.",p:7000,t:"Fresh",i:"https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg"},
+ {n:"Local Beer",d:"Nile Special, Club, Bell, Guinness & more.",p:6000,t:"Beer",m:1,i:"https://images.pexels.com/photos/1552750/pexels-photo-1552750.jpeg"},
+ {n:"Whisky Shot",d:"Premium whisky & spirits (ask for brands).",p:10000,t:"Whisky",m:1,i:"https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg"},
+ {n:"Classic Cocktail",d:"Refreshing cocktails from our bar team.",p:15000,t:"Cocktail",i:"https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg"},
+ {n:"Soda / Water",d:"Soft drinks, mineral water & chilled refreshers.",p:3000,t:"Cold",m:1,i:"https://images.pexels.com/photos/2775860/pexels-photo-2775860.jpeg"}
+]};
 
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
-    }
+const money=n=>"UGX "+Number(n).toLocaleString();
+const esc=s=>s.replace(/'/g,"\\'");
+function dishHTML(x){
+  const tag=x.t?`<span class="tag ${x.c?'combo':''}">${x.t}</span>`:'';
+  return `<article class="dish">
+    <div class="dish-img">${tag}<img loading="lazy" src="${x.i}${Q}" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg${Q}'" alt="${x.n}"></div>
+    <div class="dish-body">
+      <div class="dish-head"><h3>${x.n}</h3><span class="dish-price">${x.m?'<small>from </small>':''}${money(x.p)}</span></div>
+      <p class="dish-desc">${x.d}</p>
+      <button class="dish-add" onclick="add('${esc(x.n)}',${x.p},'${x.i}${Q}')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Add to Order</button>
+    </div></article>`;
+}
+function renderMenu(cat){document.getElementById('menuGrid').innerHTML=menu[cat].map(dishHTML).join('')}
+renderMenu('grill');
+document.querySelectorAll('.menu-nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.menu-nav button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');renderMenu(b.dataset.cat);
+});
 
-    function toggleMobileMenu() {
-      const links = document.getElementById("navLinks");
-      links.style.display = links.style.display === "flex" ? "none" : "flex";
-    }
+/* CART */
+let cart=JSON.parse(localStorage.getItem("bh2"))||[];
+const save=()=>localStorage.setItem("bh2",JSON.stringify(cart));
+function add(n,p,i){const e=cart.find(x=>x.n===n);e?e.q++:cart.push({n,p,i,q:1});save();render();toast(n+" added");}
+function upd(k,d){cart[k].q+=d;if(cart[k].q<1)cart.splice(k,1);save();render()}
+function del(k){cart.splice(k,1);save();render()}
+function render(){
+  const box=document.getElementById('cartList');
+  const items=cart.reduce((a,c)=>a+c.q,0),tot=cart.reduce((a,c)=>a+c.p*c.q,0);
+  document.getElementById('cc').textContent=items;
+  document.getElementById('cTotal').textContent=money(tot);
+  document.getElementById('checkoutBtn').disabled=!cart.length;
+  if(!cart.length){box.innerHTML=`<div class="empty-c"><div><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg><p>Your order is empty.</p></div></div>`;return}
+  box.innerHTML=cart.map((it,k)=>`<div class="citem"><img src="${it.i}"><div><h5>${it.n}</h5><div class="cp">${money(it.p)}</div><div class="qty"><button onclick="upd(${k},-1)">−</button><span>${it.q}</span><button onclick="upd(${k},1)">+</button></div></div><button class="rm" onclick="del(${k})">×</button></div>`).join('');
+}
+function toggleCart(){document.getElementById('cartOv').classList.toggle('open')}
+function toast(m){const t=document.getElementById('toast');t.innerHTML=`<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>${m}`;t.classList.add('show');clearTimeout(t._);t._=setTimeout(()=>t.classList.remove('show'),2100)}
+function checkout(){
+  if(!cart.length)return;
+  const nm=document.getElementById('oName').value.trim()||"Customer",
+        ph=document.getElementById('oPhone').value.trim(),
+        lc=document.getElementById('oLoc').value.trim()||"Not specified",
+        tot=cart.reduce((a,c)=>a+c.p*c.q,0);
+  let t=`*NEW ORDER — BAHAMAS*%0A%0A*Name:* ${encodeURIComponent(nm)}%0A*Phone:* ${encodeURIComponent(ph)}%0A*Location:* ${encodeURIComponent(lc)}%0A%0A*ITEMS*%0A`;
+  cart.forEach((it,i)=>t+=`${i+1}. ${encodeURIComponent(it.n)} ×${it.q} — ${encodeURIComponent(money(it.p*it.q))}%0A`);
+  t+=`%0A*TOTAL: ${encodeURIComponent(money(tot))}*%0A%0APlease confirm delivery fee. Thank you!`;
+  window.open(`https://wa.me/${WA}?text=${t}`,'_blank');
+}
 
-    // Initialize
-    document.getElementById("navLinks").style.display = "flex";
-    renderCart();
-  </script>
+/* RESERVATION -> WhatsApp */
+document.getElementById('resForm').onsubmit=e=>{
+  e.preventDefault();
+  const g=id=>document.getElementById(id).value;
+  const t=`*TABLE RESERVATION — BAHAMAS*%0A%0A*Name:* ${encodeURIComponent(g('rName'))}%0A*Email:* ${encodeURIComponent(g('rEmail')||'—')}%0A*Phone:* ${encodeURIComponent(g('rPhone'))}%0A*Date:* ${encodeURIComponent(g('rDate'))}%0A*Time:* ${encodeURIComponent(g('rTime'))}%0A*Guests:* ${encodeURIComponent(g('rPax'))}%0A%0APlease confirm my reservation. Thank you!`;
+  window.open(`https://wa.me/${WA}?text=${t}`,'_blank');
+  toast("Reservation sent!");
+};
+
+/* misc */
+window.addEventListener('scroll',()=>document.getElementById('hdr').classList.toggle('scrolled',scrollY>40));
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
+document.getElementById('yr').textContent=new Date().getFullYear();
+render();
+</script>
 </body>
 </html>
